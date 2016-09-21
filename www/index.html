@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title> Khmer Writing </title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/signature_pad/signature_pad.js"></script>
+
+    <script src="cordova.js"></script>
+
+    <script src="js/app.module.js"></script>
+    <script src="js/app.run.js"></script>
+    <script src="js/app.routes.js"></script>
+    <script src="js/classes/classes-controllers.js"></script>
+    <script src="js/classes/classes-services.js"></script>
+
+    <script src="js/lessons/lessons-controllers.js"></script>
+    <script src="js/lessons/lessons-services.js"></script>
+    <script src="js/lessons/lesson-controllers.js"></script>
+    <script src="js/lessons/lesson-services.js"></script>
+
+    <script src="js/practice-categories/how-to-write-controllers.js"></script>
+
+  </head>
+  <body ng-app="app">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

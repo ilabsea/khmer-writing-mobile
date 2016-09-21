@@ -1,0 +1,17 @@
+<ion-view>
+
+  <ion-nav-bar>
+    <ion-nav-back-button>
+      <i class="ion-chevron-left"></i>Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content>
+    <ion-list>
+      <ion-item href="#/lessons/{{lesson.id}}" ng-repeat='lesson in lessons'>
+        មេរៀនទី​ {{lesson.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>
