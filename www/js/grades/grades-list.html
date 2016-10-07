@@ -1,0 +1,11 @@
+<ion-view >
+
+  <ion-content>
+    <ion-list>
+      <ion-item ui-sref='lessons' ng-repeat='grade in grades' ng-click='setgrade(grade)'>
+        {{grade.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>

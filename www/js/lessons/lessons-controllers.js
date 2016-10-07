@@ -1,11 +1,21 @@
 angular.module('app')
 
-.controller('LessonsCtrl', function ($stateParams, $scope, LessonsServices, ClassesServices) {
-  vm = $scope;
-  vm.classId = $stateParams.classId;
+.controller('LessonsCtrl', function ($scope, ClassesServices, LessonsServices) {
+  vm = $scope, currentClass = ClassesServices.getClass();
 
-  ClassesServices.setClassId(vm.classId);
+  vm.lessons = [];
+  vm.setLesson = setLesson;
 
-  vm.lessons = LessonsServices.getByClassId(vm.classId);
-  console.log('vm.lessons : ', vm.lessons);
+  setLessons();
+
+  function setLessons() {
+    LessonsServices.getByClassId(currentClass.id).then(function (lessons) {
+      console.log('lessons : ', lessons);
+      vm.lessons = lessons;
+    });
+  }
+
+  function setLesson(lessonParam) {
+    LessonsServices.setLesson(lessonParam);
+  }
 })

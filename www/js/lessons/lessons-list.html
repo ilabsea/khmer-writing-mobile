@@ -1,3 +1,4 @@
+
 <ion-view>
 
   <ion-nav-bar>
@@ -8,7 +9,7 @@
 
   <ion-content>
     <ion-list>
-      <ion-item href="#/lessons/{{lesson.id}}" ng-repeat='lesson in lessons'>
+      <ion-item ui-sref='methods' ng-repeat='lesson in lessons' ng-click='setLesson(lesson)'>
         មេរៀនទី​ {{lesson.name}}
       </ion-item>
     </ion-list>
