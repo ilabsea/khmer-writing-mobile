@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, ClassesServices, LessonsServices, ContentsServices){
+.controller("ContentsCtrl", function($scope, LessonsServices, ContentsServices, MethodsServices){
   vm = $scope;
 
   var canvas = document.getElementById('drawingCanvas');
@@ -12,40 +12,36 @@ angular.module('app')
   var index = 0;
 
   vm.contents = [];
-
   setContents();
 
   function setContents() {
-    console.log('ClassesServices.getClassId() : ', ClassesServices.getClass());
-    console.log('LessonsServices.getClassId() : ', LessonsServices.getLesson());
-    ContentsServices.getByClassIdLessonId(ClassesServices.getClass().id, LessonsServices.getLesson().id).then(function (content) {
-      console.log('content : ', content.contents);
-      console.log('type of content : ', typeof content.contents);
-      // vm.content = content.contents;
+    ContentsServices.getByLessonIdMethodId(LessonsServices.getLesson().id, MethodsServices.getMethod().id).then(function (contents) {
+      vm.contents = contents;
+      vm.content = vm.contents[index].content;
     });
   }
 
-  // vm.isDisabledBack= function() {
-  //   if(index == 0)
-  //     return true;
-  // }
-  //
-  // vm.isDisabledNext = function() {
-  //   if(index == LessonServices.all().length - 1)
-  //     return true;
-  // }
-  //
-  // vm.goNext = function() {
-  //   index++;
-  //   vm.imageName = LessonServices.getContent(1, 1, index);
-  //   signaturePad.clear();
-  // }
-  //
-  // vm.goBack = function() {
-  //   index--;
-  //   vm.imageName = LessonServices.getContent(1, 1, index);
-  //   signaturePad.clear();
-  // }
+  vm.isDisabledBack= function() {
+    if(index == 0)
+      return true;
+  }
+
+  vm.isDisabledNext = function() {
+    if(index == vm.contents.length - 1)
+      return true;
+  }
+
+  vm.goNext = function() {
+    index++;
+    vm.content = vm.contents[index].content;
+    signaturePad.clear();
+  }
+
+  vm.goBack = function() {
+    index--;
+    vm.content = vm.contents[index].content;
+    signaturePad.clear();
+  }
 
   vm.redraw = function () {
     signaturePad.clear();

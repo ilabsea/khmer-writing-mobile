@@ -15,7 +15,8 @@ function MethodsServices($cordovaSQLite) {
   }
 
   function all() {
-    var query = "SELECT * FROM methods";
+    var query = "SELECT * FROM writing_methods";
+    console.log('query : ', query);
     var methods = $cordovaSQLite.execute(db, query).then(function(res) {
       var result = [];
       if(res.rows.length > 0){

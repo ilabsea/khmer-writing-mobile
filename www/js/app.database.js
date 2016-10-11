@@ -1,5 +1,4 @@
 function createTables($cordovaSQLite) {
-  console.log('window.cordova : ', window.cordova);
   if (window.cordova) {
     db = $cordovaSQLite.openDB({ name: "khmer-writing.db" }); //device
   }else{

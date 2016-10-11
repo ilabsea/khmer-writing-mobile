@@ -8,6 +8,7 @@ angular.module('app')
   vm.setGrade = setGrade;
 
   function setGrade(grade) {
+    console.log('grade : ', grade);
     GradesServices.setGrade(grade);
   }
 

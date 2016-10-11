@@ -9,7 +9,9 @@ angular.module('app')
   setMethods();
 
   function setMethods() {
+    console.log('setMethods');
     MethodsServices.all().then(function(methods) {
+      console.log('vm.methods  : ', methods);
       vm.methods = methods;
     });
   }

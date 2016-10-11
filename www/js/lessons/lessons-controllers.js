@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('LessonsCtrl', function ($scope, ClassesServices, LessonsServices) {
-  vm = $scope, currentClass = ClassesServices.getClass();
+.controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices) {
+  vm = $scope, currentClass = {};
 
   vm.lessons = [];
   vm.setLesson = setLesson;
@@ -9,6 +9,8 @@ angular.module('app')
   setLessons();
 
   function setLessons() {
+    currentClass = GradesServices.getGrade();
+    console.log('currentClass : ', currentClass);
     LessonsServices.getByClassId(currentClass.id).then(function (lessons) {
       console.log('lessons : ', lessons);
       vm.lessons = lessons;

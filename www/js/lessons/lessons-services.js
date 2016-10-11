@@ -14,9 +14,10 @@ function LessonsServices($cordovaSQLite) {
     return lesson;
   }
 
-  function getByClassId(classId) {
-    var query = "SELECT * FROM lessons WHERE class_id = ?";
-    var lessons = $cordovaSQLite.execute(db, query, [classId]).then(function(res) {
+  function getByClassId(gradeId) {
+    var query = "SELECT * FROM lessons WHERE grade_id = ?";
+    console.log('gradeId : ', gradeId);
+    var lessons = $cordovaSQLite.execute(db, query, [gradeId]).then(function(res) {
       var result = [];
       if(res.rows.length > 0){
         var i = 0,

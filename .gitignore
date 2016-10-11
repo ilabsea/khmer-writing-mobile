@@ -1,7 +1,10 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-node_modules/
-platforms/
-plugins/
+node_modules
+platforms
+plugins
 .DS_Store
+resources
+hooks
+www/khmer-writing.db
