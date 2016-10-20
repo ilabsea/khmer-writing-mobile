@@ -2,9 +2,9 @@ angular.module('app')
 
 .factory('GradesServices', GradesServices)
 
-GradesServices.$inject = ['$cordovaSQLite']
+GradesServices.$inject = ['$cordovaSQLite', '$cordovaFile']
 
-function GradesServices($cordovaSQLite) {
+function GradesServices($cordovaSQLite, $cordovaFile) {
 
   var grade;
 
@@ -18,9 +18,7 @@ function GradesServices($cordovaSQLite) {
 
   function all() {
     var query = "SELECT * FROM grades";
-    console.log('query : ', query);
     var grades = $cordovaSQLite.execute(db, query).then(function(res) {
-      console.log("res all : ", res)
       var result = [];
       if(res.rows.length > 0){
         var i = 0,
@@ -29,7 +27,6 @@ function GradesServices($cordovaSQLite) {
           result.push(res.rows.item(i));
         }
       }
-      console.log('result db all ClassesServices: ', result);
       return result;
     });
 

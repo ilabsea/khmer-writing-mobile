@@ -9,38 +9,33 @@ function routes($stateProvider, $urlRouterProvider) {
 
   .state('home', {
     url: '/home',
-    templateUrl: 'js/home/home.html',
+    templateUrl: 'templates/home.html',
     controller: 'HomeCtl'
   })
 
   .state('grades', {
     url: '/grades',
-    templateUrl: 'js/grades/grades-list.html',
-    controller: 'GradesCtrl',
-    resolve: {
-      gradesLists: function(GradesServices){
-        return GradesServices.all();
-      }
-    }
+    templateUrl: 'templates/grades-list.html',
+    controller: 'GradesCtrl'
   })
 
   .state('lessons', {
     url: '/lessons',
-    templateUrl: 'js/lessons/lessons-list.html',
+    templateUrl: 'templates/lessons-list.html',
     controller: 'LessonsCtrl'
   })
 
   .state('methods', {
     url: '/methods',
-    templateUrl: 'js/methods/methods-list.html',
+    templateUrl: 'templates/methods-list.html',
     controller: 'MethodsCtrl'
   })
 
   .state('contents', {
     url: '/contents',
-    templateUrl: 'js/lesson-contents/contents.html',
+    templateUrl: 'templates/contents.html',
     controller: 'ContentsCtrl'
   })
 
-  $urlRouterProvider.otherwise('/home')
+  $urlRouterProvider.otherwise('/grades')
 }

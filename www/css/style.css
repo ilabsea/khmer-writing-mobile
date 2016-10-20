@@ -1,1 +1,128 @@
-/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: 'Kh BL LazySmooth';
+  src: url('../fonts/kh-bl-lazysmooth.eot');
+  src: url('../fonts/kh-bl-lazysmooth.woff2') format('woff2'),
+       url('../fonts/kh-bl-lazysmooth.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.back-contain{
+  display: block;
+  background: transparent url(../img/back-btn.png) no-repeat center center;
+  border: 1px solid;
+  width: 8%;
+  height: 15%;
+  margin-top: 2%;
+  margin-left: 2%;
+  border: none;
+  border-radius: 45%;
+  background-size: contain;
+}
+
+
+/* ============================== Background's screen =============================================*/
+
+.grade-background {
+  background: url("../img/grade/grade-background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.lesson-background {
+  background: url("../img/lesson/lesson-background.png") no-repeat center center fixed;
+  background-size: contain;
+}
+
+.writing-background {
+  background: url("../img/writing-background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* ================================ Grade screen element ================================*/
+
+.grade-contain{
+  display: block;
+  float: right;
+  margin-right: 28%;
+  margin-top: 14%;
+  width: 45%;
+  height: 65%;
+}
+
+.grade-item {
+  display: block;
+  position: relative;
+  margin-bottom: 1%;
+  width: 70%;
+  margin-left: 17%;
+}
+
+.grade-item img{
+  width: 99%;
+}
+
+/* ================================ Lesson screen element ================================*/
+.lesson-contain{
+  display: block;
+  float: right;
+  margin-right: 15%;
+  margin-top: 1%;
+  width: 44%;
+  height: 53%;
+}
+
+.lesson-item {
+  display: inline-block;
+  position: relative;
+  background: transparent url("../img/lesson/lesson-book.png") no-repeat center center;
+  width: 27%;
+  height: 48%;
+  margin-bottom: 9%;
+  margin-left: 4.5%;
+  background-size: contain;
+}
+
+.grade-text{
+  display: block;
+  float: left;
+  margin-top: 16%;
+  margin-left: 16%;
+  width: 20%;
+  text-align: center;
+  color: #26bcf7;
+  font-size: 357%;
+  font-family: 'Kh BL LazySmooth';
+}
+
+.lesson-text{
+  display: inline-block;
+  position: relative;
+  color: #f8f8f8;
+  font-size: 120%;
+  font-family: 'Kh BL LazySmooth';
+  margin-top: 30%;
+  margin-left: 30%;
+}
+
+.lesson-numeric-text{
+  display: inline-block;
+  position: relative;
+  color: #f8f8f8;
+  font-size: 350%;
+  font-family: 'Kh BL LazySmooth';
+  text-align: center;
+  margin-top: 20%;
+  margin-left: 30%;
+}
+
+.next-lesson-btn{
+  position: absolute;
+  background: transparent url("../img/lesson/next-btn.png") no-repeat center center;
+  width: 8%;
+  height: 14%;
+  left: 89%;
+  top: 46%;
+  border: none;
+  border-radius: 45%;
+  background-size: contain;
+}

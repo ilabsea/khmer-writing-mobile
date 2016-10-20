@@ -1,7 +1,14 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, LessonsServices, ContentsServices, MethodsServices){
-  vm = $scope;
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices){
+  var vm = $scope;
+  var currentGrade = GradesServices.getGrade();
+  var currentLesson = LessonsServices.getLesson();
+  var currentMethod = MethodsServices.getMethod();
+
+  vm.gradeCode = currentGrade.code;
+  console.log('currentGrade : ', currentGrade);
+  vm.lessonCode = currentLesson.code;
 
   var canvas = document.getElementById('drawingCanvas');
   var signaturePad = new SignaturePad(canvas, {
@@ -12,10 +19,11 @@ angular.module('app')
   var index = 0;
 
   vm.contents = [];
+
   setContents();
 
   function setContents() {
-    ContentsServices.getByLessonIdMethodId(LessonsServices.getLesson().id, MethodsServices.getMethod().id).then(function (contents) {
+    ContentsServices.getByLessonIdMethodId(currentLesson.id, currentMethod.id).then(function (contents) {
       vm.contents = contents;
       vm.content = vm.contents[index].content;
     });

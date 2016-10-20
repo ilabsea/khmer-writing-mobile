@@ -16,15 +16,5 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
-    $cordovaFile.copyFile(cordova.file.applicationDirectory + 'www/', "khmer-writing.db", cordova.file.dataDirectory, "khmer-writing.db")
-      .then(function (success) {
-        console.log('success');
-        db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
-        $location.path('/grades');
-      }, function (error) {
-        console.log('error file transfer : ', error);
-      });
-
   });
 }

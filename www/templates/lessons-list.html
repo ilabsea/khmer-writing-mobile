@@ -1,0 +1,19 @@
+<ion-view class="lesson-background">
+  <ion-content>
+
+    <div class="back-contain" ng-click='goBack()'></div>
+
+    <span class='grade-text'> {{gradeName}} </span>
+
+    <div class='lesson-contain'>
+      <div ng-repeat="lesson in lessonsBuilt track by $index" ng-click='setLesson(lesson)' class='lesson-item'>
+        <span class='lesson-text'> មេរៀនទី</span>
+        <span class='lesson-numeric-text'> {{lesson["khmer_numeric"]}}</span>
+      </div>
+    </div>
+
+    <button class='next-lesson-btn' ng-click='next()'></button>
+
+  </ion-content>
+
+</ion-view>
