@@ -1,10 +1,14 @@
 angular.module('app')
 
-.controller("MethodsCtrl", function($stateParams, $scope, MethodsServices){
+.controller("MethodsCtrl", function($stateParams, $scope, MethodsServices, LessonsServices, $ionicHistory){
   vm = $scope;
+  var cureentLesson = LessonsServices.getLesson();
 
   vm.methods = [];
   vm.setMethod = setMethod;
+  vm.lessonTitle = cureentLesson.name;
+  vm.lessonKhmerNumeric = cureentLesson.khmer_numeric;
+  vm.goBack = goBack;
 
   setMethods();
 
@@ -20,7 +24,8 @@ angular.module('app')
     MethodsServices.setMethod(methodParam);
   }
 
-
-
+  function goBack() {
+    $ionicHistory.goBack();
+  }
 
 })

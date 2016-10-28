@@ -1,14 +1,21 @@
-<ion-view title='រៀនគូសបន្ទាត់​ និង ខ្សែកោង' >
+<ion-view class='method-background'>
 
-  <ion-nav-bar>
-    <ion-nav-back-button>
-      <i class="ion-chevron-left"></i> Back
-    </ion-nav-back-button>
-  </ion-nav-bar>
+  <ion-content scroll="false">
 
-  <ion-content>
-    <ion-list >
-      <ion-item ng-repeat='method in methods' ui-sref='contents' ng-click='setMethod(method)'> {{method.name}}</ion-item>
-    </ion-list>
+    <div class="back-contain" ng-click='goBack()'></div>
+
+    <span class="method-lesson-text">
+      មេរៀនទី {{lessonKhmerNumeric}} ៖
+    </span>
+    <span class="lesson-title">
+      {{lessonTitle}}
+    </span>
+
+    <div class='method-contain'>
+      <div ng-repeat='method in methods' ui-sref='contents' ng-click='setMethod(method)' class='method-item'>
+        <img src='img/method/{{method.icon}}-btn.png'>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>

@@ -1,14 +1,14 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices){
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $ionicHistory){
   var vm = $scope;
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
 
   vm.gradeCode = currentGrade.code;
-  console.log('currentGrade : ', currentGrade);
   vm.lessonCode = currentLesson.code;
+  vm.methodCode = currentMethod.code;
 
   var canvas = document.getElementById('drawingCanvas');
   var signaturePad = new SignaturePad(canvas, {
@@ -19,17 +19,25 @@ angular.module('app')
   var index = 0;
 
   vm.contents = [];
+  vm.goBack = goBack;
 
   setContents();
 
   function setContents() {
     ContentsServices.getByLessonIdMethodId(currentLesson.id, currentMethod.id).then(function (contents) {
       vm.contents = contents;
+      console.log('vm.contents : ', vm.contents);
+
       vm.content = vm.contents[index].content;
+      console.log('vm.content : ', vm.content);
     });
   }
 
-  vm.isDisabledBack= function() {
+  function goBack() {
+    $ionicHistory.goBack();
+  }
+
+  vm.isDisabledPrevious= function() {
     if(index == 0)
       return true;
   }
@@ -39,13 +47,13 @@ angular.module('app')
       return true;
   }
 
-  vm.goNext = function() {
+  vm.next = function() {
     index++;
     vm.content = vm.contents[index].content;
     signaturePad.clear();
   }
 
-  vm.goBack = function() {
+  vm.previous = function() {
     index--;
     vm.content = vm.contents[index].content;
     signaturePad.clear();

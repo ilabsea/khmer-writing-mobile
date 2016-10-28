@@ -27,8 +27,10 @@ angular.module('app')
   function next() {
     if(Math.floor(lessons.length / 6) > index){
       index++;
-      setLessonsBuilt();
+    }else{
+      index = 0;
     }
+    setLessonsBuilt();
   }
 
   function goBack() {
