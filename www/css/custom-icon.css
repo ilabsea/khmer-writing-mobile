@@ -1,0 +1,7 @@
+.icon.ion-hearing{
+  content: url('../img/icon/hearing.png') !important;
+}
+
+.icon.ion-not-hearing{
+  content: url('../img/icon/not-hearing.png') !important;
+}

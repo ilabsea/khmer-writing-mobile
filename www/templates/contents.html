@@ -7,7 +7,10 @@
     <div class='writing-contain'>
 
       <div class='content-panel'>
-        <img src='img/grade{{gradeCode}}-lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png'></img>
+
+        <img ng-if='methodCode != 3' src='img/grade{{gradeCode}}-lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png'>
+        <button ng-if='methodCode == 3' class='button button-assertive vertical-horizontal-center' ng-click="playSound()" style="margin-top: 27%;"> <i class= "icon ion-hearing"></i> </button>
+
       </div>
 
       <div class='writing-panel'>

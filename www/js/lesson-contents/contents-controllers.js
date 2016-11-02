@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $ionicHistory){
+.controller("ContentsCtrl", function($scope, $ionicPlatform, GradesServices, LessonsServices, ContentsServices, MethodsServices, $ionicHistory, $cordovaMedia){
   var vm = $scope;
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
@@ -20,17 +20,23 @@ angular.module('app')
 
   vm.contents = [];
   vm.goBack = goBack;
+  vm.playSound = playSound;
+  vm.playing = false;
 
   setContents();
 
   function setContents() {
     ContentsServices.getByLessonIdMethodId(currentLesson.id, currentMethod.id).then(function (contents) {
       vm.contents = contents;
-      console.log('vm.contents : ', vm.contents);
-
       vm.content = vm.contents[index].content;
-      console.log('vm.content : ', vm.content);
     });
+  }
+
+  function playSound() {
+    var src = '/android_asset/www/audio/grade' + vm.gradeCode + '/lesson' + vm.lessonCode + '/' + vm.content + '.wav';
+    var media = $cordovaMedia.newMedia(src);
+    vm.playing = true;
+    media.play();
   }
 
   function goBack() {
@@ -62,5 +68,8 @@ angular.module('app')
   vm.redraw = function () {
     signaturePad.clear();
   }
+
+
+
 
 })

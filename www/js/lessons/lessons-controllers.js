@@ -25,9 +25,9 @@ angular.module('app')
   }
 
   function next() {
-    if(Math.floor(lessons.length / 6) > index){
+    if( Math.floor(lessons.length / 6) > index ){
       index++;
-    }else{
+    } else {
       index = 0;
     }
     setLessonsBuilt();

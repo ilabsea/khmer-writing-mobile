@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller('GradesCtrl', function(GradesServices, $scope, $cordovaFile, $ionicPlatform, $cordovaSQLite, $state, $state) {
+.controller('GradesCtrl', function(GradesServices, $scope, $cordovaFile, $ionicPlatform, $cordovaSQLite, $state) {
   var vm = $scope;
 
   vm.grades = [];
