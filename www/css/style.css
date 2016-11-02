@@ -131,8 +131,8 @@
 }
 
 .content-panel{
-  text-align: center;
   float: left;
+  text-align: center;
   width: 50%;
   height: 64%;
   display: inline-block;
@@ -140,24 +140,26 @@
 }
 
 .content-panel img{
-  width: 90%;
+  max-width: 50%;
+  min-width: 30%;
 }
 
 .writing-panel{
-  background: transparent url(../img/table.png) no-repeat center center;
-  background-size: contain;
-  float: right;
-  margin-right: 14%;
   margin-top: 5%;
+  margin-left: 3%;
   height: 64%;
   width: 31%;
   display: inline-block;
   position: relative;
 }
 
+.writing-panel canvas{
+  background: transparent url(../img/table.png) no-repeat center center;
+  background-size: contain;
+}
+
 .writing-footer{
   display: inline-block;
-  margin-top: 1%;
   margin-left: 9%;
   height: 13%;
   width: 81%;

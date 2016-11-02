@@ -7,12 +7,6 @@ routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 function routes($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('home', {
-    url: '/home',
-    templateUrl: 'templates/home.html',
-    controller: 'HomeCtl'
-  })
-
   .state('grades', {
     url: '/grades',
     templateUrl: 'templates/grades-list.html',

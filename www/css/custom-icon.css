@@ -1,7 +1,19 @@
 .icon.ion-hearing{
-  content: url('../img/icon/hearing.png') !important;
+  content: url('../img/icon/hearing.png');
+}
+
+.icon.ion-play{
+  content: url('../img/icon/play.png') !important;
 }
 
 .icon.ion-not-hearing{
-  content: url('../img/icon/not-hearing.png') !important;
+  content: url('../img/icon/not-hearing.png');
+}
+
+.icon.ion-expand{
+  content: url('../img/icon/expand-48.png');
+}
+
+.icon.ion-collapse{
+  content: url('../img/icon/collapse-48.png');
 }
