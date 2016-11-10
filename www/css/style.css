@@ -39,19 +39,23 @@
   margin-right: 28%;
   margin-top: 14%;
   width: 45%;
-  height: 65%;
+  height: 70%;
 }
 
 .grade-item {
   display: block;
   position: relative;
-  margin-bottom: 2%;
-  width: 75%;
-  margin-left: 15%;
+  width: 80%;
+  height: 28%;
+  margin-left: 14%;
 }
 
 .grade-item img{
-  width: 99%;
+  width: 95%;
+}
+
+.grade-item.activated img{
+  width: 90%;
 }
 
 /* ================================ Lesson screen element ================================*/
@@ -74,6 +78,10 @@
   margin-bottom: 9%;
   margin-left: 4.5%;
   background-size: contain;
+}
+
+.lesson-item.activated {
+  height: 39%;
 }
 
 .grade-text{
@@ -160,36 +168,34 @@
 
 .writing-footer{
   display: inline-block;
+  position: relative;
   margin-left: 9%;
   height: 13%;
   width: 81%;
-  position: relative;
 }
 
-.writing-footer button {
-  background-size: contain;
+.writing-footer div {
   display: inline-block;
-  position: relative;
+  background-size: cover;
   width: 18%;
   height: 100%;
-  border: none;
+}
+
+.writing-footer div.activated {
+  background-size: contain;
 }
 
 .previous{
   background: transparent url("../img/content/previous-btn.png") no-repeat center center;
-  background-size: contain;
-  float: left;
 }
 
 .delete{
   background: transparent url("../img/content/delete-btn.png") no-repeat center center;
-  width: 14% !important;
-  float: right;
+  margin-left: 45%;
 }
 
 .next{
   background: transparent url("../img/content/next-btn.png") no-repeat center center;
-  float: right;
 }
 
 
@@ -223,24 +229,17 @@
   margin-top: 4%;
 }
 
-.method-item {
+.method-item{
   display: inline-block;
-  position: relative;
-  margin-left: 1%;
-  width: 41%;
-  padding-bottom: 5%;
-  padding-left: 3%;
-}
-
-.method-item:hover{
-  opacity: 5%;
+  margin-left: 3%;
+  width: 40%;
+  margin-bottom: 6%;
 }
 
 .method-item img{
-  width: 99%;
+  width: 95%;
 }
 
-.tranparent-button {
-  border: none;
-  background: none;
+.method-item.activated img{
+  width: 90%;
 }

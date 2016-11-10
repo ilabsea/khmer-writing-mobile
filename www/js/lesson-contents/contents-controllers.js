@@ -69,7 +69,4 @@ angular.module('app')
     signaturePad.clear();
   }
 
-
-
-
 })
