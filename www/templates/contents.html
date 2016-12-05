@@ -8,13 +8,17 @@
 
       <div class='content-panel'>
 
-        <img ng-if='methodCode != 3' src='img/grade{{gradeCode}}-lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png' style="margin-top: 13%;">
+        <img ng-if='methodCode != 3' src='img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png' style="margin-top: 13%;">
         <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()" style="margin-top: 30%;"></a>
 
       </div>
 
-      <div class='writing-panel'>
-        <canvas width="310" height="300"  id='drawingCanvas'>
+      <div class='writing-panel' ng-if='methodCode != 4' >
+        <canvas width="330" height="310" id='drawingCanvas' style="background: transparent url(img/table.png) no-repeat center center; background-size: contain;">
+      </div>
+
+      <div class='writing-panel' ng-if='methodCode == 4' >
+        <canvas width="330" height="310" id='drawingCanvas' style='background: transparent url(img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}-clue.png) no-repeat center center; background-size: contain;'>
       </div>
 
       <div class='writing-footer'>

@@ -161,11 +161,6 @@
   position: relative;
 }
 
-.writing-panel canvas{
-  background: transparent url(../img/table.png) no-repeat center center;
-  background-size: contain;
-}
-
 .writing-footer{
   display: inline-block;
   position: relative;

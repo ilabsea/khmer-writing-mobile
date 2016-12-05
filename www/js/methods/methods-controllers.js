@@ -2,18 +2,18 @@ angular.module('app')
 
 .controller("MethodsCtrl", function($stateParams, $scope, MethodsServices, LessonsServices, $ionicHistory){
   vm = $scope;
-  var cureentLesson = LessonsServices.getLesson();
+  var currentLesson = LessonsServices.getLesson();
 
   vm.methods = [];
   vm.setMethod = setMethod;
-  vm.lessonTitle = cureentLesson.name;
-  vm.lessonKhmerNumeric = cureentLesson.khmer_numeric;
+  vm.lessonTitle = currentLesson.name;
+  vm.lessonKhmerNumeric = currentLesson.khmer_numeric;
   vm.goBack = goBack;
 
   setMethods();
 
   function setMethods() {
-    MethodsServices.all().then(function(methods) {
+    MethodsServices.getMethodsByLessonId(currentLesson.id).then(function(methods) {
       vm.methods = methods;
     });
   }

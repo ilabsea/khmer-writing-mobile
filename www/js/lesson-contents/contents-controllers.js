@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, $ionicPlatform, GradesServices, LessonsServices, ContentsServices, MethodsServices, $ionicHistory, $cordovaMedia){
-  var vm = $scope;
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $ionicHistory, $cordovaMedia){
+  var vm = $scope, canvas, signaturePad;
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
@@ -10,12 +10,6 @@ angular.module('app')
   vm.lessonCode = currentLesson.code;
   vm.methodCode = currentMethod.code;
 
-  var canvas = document.getElementById('drawingCanvas');
-  var signaturePad = new SignaturePad(canvas, {
-                        minWidth: 2,
-                        maxWidth: 5,
-                        penColor: "rgb(66, 133, 244)"
-                    });
   var index = 0;
 
   vm.contents = [];
@@ -29,6 +23,15 @@ angular.module('app')
     ContentsServices.getByLessonIdMethodId(currentLesson.id, currentMethod.id).then(function (contents) {
       vm.contents = contents;
       vm.content = vm.contents[index].content;
+      canvas = document.getElementById('drawingCanvas');
+      if(canvas){
+        signaturePad = new SignaturePad(canvas, {
+                                minWidth: 2,
+                                maxWidth: 5,
+                                penColor: "rgb(66, 133, 244)"
+                            });
+      }
+
     });
   }
 
@@ -41,6 +44,7 @@ angular.module('app')
 
   function goBack() {
     $ionicHistory.goBack();
+    signaturePad.off();
   }
 
   vm.isDisabledPrevious= function() {

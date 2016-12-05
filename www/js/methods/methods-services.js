@@ -14,9 +14,9 @@ function MethodsServices($cordovaSQLite) {
     return method;
   }
 
-  function all() {
-    var query = "SELECT * FROM writing_methods";
-    var methods = $cordovaSQLite.execute(db, query).then(function(res) {
+  function getMethodsByLessonId(lessonId) {
+    var query = "SELECT DISTINCT writing_methods.* FROM writing_methods JOIN contents WHERE writing_methods.id = contents.writing_method_id AND contents.lesson_id=?";
+    var methods = $cordovaSQLite.execute(db, query, [lessonId]).then(function(res) {
       var result = [];
       if(res.rows.length > 0){
         var i = 0,
@@ -32,7 +32,7 @@ function MethodsServices($cordovaSQLite) {
   }
 
   return{
-    all: all,
+    getMethodsByLessonId: getMethodsByLessonId,
     setMethod: setMethod,
     getMethod: getMethod
   }
