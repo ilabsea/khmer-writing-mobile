@@ -31,6 +31,18 @@
   background-size: cover;
 }
 
+/* ================================ User screen element ================================*/
+.user-contain{
+  display: block;
+  /* float: right; */
+  margin-left: 26%;
+  margin-top: 12%;
+  width: 45%;
+  height: 63%;
+  background-color: white;
+  border-radius: 10%;
+}
+
 /* ================================ Grade screen element ================================*/
 
 .grade-contain{
