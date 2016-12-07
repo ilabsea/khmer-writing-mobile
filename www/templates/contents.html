@@ -2,23 +2,28 @@
 
   <ion-content scroll="false">
 
-    <div class="back-contain" ng-click='goBack()'></div>
+    <div class="back-btn" ng-click='goBack()'></div>
 
     <div class='writing-contain'>
 
       <div class='content-panel'>
 
-        <img ng-if='methodCode != 3' src='img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png' style="margin-top: 13%;">
-        <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()" style="margin-top: 30%;"></a>
+        <div>
+          <span class='content-title-numeric'> មេរៀនទី {{currentLesson["khmer_numeric"]}}</span>
+          <span class='content-title'> {{currentLesson["name"]}}</span>
+        </div>
+
+        <img ng-if='methodCode != 3' src='img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png'>
+        <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()"></a>
 
       </div>
 
       <div class='writing-panel' ng-if='methodCode != 4' >
-        <canvas width="330" height="310" id='drawingCanvas' style="background: transparent url(img/table.png) no-repeat center center; background-size: contain;">
+        <canvas width="490" height="380" id='drawingCanvas' style="background: transparent url(img/table.png) no-repeat center center; background-size: contain;">
       </div>
 
       <div class='writing-panel' ng-if='methodCode == 4' >
-        <canvas width="330" height="310" id='drawingCanvas' style='background: transparent url(img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}-clue.png) no-repeat center center; background-size: contain;'>
+        <canvas width="490" height="380" id='drawingCanvas' style='background: transparent url(img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}-clue.png) no-repeat center center; background-size: contain;'>
       </div>
 
       <div class='writing-footer'>

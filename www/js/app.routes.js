@@ -7,11 +7,11 @@ routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 function routes($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('users', {
-    url: '/users',
-    templateUrl: 'templates/users.html',
-    controller: 'UsersCtrl'
-  })
+  // .state('users', {
+  //   url: '/users',
+  //   templateUrl: 'templates/users.html',
+  //   controller: 'UsersCtrl'
+  // })
 
   .state('grades', {
     url: '/grades',
@@ -37,5 +37,5 @@ function routes($stateProvider, $urlRouterProvider) {
     controller: 'ContentsCtrl'
   })
 
-  $urlRouterProvider.otherwise('/users')
+  $urlRouterProvider.otherwise('/grades')
 }

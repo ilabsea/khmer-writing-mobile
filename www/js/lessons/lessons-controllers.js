@@ -8,6 +8,7 @@ angular.module('app')
 
   vm.lessonsBuilt = [];
   vm.next = next;
+  vm.previous = previous;
   vm.setLesson = setLesson;
   vm.gradeName = currentGrade.name;
   vm.goBack = goBack;
@@ -33,9 +34,17 @@ angular.module('app')
     setLessonsBuilt();
   }
 
+  function previous() {
+    if( index <= Math.floor(lessons.length / 6) && index > 0){
+      index--;
+    } else if(index == 0) {
+      index = Math.floor(lessons.length / 6);
+    }
+    setLessonsBuilt();
+  }
+
   function goBack() {
-    console.log('goBack');
-    $ionicHistory.goBack();
+    $state.go('grades')
   }
 
   function setLessons() {

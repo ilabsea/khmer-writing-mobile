@@ -1,7 +1,7 @@
 <ion-view class="lesson-background">
-  <ion-content scroll="false"  >
+  <ion-content>
 
-    <div class="back-contain" ng-click='goBack()'></div>
+    <div class="back-btn" ng-click='goBack()'></div>
 
     <span class='grade-text'> {{gradeName}} </span>
 
@@ -10,9 +10,13 @@
         <span class='lesson-text'> មេរៀនទី </span>
         <span class='lesson-numeric-text'> {{lesson["khmer_numeric"]}}</span>
       </div>
-    </div>
 
-    <button class='next-lesson-btn' ng-click='next()'></button>
+      <div class='lesson-next-previous'>
+        <div class='lesson-previous' ng-click="previous()"></div>
+        <div class='lesson-next' ng-click="next()"></div>
+      </div>
+
+    </div>
 
   </ion-content>
 

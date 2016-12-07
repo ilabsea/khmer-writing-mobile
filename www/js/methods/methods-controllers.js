@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("MethodsCtrl", function($stateParams, $scope, MethodsServices, LessonsServices, $ionicHistory){
+.controller("MethodsCtrl", function($stateParams, $scope, MethodsServices, LessonsServices, $state){
   vm = $scope;
   var currentLesson = LessonsServices.getLesson();
 
@@ -23,7 +23,7 @@ angular.module('app')
   }
 
   function goBack() {
-    $ionicHistory.goBack();
+    $state.go('lessons');
   }
 
 })

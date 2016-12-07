@@ -1,0 +1,87 @@
+.lesson-background {
+  background: url("../img/lesson/lesson-background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.lesson-contain{
+  display: block;
+  float: right;
+  margin-top: 1.5%;
+  width: 54%;
+  height: 65%;
+}
+
+.lesson-item {
+  display: inline-block;
+  position: relative;
+  background: transparent url("../img/lesson/lesson-book.png") no-repeat center center;
+  width: 25%;
+  height: 37%;
+  margin-bottom: 13%;
+  margin-left: 4%;
+  background-size: contain;
+  text-align: center;
+}
+
+.lesson-item.activated {
+  height: 39%;
+}
+
+.grade-text{
+  display: block;
+  float: left;
+  margin-top: 15.5%;
+  margin-left: 19%;
+  width: 20%;
+  text-align: center;
+  color: #26bcf7;
+  font-size: 61px;
+  font-family: 'Daun Teav';
+}
+
+.lesson-text{
+  display: block;
+  position: relative;
+  color: #EFCA2B;
+  font-size: 20px;
+  font-family: 'Daun Teav';
+  margin-top: 18%;
+}
+
+.lesson-numeric-text{
+  display: block;
+  position: relative;
+  color: #EFCA2B;
+  font-size: 63px;
+  font-family: 'Daun Teav';
+  text-align: center;
+  margin-top: 25%;
+}
+
+.lesson-next-previous{
+  display: block;
+  position: relative;
+  width: 94%;
+  height: 15%;
+  margin-top: -6%;
+}
+
+.lesson-next{
+  display: inline-block;
+  position: relative;
+  background: transparent url("../img/lesson/next.png") no-repeat center center;
+  margin-left: 3%;
+  width: 10%;
+  height: 100%;
+  background-size: contain;
+}
+
+.lesson-previous{
+  display: inline-block;
+  position: relative;
+  background: transparent url("../img/lesson/previous.png") no-repeat center center;
+  width: 10%;
+  height: 100%;
+  margin-left: 37%;
+  background-size: contain;
+}

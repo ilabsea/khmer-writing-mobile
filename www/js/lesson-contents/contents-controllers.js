@@ -1,10 +1,12 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $ionicHistory, $cordovaMedia){
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $state, $cordovaMedia){
   var vm = $scope, canvas, signaturePad;
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
+
+  vm.currentLesson = currentLesson;
 
   vm.gradeCode = currentGrade.code;
   vm.lessonCode = currentLesson.code;
@@ -43,7 +45,7 @@ angular.module('app')
   }
 
   function goBack() {
-    $ionicHistory.goBack();
+    $state.go('methods');
     signaturePad.off();
   }
 

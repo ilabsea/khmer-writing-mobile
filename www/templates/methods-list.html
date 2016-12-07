@@ -2,7 +2,7 @@
 
   <ion-content scroll='false'>
 
-    <div class="back-contain" ng-click='goBack()'></div>
+    <div class="back-btn" ng-click='goBack()'></div>
 
     <div class='lesson-title-contain'>
       <span class='method-lesson-text'> មេរៀនទី {{lessonKhmerNumeric}} ៖ </span>
@@ -12,7 +12,7 @@
 
     <div class='method-contain'>
       <div ng-repeat='method in methods' ui-sref='contents' ng-click='setMethod(method)' class='method-item'>
-        <img src='img/method/{{method.icon}}-btn.png'>
+        <img src='img/method/{{method.icon}}.png'>
       </div>
     </div>
 
