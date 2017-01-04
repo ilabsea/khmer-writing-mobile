@@ -1,14 +1,13 @@
 .writing-background {
   background: url("../img/content/writing-background.png") no-repeat center center fixed;
-  background-size: cover;
-}
+  background-size: cover; }
 
-.writing-contain{
+.writing-contain {
   display: block;
   height: 85%;
-}
+  margin-top: 8%; }
 
-.content-panel{
+.content-panel {
   float: left;
   text-align: center;
   font-weight: bold;
@@ -16,36 +15,32 @@
   height: 85%;
   display: inline-block;
   position: relative;
-  margin-left: 5%;
-}
+  margin-left: 5%; }
 
-.content-title-numeric{
+.content-title-numeric {
   display: block;
   position: relative;
   color: #000000;
   font-size: 16px;
   font-family: 'Daun Teav';
   margin-top: 6.5%;
-  margin-left: 0%;
-}
+  margin-left: 0%; }
 
-.content-title{
+.content-title {
   display: block;
   position: relative;
   color: #442C0C;
   font-size: 22px;
   font-family: 'Daun Teav';
-  margin-top: 2%;
-}
+  margin-top: 2%; }
 
-.content-panel img{
+.content-panel img {
   max-width: 90%;
   min-width: 30%;
   max-height: 72%;
-  margin-top: 8%;
-}
+  margin-top: 8%; }
 
-.writing-panel{
+.writing-panel {
   height: 78%;
   width: 48%;
   display: inline-block;
@@ -53,38 +48,28 @@
   background-color: white;
   margin-top: 3%;
   margin-left: 7%;
-  border-radius: 8%;
-}
+  border-radius: 8%; }
 
-.writing-footer{
+.writing-footer {
   display: inline-block;
   position: relative;
   margin-left: 8%;
   height: 13%;
-  width: 85%;
-}
+  width: 85%; }
 
 .writing-footer div {
   display: inline-block;
   background-size: contain;
   width: 18%;
-  height: 100%;
-}
+  height: 100%; }
 
-.writing-footer div.activated {
-  background-size: contain;
-}
+.previous {
+  background: transparent url("../img/content/previous.png") no-repeat center center; }
 
-.previous{
-  background: transparent url("../img/content/previous.png") no-repeat center center;
-}
-
-.delete{
+.delete {
   background: transparent url(../img/content/delete.png) no-repeat center center;
   margin-left: 49%;
-  width: 13% !important;
-}
+  width: 13% !important; }
 
-.next{
-  background: transparent url("../img/content/next.png") no-repeat center center;
-}
+.next {
+  background: transparent url("../img/content/next.png") no-repeat center center; }

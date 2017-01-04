@@ -1,0 +1,43 @@
+.method-background {
+  background: url("../img/method/method-background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.lesson-title-contain{
+  background: transparent url("../img/method/lesson-title-bar.png") no-repeat center center;
+  background-size: contain;
+  font-family: 'Daun Teav';
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 6%;
+  padding: 1.5%;
+}
+
+.method-lesson-text{
+  color: #f8f8f8;
+  font-size: 120%;
+}
+
+.lesson-title{
+  color: #FCDE00;
+  font-size: 200%;
+}
+
+.method-contain{
+  display: block;
+  width: 80%;
+  height: 50%;
+  margin-left: 15%;
+  margin-top: 3%;
+}
+
+.method-item{
+  display: inline-block;
+  margin-left: 3%;
+  width: 40%;
+  margin-bottom: 6%;
+}
+
+.method-item img{
+  width: 95%;
+}

@@ -1,8 +1,8 @@
 <ion-view class='writing-background'>
 
   <ion-content scroll="false">
-
-    <div class="back-btn" ng-click='goBack()'></div>
+    <a ui-sref='methods' class="button button-icon icon ion-back"></a>
+    <div class="setting" ng-click='setting()'></div>
 
     <div class='writing-contain'>
 
@@ -14,20 +14,24 @@
         </div>
 
         <img ng-if='methodCode != 3' src='img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png'>
-        <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()"></a>
+        <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()" style='margin-top: 40%'></a>
 
-      </div>
-
-      <div class='writing-panel' ng-if='methodCode != 4' >
-        <canvas width="490" height="380" id='drawingCanvas' style="background: transparent url(img/table.png) no-repeat center center; background-size: contain;">
       </div>
 
       <div class='writing-panel' ng-if='methodCode == 4' >
         <canvas width="490" height="380" id='drawingCanvas' style='background: transparent url(img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}-clue.png) no-repeat center center; background-size: contain;'>
       </div>
 
+      <div class='writing-panel' ng-if='methodCode != 4 && lessonCode == 2 && gradeCode == 1' >
+        <canvas width="490" height="380" id='drawingCanvas' style="background: transparent url(img/table.png) no-repeat center center; background-size: contain;">
+      </div>
+
+      <div class='writing-panel' ng-if='methodCode != 4 && ((lessonCode != 2 && gradeCode == 1) || (lessonCode == 2 && gradeCode != 1 ))' >
+        <canvas width="490" height="380" id='drawingCanvas' style="background: transparent url(img/grid.png) no-repeat center center; background-size: contain;">
+      </div>
+
       <div class='writing-footer'>
-        <div class='previous' ng-click="previous()" ng-hide='isDisabledPrevious()'></div>
+        <div ng-click="previous()" ng-class="{'previous' : !isDisabledPrevious()}"></div>
         <div class='delete' ng-click="redraw()"></div>
         <div class='next' ng-click='next()' ng-hide='isDisabledNext()'></div>
       </div>

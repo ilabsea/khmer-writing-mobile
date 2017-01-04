@@ -8,5 +8,5 @@ plugins
 resources
 hooks
 www/khmer-writing.db
-www/js/queries.js
+www/res
 www/img/grade*

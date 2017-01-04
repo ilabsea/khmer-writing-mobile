@@ -1,0 +1,35 @@
+.user-background {
+  background: url("../img/user/user-screen.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.user-contain{
+  display: block;
+  width: 90%;
+  height: 82%;
+  margin-top: 6%;
+  margin-left: 5%;
+  border-radius: 10%;
+}
+
+
+.user-previous{
+  display: inline-block;
+  position: relative;
+  width: 10%;
+  height: 100%;
+}
+
+.user-selection{
+  display: inline-block;
+  position: relative;
+  width: 79%;
+  height: 100%;
+}
+
+.user-next{
+  display: inline-block;
+  position: relative;
+  width: 10%;
+  height: 100%;
+}
