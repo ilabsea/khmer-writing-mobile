@@ -1,12 +1,13 @@
+@import 'application';
+
 .method-background {
-  background: url("../img/method/method-background.png") no-repeat center center fixed;
+  background: url("../img/method/method-background.png") $background fixed;
   background-size: cover;
 }
 
 .lesson-title-contain{
-  background: transparent url("../img/method/lesson-title-bar.png") no-repeat center center;
+  background: transparent url("../img/method/lesson-title-bar.png") $background;
   background-size: contain;
-  font-family: 'Daun Teav';
   text-align: center;
   line-height: 1.5;
   margin-top: 6%;

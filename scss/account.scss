@@ -1,4 +1,117 @@
-.account-background {
-  background: url("../img/user/account-screen.png") no-repeat center center fixed;
+@import 'application';
+$font-color: #763617;
+$font-size: 22px;
+
+.account-panel {
+  display: block;
+  background: url(../img/account/account.png) center center no-repeat;
+  background-size: 92% 92%;
+  height: 90%;
+  margin-top: 3.5%;
+  width: 100%;
+}
+
+.split-left{
+  display: inline-block;
+  position: relative;
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+
+.split-right{
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 60%;
+}
+
+.account-previous{
+  display: inline-block;
+  float: left;
+  background: url("../img/account/previous.png") 44.6% 48% no-repeat fixed;
+  background-size: 2.4%;
+  width: 13%;
+  height: 100%;
+}
+
+.avatar-selection{
+  display: inline-block;
+  width: 37%;
+  height: 59%;
+  position: fixed;
+  margin-top: 3%;
+}
+
+.avatar-selection div:last-child{
+  position: relative;
+  background: url(../img/account/save.png) center center no-repeat;
+  background-size: contain;
+  width: 67%;
+  height: 16%;
+  margin-left: 17%;
+  margin-top: 1%;
+}
+
+.avatar-item{
+  display: inline-block;
+  position: relative;
+  background: url(../img/avatar/avatar.png) center center no-repeat;
+  width: 29%;
+  height: 35%;
+  background-size: contain;
+  margin-right: 2%;
+  margin-left: 1.5%;
+  cursor: pointer;
+  // background-color: transparent !important;
+}
+
+.avatar-item:visited{
+  opacity: .3;
+}
+
+.account-next{
+  display: inline-block;
+  background: url("../img/account/next.png") 86% 48% no-repeat fixed;
+  background-size: 2.4%;
+  width: 13%;
+  height: 100%;
+}
+
+.account-name{
+  background: url(../img/account/name.png) $background;
   background-size: cover;
+  width: 75.5%;
+  margin-left: 21.3%!important;
+  margin-top: 8%!important;
+  height: 9%;
+}
+
+input[type="text"]#name::-webkit-input-placeholder {
+  color: $font-color;
+  font-size: $font-size;
+}
+
+.select-grade{
+  background: url(../img/account/grade.png) $background;
+  background-size: contain;
+  margin-top: 4%;
+  margin-left: 22%;
+  width: 43.5%;
+  float: left;
+}
+
+.select-grade .input-label{
+  font-size: $font-size;
+  color: $font-color;
+  margin-left: 25%;
+}
+
+.select-type{
+  background: url("../img/account/grade-type.png") $background;
+  background-size: contain;
+  margin-top: 4%;
+  margin-left: 24%;
+  width: 34%;
+  height: 10%;
 }

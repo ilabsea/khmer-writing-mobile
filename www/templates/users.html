@@ -1,17 +1,32 @@
-<ion-view class='user-background'>
+<ion-view class='app-background'>
 
   <ion-content>
-
-    <div class='user-contain'>
+    <a class="button button-icon icon ion-close" ui-sref='grades' ng-if='!isHome'></a>
+    <div class='contain-panel'>
       <div class="user-previous">
 
       </div>
 
-      <div class="user-selection">
-
+      <div class="user-item">
+        <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%; ">
+        <p class="user-name">កុមារី ដាលីន</p>
+        <p class="user-grade">ថ្នាក់ទី ១ " ក " </p>
+        <div ui-sref='grades'></div>
       </div>
 
-      <div class="user-next">
+      <div class="user-item" style="margin-left: 40%;" ng-if='isHome'>
+        <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%;" ui-sref='accounts'>
+        <p class="user-name" style="margin-top: 13%;">បងេី្កតថ្មី</p>
+      </div>
+
+      <div class="user-item" style="margin-left: 40%;" ng-if='!isHome'>
+        <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%; ">
+        <p class="user-name">កុមារី ដាលីន</p>
+        <p class="user-grade">ថ្នាក់ទី ១ " ក " </p>
+        <div ui-sref='grades'></div>
+      </div>
+
+      <div class="user-next" ng-style='{"margin-top": isHome ? "0%" : "-9.9%"}'>
 
       </div>
     </div>

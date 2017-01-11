@@ -1,5 +1,7 @@
+@import 'application';
+
 .grade-background {
-  background: url("../img/grade/grade-background.png") no-repeat center center fixed;
+  background: url("../img/grade/grade-background.png") $background fixed;
   background-size: cover;
 }
 
@@ -20,8 +22,4 @@
 
 .grade-item img{
   width: 95%;
-}
-
-.activated{
-  opacity: .3;
 }

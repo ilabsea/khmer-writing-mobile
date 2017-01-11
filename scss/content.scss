@@ -1,5 +1,7 @@
+@import 'application';
+
 .writing-background {
-  background: url("../img/content/writing-background.png") no-repeat center center fixed;
+  background: url("../img/content/writing-background.png") $background fixed;
   background-size: cover;
 }
 
@@ -25,7 +27,6 @@
   position: relative;
   color: #000000;
   font-size: 16px;
-  font-family: 'Daun Teav';
   margin-top: 6.5%;
   margin-left: 0%;
 }
@@ -35,7 +36,6 @@
   position: relative;
   color: #442C0C;
   font-size: 22px;
-  font-family: 'Daun Teav';
   margin-top: 2%;
 }
 
@@ -73,15 +73,15 @@
 }
 
 .previous{
-  background: transparent url("../img/content/previous.png") no-repeat center center;
+  background: transparent url("../img/content/previous.png") $background;
 }
 
 .delete{
-  background: transparent url(../img/content/delete.png) no-repeat center center;
+  background: transparent url("../img/content/delete.png") $background;
   margin-left: 49%;
   width: 13% !important;
 }
 
 .next{
-  background: transparent url("../img/content/next.png") no-repeat center center;
+  background: transparent url("../img/content/next.png") $background;
 }

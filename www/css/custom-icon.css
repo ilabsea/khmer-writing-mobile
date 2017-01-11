@@ -26,3 +26,16 @@
   margin-top: 0.6%;
   margin-right: 0.5%;
   content: url(../img/icon/setting.png) !important; }
+
+.icon.ion-close {
+  width: 8%;
+  float: right;
+  margin-top: 1.9%;
+  margin-right: 6.2%;
+  content: url(../img/icon/close.png) !important; }
+
+.icon.ion-edit {
+  width: 14.5%;
+  margin-top: -11.5%;
+  margin-left: 38%;
+  content: url(../img/icon/edit.png) !important; }
