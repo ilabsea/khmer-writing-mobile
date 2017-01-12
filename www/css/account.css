@@ -60,6 +60,9 @@ ion-view {
   margin-left: 17%;
   margin-top: 1%; }
 
+.avatar-selection .selected {
+  opacity: 0.5; }
+
 .avatar-item {
   display: inline-block;
   position: relative;
@@ -79,7 +82,8 @@ ion-view {
   background: url("../img/account/next.png") 86% 48% no-repeat fixed;
   background-size: 2.4%;
   width: 13%;
-  height: 100%; }
+  height: 100%;
+  margin-left: 74%; }
 
 .account-name {
   background: url(../img/account/name.png) center center no-repeat;

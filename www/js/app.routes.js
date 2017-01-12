@@ -61,7 +61,9 @@ function routes($stateProvider, $urlRouterProvider) {
 
   .state('accounts', {
     url: '/accounts',
-    templateUrl: 'templates/account.html'
+    templateUrl: 'templates/account.html',
+    controller: 'AccountsCtrl'
+
   })
 
   .state('aboutus', {
@@ -69,5 +71,5 @@ function routes($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/aboutus.html'
   })
 
-  $urlRouterProvider.otherwise('/users')
+  $urlRouterProvider.otherwise('/home')
 }

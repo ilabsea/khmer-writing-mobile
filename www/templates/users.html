@@ -3,32 +3,21 @@
   <ion-content scroll='false'>
     <a class="button button-icon icon ion-close" ui-sref='grades' ng-if='!isHome'></a>
     <div class='contain-panel'>
-      <div class="user-previous">
+      <div class="user-previous" ng-click='previous()'></div>
 
-      </div>
-
-      <div class="user-item">
+      <div class="user-item" ng-repeat='user in users'>
         <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%; ">
-        <p class="user-name">កុមារី ដាលីន</p>
-        <p class="user-grade">ថ្នាក់ទី ១ " ក " </p>
-        <div ui-sref='grades'></div>
+        <p class="user-name">{{user.name}}</p>
+        <p class="user-grade">ថ្នាក់ទី {{user.grade}} " {{user.type}} " </p>
+        <div ui-sref='grades' ng-click='setCurrentUser(user)'></div>
       </div>
 
-      <div class="user-item" style="margin-left: 40%;" ng-if='isHome'>
+      <div class="user-item" style="margin-left: 40%;" ng-if='isHome && offset == 0'>
         <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%;" ui-sref='accounts'>
         <p class="user-name" style="margin-top: 13%;">បងេី្កតថ្មី</p>
       </div>
 
-      <div class="user-item" style="margin-left: 40%;" ng-if='!isHome'>
-        <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%; ">
-        <p class="user-name">កុមារី ដាលីន</p>
-        <p class="user-grade">ថ្នាក់ទី ១ " ក " </p>
-        <div ui-sref='grades'></div>
-      </div>
-
-      <div class="user-next" ng-style='{"margin-top": isHome ? "0%" : "-9.9%"}'>
-
-      </div>
+      <div class="user-next" ng-style='{"margin-top": isHome ? "0%" : "-9.9%"}' ng-click='next()'> </div>
     </div>
 
   </ion-content>

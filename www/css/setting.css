@@ -17,6 +17,8 @@ ion-view {
 
 .setting-panel {
   display: block;
+  background: url("../img/setting/setting-panel.png") center center no-repeat;
+  background-size: 93% 91%;
   height: 90%;
   width: 100%;
   margin-top: 3.5%; }

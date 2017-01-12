@@ -53,6 +53,10 @@ $font-size: 22px;
   margin-top: 1%;
 }
 
+.avatar-selection .selected{
+  opacity: 0.5;
+}
+
 .avatar-item{
   display: inline-block;
   position: relative;
@@ -63,7 +67,6 @@ $font-size: 22px;
   margin-right: 2%;
   margin-left: 1.5%;
   cursor: pointer;
-  // background-color: transparent !important;
 }
 
 .avatar-item:visited{
@@ -76,6 +79,7 @@ $font-size: 22px;
   background-size: 2.4%;
   width: 13%;
   height: 100%;
+  margin-left: 74%
 }
 
 .account-name{

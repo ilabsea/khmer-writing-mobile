@@ -32,6 +32,10 @@ $font-color: #763617;
   text-align: center;
 }
 
+div.user-item:nth-last-of-type(2){
+  margin-left: 40%;
+}
+
 .user-item p{
   margin-top: 6%;
   font-size: 29px;
