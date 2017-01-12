@@ -9,7 +9,7 @@ ion-view {
   font-family: "Daun Teav" !important; }
 
 .app-background {
-  background: url("../img/global-background.png") center center no-repeat fixed;
+  background: url("../img/app-background.png") center center no-repeat fixed;
   background-size: cover; }
 
 .activated {
@@ -17,8 +17,6 @@ ion-view {
 
 .setting-panel {
   display: block;
-  background: url("../img/setting/setting-panel.png") center center no-repeat;
-  background-size: 93% 91%;
   height: 90%;
   width: 100%;
   margin-top: 3.5%; }
@@ -37,42 +35,31 @@ ion-view {
   height: 75%;
   width: 50%; }
 
-.new-user {
-  background: url(../img/setting/new.png) center center no-repeat;
+.editing-panel div {
   background-size: contain;
   margin-left: 6%;
   width: 65%;
   height: 21%; }
 
+.new-user {
+  background: url(../img/setting/new.png) center center no-repeat; }
+
 .change-user {
   background: url(../img/setting/change.png) center center no-repeat;
-  background-size: contain;
-  margin-left: 6%;
-  width: 65%;
-  height: 21%;
   margin-top: 2%; }
 
 .delete-user {
   background: url(../img/setting/delete.png) center center no-repeat;
-  background-size: contain;
-  margin-left: 6%;
-  width: 28%;
-  height: 21%;
+  width: 28% !important;
   float: left; }
 
 .sound {
   background: url(../img/setting/sound-close.png) center center no-repeat;
-  background-size: contain;
-  margin-left: 36%;
-  width: 35%;
-  height: 21%; }
+  margin-left: 36% !important;
+  width: 35% !important; }
 
 .aboutus {
   background: url(../img/setting/aboutus.png) center center no-repeat;
-  background-size: contain;
-  margin-left: 6%;
-  width: 65%;
-  height: 20%;
   margin-top: 2%; }
 
 .avatar {
@@ -87,7 +74,7 @@ ion-view {
   color: #FFF;
   margin-top: 6%;
   font-size: 33px;
-  margin-left: 9%; }
+  margin-left: 10%; }
 
 .grade {
   color: #FFF;

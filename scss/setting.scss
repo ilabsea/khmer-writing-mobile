@@ -2,8 +2,8 @@
 
 .setting-panel {
   display: block;
-  background: url("../img/setting/setting-panel.png") $background;
-  background-size: 93% 91%;
+  // background: url("../img/setting/setting-panel.png") $background;
+  // background-size: 93% 91%;
   height: 90%;
   width: 100%;
   margin-top: 3.5%;
@@ -25,46 +25,36 @@
   width: 50%;
 }
 
-.new-user{
-  background: url(../img/setting/new.png) center center no-repeat;
+.editing-panel div{
   background-size: contain;
   margin-left: 6%;
   width: 65%;
   height: 21%;
 }
 
+.new-user{
+  background: url(../img/setting/new.png) center center no-repeat;
+}
+
 .change-user{
   background: url(../img/setting/change.png) $background;
-  background-size: contain;
-  margin-left: 6%;
-  width: 65%;
-  height: 21%;
   margin-top: 2%;
 }
 
 .delete-user{
   background: url(../img/setting/delete.png) $background;
-  background-size: contain;
-  margin-left: 6%;
-  width: 28%;
-  height: 21%;
+  width: 28% !important;
   float: left;
 }
 
 .sound{
   background: url(../img/setting/sound-close.png) $background;
-  background-size: contain;
-  margin-left: 36%;
-  width: 35%;
-  height: 21%;
+  margin-left: 36% !important;
+  width: 35% !important;
 }
 
 .aboutus{
   background: url(../img/setting/aboutus.png) $background;
-  background-size: contain;
-  margin-left: 6%;
-  width: 65%;
-  height: 20%;
   margin-top: 2%;
 }
 
@@ -81,7 +71,7 @@
   color: #FFF;
   margin-top: 6%;
   font-size: 33px;
-  margin-left: 9%;
+  margin-left: 10%;
 }
 
 .grade{
