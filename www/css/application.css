@@ -14,3 +14,8 @@ ion-view {
 
 .activated {
   opacity: .3; }
+
+.popup {
+  width: 60% !important;
+  font-size: 20px;
+  text-align: center; }

@@ -12,14 +12,14 @@ $font-color: #763617;
 
 .user-previous{
   display: inline-block;
-  position: relative;
+  position: fixed;
   background: url("../img/user/previous.png") $background;
   background-size: contain;
   float: left;
   width: 2.8%;
   height: 100%;
-  margin-left: 6.2%;
-  margin-right: 2%;
+  margin-left: 7.2%;
+  margin-top: -2.8%;
 }
 
 .user-item{
@@ -60,5 +60,5 @@ div.user-item:nth-last-of-type(2){
   background-size: contain;
   width: 2.8%;
   height: 100%;
-  margin-left: 79%;
+  margin-left: 90%;
 }

@@ -7,7 +7,6 @@ function UsersServices($cordovaSQLite) {
   var currentUser;
 
   function getUsers(index) {
-    console.log('index : ', index);
     var limit = 2;
     if(index == 0)
       limit = 1;
@@ -21,7 +20,6 @@ function UsersServices($cordovaSQLite) {
           result.push(res.rows.item(i));
         }
       }
-      console.log('result : ', result);
       return result;
     });
   }
@@ -34,9 +32,28 @@ function UsersServices($cordovaSQLite) {
     return currentUser;
   }
 
+  function numberOfUsers() {
+    var countSql = "SELECT count(*) AS count FROM users";
+    return $cordovaSQLite.execute(db, countSql, []).then(function (res) {
+      return res.rows.item(0).count;
+    });
+  }
+
+  function deleteUser() {
+    var deleteSql = "DELETE FROM users WHERE id = " + currentUser.id;
+    return $cordovaSQLite.execute(db, deleteSql, []).then(function(success){
+      console.log('success : ', success);
+      return success;
+    }, function(error){
+      console.log('error : ', error);
+    });
+  }
+
   return{
     getUsers: getUsers,
     setCurrentUser: setCurrentUser,
-    getCurrentUser: getCurrentUser
+    getCurrentUser: getCurrentUser,
+    numberOfUsers: numberOfUsers,
+    deleteUser: deleteUser
   }
 }

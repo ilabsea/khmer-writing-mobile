@@ -15,6 +15,11 @@ ion-view {
 .activated {
   opacity: .3; }
 
+.popup {
+  width: 60% !important;
+  font-size: 20px;
+  text-align: center; }
+
 .setting-panel {
   display: block;
   background: url("../img/setting/setting-panel.png") center center no-repeat;
@@ -83,3 +88,6 @@ ion-view {
   margin-top: 7%;
   font-size: 28px;
   margin-left: 8%; }
+
+.custom-popup .popup-head {
+  display: none; }

@@ -5,3 +5,11 @@ function createTables($cordovaSQLite) {
   $cordovaSQLite.execute(db, users);
 
 }
+
+function setDatabaseCopied(state) {
+  localStorage.setItem("databaseCopied", state);
+}
+
+function getDatabaseCopied() {
+  return localStorage.getItem("databaseCopied");
+}

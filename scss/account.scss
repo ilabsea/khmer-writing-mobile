@@ -43,14 +43,15 @@ $font-size: 22px;
   margin-top: 3%;
 }
 
-.avatar-selection div:last-child{
+.avatar-selection button:last-child{
   position: relative;
-  background: url(../img/account/save.png) center center no-repeat;
+  background: url("../img/account/save.png") $background;
   background-size: contain;
   width: 67%;
   height: 16%;
   margin-left: 17%;
   margin-top: 1%;
+  border: none;
 }
 
 .avatar-selection .selected{
@@ -60,16 +61,13 @@ $font-size: 22px;
 .avatar-item{
   display: inline-block;
   position: relative;
-  background: url(../img/avatar/avatar.png) center center no-repeat;
+  background: $background;
   width: 29%;
   height: 35%;
   background-size: contain;
   margin-right: 2%;
   margin-left: 1.5%;
   cursor: pointer;
-}
-
-.avatar-item:visited{
   opacity: .3;
 }
 
@@ -99,9 +97,10 @@ input[type="text"]#name::-webkit-input-placeholder {
 .select-grade{
   background: url(../img/account/grade.png) $background;
   background-size: contain;
-  margin-top: 4%;
+  margin-top: 6%;
   margin-left: 22%;
   width: 43.5%;
+  height: 11%;
   float: left;
 }
 
@@ -114,8 +113,20 @@ input[type="text"]#name::-webkit-input-placeholder {
 .select-type{
   background: url("../img/account/grade-type.png") $background;
   background-size: contain;
-  margin-top: 4%;
-  margin-left: 24%;
+  margin-top: 6%;
   width: 34%;
-  height: 10%;
+  height: 11%;
+}
+
+.select-type select{
+  margin-left: 20%;
+  background-color: white;
+}
+
+.item-select:after {
+  content: none !important;
+}
+
+.select-type select option:checked {
+  color: red;
 }

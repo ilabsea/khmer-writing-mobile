@@ -15,6 +15,11 @@ ion-view {
 .activated {
   opacity: .3; }
 
+.popup {
+  width: 60% !important;
+  font-size: 20px;
+  text-align: center; }
+
 .method-background {
   background: url("../img/method/method-background.png") center center no-repeat fixed;
   background-size: cover; }
