@@ -60,10 +60,9 @@ function routes($stateProvider, $urlRouterProvider) {
   })
 
   .state('accounts', {
-    url: '/accounts',
+    url: '/accounts/:state',
     templateUrl: 'templates/account.html',
     controller: 'AccountsCtrl'
-
   })
 
   .state('aboutus', {

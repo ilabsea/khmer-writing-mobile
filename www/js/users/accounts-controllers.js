@@ -3,9 +3,25 @@ angular.module('app')
 .controller("AccountsCtrl", function ($scope, AccountsServices, $state, UsersServices, $ionicHistory, $ionicPopup) {
   var vm = $scope;
   var selectedAvatar;
+  var currentUser = UsersServices.getCurrentUser();
 
   vm.avatars = AccountsServices.getAvatars();
-  vm.user = {"grade" : "១", "type" : "ក"}
+  vm.user = {};
+
+  vm.initUser = function(){
+    vm.user = $state.params.state == "edit" ? currentUser : {"grade" : "១", "type" : "ក", "avatar_id" : 1, "avatar_name": "boy.png"};
+    var i = 0,
+        length = vm.avatars.length;
+    for (; i < length ; i++) {
+      var avatar = vm.avatars[i];
+      if(avatar.id == vm.user.avatar_id){
+        selectedAvatar = avatar;
+        selectedAvatar.selected = true;
+      }else{
+        avatar.selected = false;
+      }
+    }
+  }
 
   vm.select = function (avatar) {
     if(selectedAvatar && avatar.id != selectedAvatar.id){
@@ -16,10 +32,16 @@ angular.module('app')
   }
 
   vm.save = function(userParams) {
-    AccountsServices.addUser(userParams, selectedAvatar).then(function (user) {
-      $state.go('grades');
-      UsersServices.setCurrentUser(user);
-    });
+    if(userParams.id)
+      AccountsServices.editUser(userParams, selectedAvatar).then(function (user) {
+        $state.go('grades');
+        UsersServices.setCurrentUser(user);
+      });
+    else
+      AccountsServices.addUser(userParams, selectedAvatar).then(function (user) {
+        $state.go('grades');
+        UsersServices.setCurrentUser(user);
+      });
   }
 
   vm.goBack = function() {
@@ -48,6 +70,10 @@ angular.module('app')
         ]
       });
     }
+  }
+
+  function resetForm() {
+    vm.user = {"grade" : "១", "type" : "ក"};
   }
 
 

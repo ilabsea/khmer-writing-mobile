@@ -6,15 +6,14 @@
 
     <div class='setting-panel'>
       <div class='user-panel'>
-        <div class="avatar">
-        </div>
-        <a class="button button-icon icon ion-edit" ui-sref='accounts'></a>
+        <img src='img/avatar/{{currentUser.avatar_name}}' style='width: 34%; margin-top: 20%; margin-left: 13%;'>
+        <a class="button button-icon icon ion-edit" ui-sref="accounts({ state: 'edit'})"></a>
         <p class='name'>{{currentUser.name}}</p>
         <p class='grade'>ថ្នាក់ទី {{currentUser.grade}} " {{currentUser.type}} "</p>
       </div>
 
       <div class='editing-panel'>
-        <div class="new-user" ui-sref='accounts'></div>
+        <div class="new-user" ui-sref="accounts({ state: 'new'})"></div>
         <div class="change-user" ui-sref='users'></div>
         <div class="delete-user" ng-click='deleteUser()'></div>
         <div class="sound"></div>

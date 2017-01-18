@@ -1,12 +1,13 @@
 angular.module('app')
 
-.controller("SettingsCtrl", function($scope, UsersServices, $ionicPopup, $state){
+.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state){
   var vm = $scope;
 
   vm.currentUser = UsersServices.getCurrentUser();
   vm.randomNumber = '';
   vm.valid = true;
   vm.formDelete = {};
+
   var popup;
 
   vm.deleteUser = function(){

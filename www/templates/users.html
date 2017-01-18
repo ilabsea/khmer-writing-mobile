@@ -7,7 +7,7 @@
 
       <div style="margin-left: 11%;">
         <div class="user-item" ng-repeat='user in users'>
-          <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%; ">
+          <img src='img/avatar/{{user.avatar_name}}' style="width: 45%; margin-top: 26.5%; ">
           <p class="user-name">{{user.name}}</p>
           <p class="user-grade">ថ្នាក់ទី {{user.grade}} " {{user.type}} " </p>
           <div ui-sref='grades' ng-click='setCurrentUser(user)'></div>
@@ -15,7 +15,7 @@
       </div>
 
       <div class="user-item" style="margin-left: 51%;" ng-if='isHome && offset == 0'>
-        <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%;" ui-sref='accounts'>
+        <img src='img/avatar/avatar.png' style="width: 45%; margin-top: 26.5%;" ui-sref="accounts({ state: 'new'})">
         <p class="user-name" style="margin-top: 13%;">បងេី្កតថ្មី</p>
       </div>
 

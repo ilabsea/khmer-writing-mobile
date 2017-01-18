@@ -22,7 +22,7 @@ ion-view {
 
 .account-panel {
   display: block;
-  background: url(../img/account/account.png) center center no-repeat;
+  background: url("../img/account/account.png") center center no-repeat;
   background-size: 92% 92%;
   height: 90%;
   margin-top: 3.5%;
@@ -44,10 +44,12 @@ ion-view {
 .account-previous {
   display: inline-block;
   float: left;
-  background: url("../img/account/previous.png") 44.6% 48% no-repeat fixed;
-  background-size: 2.4%;
-  width: 13%;
-  height: 100%; }
+  background: url(../img/account/previous.png) center center no-repeat fixed;
+  background-size: contain;
+  width: 6%;
+  height: 9%;
+  margin-top: 27%;
+  margin-left: 6.5%; }
 
 .avatar-selection {
   display: inline-block;
@@ -67,7 +69,7 @@ ion-view {
   border: none; }
 
 .avatar-selection .selected {
-  opacity: 0.5; }
+  opacity: 1; }
 
 .avatar-item {
   display: inline-block;
@@ -83,11 +85,12 @@ ion-view {
 
 .account-next {
   display: inline-block;
-  background: url("../img/account/next.png") 86% 48% no-repeat fixed;
-  background-size: 2.4%;
-  width: 13%;
-  height: 100%;
-  margin-left: 74%; }
+  background: url("../img/account/next.png") center center no-repeat fixed;
+  background-size: contain;
+  width: 6%;
+  height: 9%;
+  margin-left: 74.7%;
+  margin-top: 27%; }
 
 .account-name {
   background: url(../img/account/name.png) center center no-repeat;
@@ -111,7 +114,7 @@ input[type="text"]#name::-webkit-input-placeholder {
   float: left; }
 
 .select-grade .input-label {
-  font-size: 22px;
+  font-size: 20px;
   color: #763617;
   margin-left: 25%; }
 
