@@ -2,11 +2,11 @@ angular.module('app')
 
 .controller("AccountsCtrl", function ($scope, AccountsServices, $state, UsersServices, $ionicHistory, $ionicPopup) {
   var vm = $scope;
-  var selectedAvatar;
   var currentUser = UsersServices.getCurrentUser();
 
   vm.avatars = AccountsServices.getAvatars();
   vm.user = {};
+  vm.selectedAvatar;
 
   vm.initUser = function(){
     vm.user = $state.params.state == "edit" ? currentUser : {"grade" : "១", "type" : "ក", "avatar_id" : 1, "avatar_name": "boy.png"};
@@ -15,8 +15,8 @@ angular.module('app')
     for (; i < length ; i++) {
       var avatar = vm.avatars[i];
       if(avatar.id == vm.user.avatar_id){
-        selectedAvatar = avatar;
-        selectedAvatar.selected = true;
+        vm.selectedAvatar = avatar;
+        vm.selectedAvatar.selected = true;
       }else{
         avatar.selected = false;
       }
@@ -24,21 +24,21 @@ angular.module('app')
   }
 
   vm.select = function (avatar) {
-    if(selectedAvatar && avatar.id != selectedAvatar.id){
-      selectedAvatar.selected = false ;
+    if(vm.selectedAvatar && avatar.id != vm.selectedAvatar.id){
+      vm.selectedAvatar.selected = false ;
     }
-    selectedAvatar = avatar;
-    selectedAvatar.selected = true;
+    vm.selectedAvatar = avatar;
+    vm.selectedAvatar.selected = true;
   }
 
   vm.save = function(userParams) {
     if(userParams.id)
-      AccountsServices.editUser(userParams, selectedAvatar).then(function (user) {
+      AccountsServices.editUser(userParams, vm.selectedAvatar).then(function (user) {
         $state.go('grades');
         UsersServices.setCurrentUser(user);
       });
     else
-      AccountsServices.addUser(userParams, selectedAvatar).then(function (user) {
+      AccountsServices.addUser(userParams, vm.selectedAvatar).then(function (user) {
         $state.go('grades');
         UsersServices.setCurrentUser(user);
       });

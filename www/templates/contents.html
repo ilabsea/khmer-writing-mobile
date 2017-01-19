@@ -13,7 +13,7 @@
           <span class='content-title'> {{currentLesson["name"]}}</span>
         </div>
 
-        <img ng-if='methodCode != 3' src='img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png'>
+        <img ng-if='methodCode != 3' ng-src='img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}.png'>
         <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()" style='margin-top: 40%'></a>
 
       </div>

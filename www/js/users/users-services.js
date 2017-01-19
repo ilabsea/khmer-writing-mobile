@@ -42,7 +42,6 @@ function UsersServices($cordovaSQLite) {
   function deleteUser() {
     var deleteSql = "DELETE FROM users WHERE id = " + currentUser.id;
     return $cordovaSQLite.execute(db, deleteSql, []).then(function(success){
-      console.log('success : ', success);
       return success;
     }, function(error){
       console.log('error : ', error);
