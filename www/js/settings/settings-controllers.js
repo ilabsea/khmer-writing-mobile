@@ -29,7 +29,7 @@ angular.module('app')
     if(randomInput == vm.randomNumber){
       UsersServices.deleteUser().then(function(res){
         popup.close();
-        $state.go('home');
+        $state.go('home', {}, { reload: true });
       });
 
     }else{

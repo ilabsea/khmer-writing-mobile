@@ -9,6 +9,7 @@ function routes($stateProvider, $urlRouterProvider) {
 
   .state('home', {
     url: '/home',
+    cache: false,
     templateUrl: 'templates/users.html',
     controller: "UsersCtrl",
     resolve:{
@@ -55,12 +56,14 @@ function routes($stateProvider, $urlRouterProvider) {
 
   .state('settings', {
     url: '/settings',
+    cache: false,
     templateUrl: 'templates/settings.html',
     controller: 'SettingsCtrl'
   })
 
   .state('accounts', {
     url: '/accounts/:state',
+    cache: false,
     templateUrl: 'templates/account.html',
     controller: 'AccountsCtrl'
   })

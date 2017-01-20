@@ -9,7 +9,7 @@ ion-view {
   font-family: "Daun Teav" !important; }
 
 .app-background {
-  background: url("../img/account/account-screen.png") center center no-repeat fixed;
+  background: url("../img/app-background.png") center center no-repeat fixed;
   background-size: cover; }
 
 .activated {
@@ -22,6 +22,8 @@ ion-view {
 
 .account-panel {
   display: block;
+  background: url("../img/account/account.png") center center no-repeat;
+  background-size: 92% 92%;
   height: 90%;
   margin-top: 3.5%;
   width: 100%; }
