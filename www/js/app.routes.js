@@ -21,6 +21,7 @@ function routes($stateProvider, $urlRouterProvider) {
 
   .state('users', {
     url: '/users',
+    cache: false,
     templateUrl: 'templates/users.html',
     controller: "UsersCtrl",
     resolve:{

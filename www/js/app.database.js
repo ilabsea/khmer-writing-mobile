@@ -6,7 +6,7 @@ function createTables($cordovaSQLite) {
   var guest = ["ភ្ញៀវ", "", "" , 1, "boy.png"];
 
   $cordovaSQLite.execute(db, users);
-  $cordovaSQLite.execute(db, addGuest, guest);
+  // $cordovaSQLite.execute(db, addGuest, guest);
 
 }
 

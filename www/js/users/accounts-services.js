@@ -29,9 +29,9 @@ function AccountsServices($cordovaSQLite) {
   }
 
   function editUser(user, avatar) {
-    var query = "UPDATE users SET name = ? , grade = ? , type = ? , avatar_id = ? , avatar_name = ?";
+    var query = "UPDATE users SET name = ? , grade = ? , type = ? , avatar_id = ? , avatar_name = ? WHERE id=?";
 
-    var userData = [user.name, user.grade, user.type, avatar.id, avatar.name];
+    var userData = [user.name, user.grade, user.type, avatar.id, avatar.name, user.id];
     return $cordovaSQLite.execute(db, query, userData).then(function(success){
       user.avatar_id = avatar.id;
       user.avatar_name = avatar.name;

@@ -4,6 +4,7 @@ angular.module('app')
   var vm = $scope;
   vm.isHome = isHome;
   vm.offset = 0;
+  vm.limit = vm.offset == 0 && vm.isHome ? 1 : 2;
 
   vm.users = [];
 
@@ -20,52 +21,48 @@ angular.module('app')
   }
 
   vm.next = function(){
-    if(vm.offset != 0)
-      vm.offset += 2;
-    else
-      vm.offset += 1;
+    vm.offset += vm.limit;
+    vm.limit = 2;
     getUsers();
   }
 
   vm.previous = function(){
-    if(vm.offset != 1) vm.offset -= 2;
-    else vm.offset = 0;
-    if(vm.offset == 0)
-      vm.offset = 0;
+    vm.limit = vm.offset == 1 ? 1 : 2;
+    vm.offset -= vm.limit;
     getUsers();
   }
 
   function getUsers() {
-    UsersServices.getUsers(vm.offset).then(function(users){
+    UsersServices.getUsers(vm.offset , vm.limit).then(function(users){
       vm.users = users;
     });
   }
 
-  // numberOfUsers();
-  // getUsers();
+  numberOfUsers();
+  getUsers();
 
-  $ionicPlatform.ready(function() {
-    var isDatabaseCopied = getDatabaseCopied();
-    if(!isDatabaseCopied){
-      $cordovaFile.copyFile(cordova.file.applicationDirectory + 'www/', "khmer-writing.db", cordova.file.dataDirectory, "khmer-writing.db")
-        .then(function () {
-          db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
-          setDatabaseCopied(true);
-          createTables($cordovaSQLite);
-          numberOfUsers();
-          getUsers();
-      }, function (error) {
-        console.log('error file transfer : ', error);
-      });
-    }
-    else{
-      db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
-      createTables($cordovaSQLite);
-      numberOfUsers();
-      getUsers();
-    }
-
-  })
+  // $ionicPlatform.ready(function() {
+  //   var isDatabaseCopied = getDatabaseCopied();
+  //   if(!isDatabaseCopied){
+  //     $cordovaFile.copyFile(cordova.file.applicationDirectory + 'www/', "khmer-writing.db", cordova.file.dataDirectory, "khmer-writing.db")
+  //       .then(function () {
+  //         db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
+  //         setDatabaseCopied(true);
+  //         createTables($cordovaSQLite);
+  //         numberOfUsers();
+  //         getUsers();
+  //     }, function (error) {
+  //       console.log('error file transfer : ', error);
+  //     });
+  //   }
+  //   else{
+  //     db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
+  //     createTables($cordovaSQLite);
+  //     numberOfUsers();
+  //     getUsers();
+  //   }
+  //
+  // })
 
 
 })

@@ -6,12 +6,9 @@ UsersServices.$inject = ["$cordovaSQLite"]
 function UsersServices($cordovaSQLite) {
   var currentUser;
 
-  function getUsers(index) {
-    var limit = 2;
-    if(index == 0)
-      limit = 1;
+  function getUsers(offset, limit) {
     var query = "SELECT * FROM users LIMIT (?) OFFSET (?)";
-    return places = $cordovaSQLite.execute(db, query, [limit, index]).then(function(res) {
+    return places = $cordovaSQLite.execute(db, query, [limit, offset]).then(function(res) {
       var result = [];
       if(res.rows.length > 0){
         var i = 0,
