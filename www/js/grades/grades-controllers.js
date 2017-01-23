@@ -4,7 +4,7 @@ angular.module('app')
   var vm = $scope;
 
   vm.grades = [];
-  
+
   vm.setGrade = setGrade;
 
   function setGrade(grade) {

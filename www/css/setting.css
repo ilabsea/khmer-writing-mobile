@@ -61,9 +61,12 @@ ion-view {
   float: left; }
 
 .sound {
-  background: url(../img/setting/sound-close.png) center center no-repeat;
+  background: url("../img/setting/sound-close.png") center center no-repeat;
   margin-left: 36% !important;
   width: 35% !important; }
+
+.sound.open {
+  background-image: url("../img/setting/sound-open.png"); }
 
 .aboutus {
   background: url(../img/setting/aboutus.png) center center no-repeat;

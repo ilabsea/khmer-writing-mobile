@@ -21,14 +21,14 @@ ion-view {
   text-align: center; }
 
 .lesson-background {
-  background: url("../img/lesson/lesson-background.png") center center no-repeat fixed;
+  background: url("../img/lesson/lesson-screen.png") center center no-repeat fixed;
   background-size: cover; }
 
 .lesson-contain {
   display: block;
   float: right;
   margin-top: 10%;
-  width: 54%;
+  width: 55%;
   height: 65%; }
 
 .lesson-item {
@@ -42,15 +42,34 @@ ion-view {
   background-size: contain;
   text-align: center; }
 
-.grade-text {
+.lesson-grade {
   display: block;
   float: left;
-  margin-top: 24%;
-  margin-left: 11%;
-  width: 20%;
-  text-align: center;
+  margin-top: 10%;
+  width: 27%;
+  height: 65%;
+  margin-left: 7%;
+  text-align: center; }
+
+.lesson-grade > p {
+  margin-top: 52%;
   color: #26bcf7;
   font-size: 61px; }
+
+.lesson-grade div > span {
+  position: relative;
+  top: 38%;
+  font-size: 26px;
+  left: 11%;
+  color: #EFCA2B; }
+
+.lesson-grade div {
+  background: transparent url("../img/lesson/grade-star-bar.png") center center no-repeat;
+  background-size: contain;
+  width: 55%;
+  height: 15%;
+  margin-top: 26%;
+  margin-left: 22%; }
 
 .lesson-text {
   display: block;
@@ -71,24 +90,34 @@ ion-view {
   display: block;
   position: relative;
   width: 60%;
-  height: 15%;
-  margin-bottom: 0%;
-  float: right; }
+  height: 10%;
+  margin-top: 2%;
+  float: right;
+  margin-right: 1%; }
 
 .lesson-next {
   display: inline-block;
   position: relative;
   background: transparent url("../img/lesson/next.png") center center no-repeat;
   margin-left: 3%;
-  width: 10%;
-  height: 100%;
+  width: 9%;
+  height: 95%;
   background-size: contain; }
 
 .lesson-previous {
   display: inline-block;
   position: relative;
   background: transparent url("../img/lesson/previous.png") center center no-repeat;
-  width: 10%;
-  height: 100%;
+  width: 9%;
+  height: 95%;
   margin-left: 41%;
   background-size: contain; }
+
+.lesson-star-bar {
+  display: inline-block;
+  width: 54%;
+  height: 17%;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  margin-top: 14%;
+  margin-left: 8%; }

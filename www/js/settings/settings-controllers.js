@@ -8,6 +8,11 @@ angular.module('app')
   vm.valid = true;
   vm.formDelete = {};
 
+  vm.isOpen = false;
+  vm.toggleSound = function() {
+    vm.isOpen = !vm.isOpen;
+  };
+
   var popup;
 
   vm.deleteUser = function(){

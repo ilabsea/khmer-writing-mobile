@@ -2,11 +2,22 @@
   <ion-content>
     <a ui-sref='grades' class="button button-icon icon ion-back"></a>
 
-    <span class='grade-text'> {{gradeName}} </span>
+    <div class='lesson-grade'>
+      <p> ថ្នាក់ទី ១ </p>
+      <div>
+        <span> ២៧ <span style='color: #26bcf7;'> /៣០ </span> </span>
+      </div>
+    </div>
+
     <div class='lesson-contain'>
       <div ng-repeat="lesson in lessonsBuilt track by $index" ui-sref='methods' ng-click='setLesson(lesson)' class='lesson-item'>
         <span class='lesson-text'> មេរៀនទី </span>
         <span class='lesson-numeric-text'> {{lesson["khmer_numeric"]}}</span>
+        <div class='lesson-star-bar'>
+          <i class='icon ion-star'></i>
+          <i class='icon ion-star'></i>
+          <i class='icon ion-star'></i>
+        </div>
       </div>
     </div>
 

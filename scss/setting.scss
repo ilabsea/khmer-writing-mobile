@@ -48,9 +48,13 @@
 }
 
 .sound{
-  background: url(../img/setting/sound-close.png) $background;
+  background: url("../img/setting/sound-close.png") $background;
   margin-left: 36% !important;
   width: 35% !important;
+}
+
+.sound.open{
+  background-image: url("../img/setting/sound-open.png");
 }
 
 .aboutus{

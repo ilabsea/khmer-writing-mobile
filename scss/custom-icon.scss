@@ -1,21 +1,5 @@
-.icon.ion-hearing{
-  content: url('../img/icon/hearing.png');
-}
-
 .icon.ion-play{
   content: url('../img/icon/play.png') !important;
-}
-
-.icon.ion-not-hearing{
-  content: url('../img/icon/not-hearing.png');
-}
-
-.icon.ion-expand{
-  content: url('../img/icon/expand-48.png');
-}
-
-.icon.ion-collapse{
-  content: url('../img/icon/collapse-48.png');
 }
 
 .icon.ion-back{
@@ -23,7 +7,7 @@
   float: left;
   margin-top: 0.5%;
   margin-left: 0.6%;
-  content: url(../img/icon/back.png)!important;
+  content: url("../img/icon/back.png")!important;
 }
 
 .icon.ion-setting{
@@ -31,7 +15,7 @@
   float: right;
   margin-top: 0.6%;
   margin-right: 0.5%;
-  content: url(../img/icon/setting.png)!important;
+  content: url("../img/icon/setting.png")!important;
 }
 
 .icon.ion-close{
@@ -39,12 +23,20 @@
   float: right;
   margin-top: 5.5%;
   margin-right: 6.2%;
-  content: url(../img/icon/close.png)!important;
+  content: url("../img/icon/close.png")!important;
 }
 
 .icon.ion-edit{
   width: 14.5%;
   margin-top: 41.5%;
   margin-left: -11%;
-  content: url(../img/icon/edit.png)!important;
+  content: url("../img/icon/edit.png")!important;
+}
+
+.icon.ion-star{
+  width: 14.5%;
+  content: url(../img/icon/star.png)!important;
+  margin-left: -24%;
+  margin-top: 9%;
+  margin-right: -19%;
 }

@@ -16,7 +16,7 @@
         <div class="new-user" ui-sref="accounts({ state: 'new'})"></div>
         <div class="change-user" ui-sref='users'></div>
         <div class="delete-user" ng-click='deleteUser()'></div>
-        <div class="sound"></div>
+        <div class="sound" ng-class="{'open': isOpen}" ng-click='toggleSound()'></div>
         <div class="aboutus" ui-sref='aboutus'></div>
       </div>
 
