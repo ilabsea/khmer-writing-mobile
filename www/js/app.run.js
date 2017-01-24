@@ -18,9 +18,15 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    if (window.cordova) {
+      db = $cordovaSQLite.openDB({ name: "khmer-writing.db" });
+    }else{
+      db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100);
+    }
 
-    // db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100); // browser
-    // createTables($cordovaSQLite);
+    if(!getDatabaseCreated()){
+      createTables($cordovaSQLite);
+    }
 
   });
 

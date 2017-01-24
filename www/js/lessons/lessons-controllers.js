@@ -12,6 +12,7 @@ angular.module('app')
   vm.setLesson = setLesson;
   vm.gradeName = currentGrade.name;
   vm.goBack = goBack;
+  vm.totalLessons;
 
   setLessons();
 
@@ -50,7 +51,7 @@ angular.module('app')
   function setLessons() {
     LessonsServices.getByClassId(currentGrade.id).then(function (result) {
       lessons = result;
-
+      vm.totalLessons = lessons.length;
       setLessonsBuilt();
     });
   }

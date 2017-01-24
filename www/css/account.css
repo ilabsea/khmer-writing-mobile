@@ -20,14 +20,6 @@ ion-view {
   font-size: 20px;
   text-align: center; }
 
-.account-panel {
-  display: block;
-  background: url("../img/account/account.png") center center no-repeat;
-  background-size: 92% 92%;
-  height: 90%;
-  margin-top: 3.5%;
-  width: 100%; }
-
 .split-left {
   display: inline-block;
   position: relative;
@@ -40,6 +32,14 @@ ion-view {
   position: relative;
   width: 50%;
   height: 60%; }
+
+.account-panel {
+  display: block;
+  background: url("../img/account/account.png") center center no-repeat;
+  background-size: 92% 92%;
+  height: 90%;
+  margin-top: 3.5%;
+  width: 100%; }
 
 .avatar-selection {
   display: inline-block;

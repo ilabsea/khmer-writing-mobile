@@ -3,9 +3,9 @@
     <a ui-sref='grades' class="button button-icon icon ion-back"></a>
 
     <div class='lesson-grade'>
-      <p> ថ្នាក់ទី ១ </p>
+      <p> {{gradeName}} </p>
       <div>
-        <span> ២៧ <span style='color: #26bcf7;'> /៣០ </span> </span>
+        <span> ២៧ <span style='color: #26bcf7;'> /{{totalLessons}} </span> </span>
       </div>
     </div>
 
@@ -16,7 +16,7 @@
         <div class='lesson-star-bar'>
           <i class='icon ion-star'></i>
           <i class='icon ion-star'></i>
-          <i class='icon ion-star'></i>
+          <i class='icon ion-star-gray'></i>
         </div>
       </div>
     </div>

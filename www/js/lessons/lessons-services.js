@@ -1,9 +1,9 @@
 angular.module('app')
 .factory("LessonsServices", LessonsServices)
 
-LessonsServices.$inject = ['$cordovaSQLite']
+LessonsServices.$inject = ['$cordovaSQLite', ENDPOINT]
 
-function LessonsServices($cordovaSQLite) {
+function LessonsServices($cordovaSQLite, ENDPOINT) {
   var lesson;
 
   function setLesson(lessonParam) {
@@ -32,10 +32,21 @@ function LessonsServices($cordovaSQLite) {
     return lessons;
   }
 
+  function fetchJson(gradeId) {
+    return $q(function(resolve, reject) {
+      $http.get(ENDPOINT.endpoint + "grades/" + gradeId + "/lessons.json")
+        .success(function(lessons) {
+        })
+        .error(function(error){
+        });
+    });
+  }
+
   return{
     getByClassId : getByClassId,
     setLesson: setLesson,
-    getLesson: getLesson
+    getLesson: getLesson,
+    fetchJson: fetchJson
   }
 
 }
