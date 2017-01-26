@@ -49,11 +49,16 @@ angular.module('app')
   }
 
   function setLessons() {
-    LessonsServices.getByClassId(currentGrade.id).then(function (result) {
+    LessonsServices.fetchByGradeId(currentGrade.id).then(function(result) {
       lessons = result;
       vm.totalLessons = lessons.length;
       setLessonsBuilt();
-    });
+    })
+    // LessonsServices.getByClassId(currentGrade.id).then(function (result) {
+    //   lessons = result;
+    //   vm.totalLessons = lessons.length;
+    //   setLessonsBuilt();
+    // });
   }
 
   function setLesson(lessonParam) {

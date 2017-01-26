@@ -31,10 +31,29 @@ function MethodsServices($cordovaSQLite) {
     return methods;
   }
 
+  function getAllMethods() {
+    var query = "SELECT * FROM writing_methods";
+    var methods = $cordovaSQLite.execute(db, query).then(function(res) {
+      console.log('res : ', res);
+      var result = [];
+      if(res.rows.length > 0){
+        var i = 0,
+            l = res.rows.length
+        for(;i<l;i++){
+          result.push(res.rows.item(i));
+        }
+      }
+      return result;
+    });
+
+    return methods;
+  }
+
   return{
     getMethodsByLessonId: getMethodsByLessonId,
     setMethod: setMethod,
-    getMethod: getMethod
+    getMethod: getMethod,
+    getAllMethods: getAllMethods
   }
 
 }

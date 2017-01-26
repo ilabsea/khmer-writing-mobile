@@ -15,7 +15,7 @@ function createTables($cordovaSQLite) {
               + " UNION SELECT 3, ' សរសេរតាមស្តាប ' , 3"
               + " UNION SELECT 4, ' សរសេរតាមរូបភាព ' , 4";
 
-  var guest = ["ភ្ញៀវ", "", "" , 1, "boy.png"];
+  var guest = ["ភ្ញៀវ", "", "" , 1, "a.png"];
 
   $cordovaSQLite.execute(db, users);
   $cordovaSQLite.execute(db, grades);

@@ -1,9 +1,9 @@
 angular.module('app')
 .factory("LessonsServices", LessonsServices)
 
-LessonsServices.$inject = ['$cordovaSQLite', ENDPOINT]
+LessonsServices.$inject = ['$cordovaSQLite', 'ENDPOINT', '$q', '$http']
 
-function LessonsServices($cordovaSQLite, ENDPOINT) {
+function LessonsServices($cordovaSQLite, ENDPOINT, $q, $http) {
   var lesson;
 
   function setLesson(lessonParam) {
@@ -32,10 +32,25 @@ function LessonsServices($cordovaSQLite, ENDPOINT) {
     return lessons;
   }
 
-  function fetchJson(gradeId) {
+  function insert(lessons, gradeId) {
+    console.log('lessons : ', lessons);
+    var lessonsSQL = "INSERT INTO lessons (name, code, khmer_numeric, grade_id) VALUES (?, ?, ?, ?)";
+    var i = 0,
+        length = lessons.length;
+    for (; i < length ; i++) {
+      var lesson = lessons[i];
+      var lessonData = [lesson.name, lesson.code, lesson.khmer_numeric, gradeId];
+      $cordovaSQLite.execute(db, lessonsSQL, lessonData);
+    }
+
+  }
+
+  function fetchByGradeId(gradeId) {
     return $q(function(resolve, reject) {
-      $http.get(ENDPOINT.endpoint + "grades/" + gradeId + "/lessons.json")
+      $http.get(ENDPOINT.url + "grades/" + gradeId + "/lessons.json")
         .success(function(lessons) {
+          insert(lessons, gradeId);
+          resolve(lessons);
         })
         .error(function(error){
         });
@@ -46,7 +61,7 @@ function LessonsServices($cordovaSQLite, ENDPOINT) {
     getByClassId : getByClassId,
     setLesson: setLesson,
     getLesson: getLesson,
-    fetchJson: fetchJson
+    fetchByGradeId: fetchByGradeId
   }
 
 }
