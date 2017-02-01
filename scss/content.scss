@@ -85,3 +85,20 @@
 .next{
   background: transparent url("../img/content/next.png") $background;
 }
+
+.brush-popup{
+  .popup{
+    background: url("../img/brush/brush-panel.png") $background;
+    background-size: contain;
+    height: 54%;
+    // margin-top: 3.5%;
+    width: 100%;
+  }
+  // .popup{
+  //   height: 90%;
+  //   width: 100%;
+  // }
+  .popup-head{
+    display: none;
+  }
+}

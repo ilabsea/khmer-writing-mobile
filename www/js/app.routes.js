@@ -74,5 +74,11 @@ function routes($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/aboutus.html'
   })
 
-  $urlRouterProvider.otherwise('/home')
+  .state('brush', {
+    url: '/brush',
+    templateUrl: 'templates/brush.html',
+    controller: 'BrushesCtrl'
+  })
+
+  $urlRouterProvider.otherwise('/brush')
 }
