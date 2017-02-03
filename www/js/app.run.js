@@ -8,6 +8,7 @@ var db = null;
 
 function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $location, $ionicHistory) {
 
+
   $ionicPlatform.ready(function() {
 
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -18,6 +19,7 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
 
     // db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100); // browser
     // createTables($cordovaSQLite);

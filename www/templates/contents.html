@@ -28,6 +28,7 @@
       <div class='writing-panel' ng-if='methodCode != 4 && ((lessonCode != 2 && gradeCode == 1) || (lessonCode == 2 && gradeCode != 1 ))' >
         <canvas width="490" height="380" id='drawingCanvas' style="background: transparent url(img/grid.png) no-repeat center center; background-size: contain;">
       </div>
+      <button ui-sref='brush'>Brush setting</button>
 
       <div class='writing-footer'>
         <div ng-click="previous()" ng-class="{'previous' : !isDisabledPrevious()}"></div>

@@ -80,5 +80,5 @@ function routes($stateProvider, $urlRouterProvider) {
     controller: 'BrushesCtrl'
   })
 
-  $urlRouterProvider.otherwise('/brush')
+  $urlRouterProvider.otherwise('/home')
 }
