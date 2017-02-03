@@ -6,12 +6,12 @@
 }
 
 .brush-panel {
-  // display: block;
-  // background: url("../img/brush/brush-panel.png") $background;
-  // background-size: 92% 92%;
-  // height: 90%;
-  // margin-top: 3.5%;
-  // width: 100%;
+  display: block;
+  background: url("../img/brush/brush-panel.png") $background;
+  background-size: 92% 92%;
+  height: 90%;
+  margin-top: 3.5%;
+  width: 100%;
 }
 
 .brush-title{
@@ -50,13 +50,20 @@
   margin-left: 24%;
 }
 
+.brush-size > span{
+  display: inline-block;
+  margin-top: 3%;
+  font-size: 28px;
+  margin-left: 34%;
+}
+
 .color-bar{
   background: url("../img/brush/color-range.png") $background;
   background-size: contain;
-  width: 52%;
-  height: 32%;
-  margin-left: 24%;
-  margin-top: -7.5%;
+  width: 51%;
+  height: 31%;
+  margin-left: 23%;
+  margin-top: -7.7%;
 }
 
 .pencil{
@@ -74,7 +81,6 @@
   background: url("../img/brush/selected-circle.png") $background;
   background-size: contain;
   width: 5%;
-  height: 13.9%;
+  height: 15.31%;
   margin-top: 3%;
-  margin-left: 48.5%;
 }

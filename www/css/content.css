@@ -93,12 +93,3 @@ ion-view {
 
 .next {
   background: transparent url("../img/content/next.png") center center no-repeat; }
-
-.brush-popup .popup {
-  background: url("../img/brush/brush-panel.png") center center no-repeat;
-  background-size: contain;
-  height: 54%;
-  width: 100%; }
-
-.brush-popup .popup-head {
-  display: none; }
