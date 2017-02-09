@@ -21,7 +21,7 @@ ion-view {
   text-align: center; }
 
 .lesson-background {
-  background: url("../img/lesson/lesson-screen.png") center center no-repeat fixed;
+  background: url("../img/lesson/lesson-background.png") center center no-repeat fixed;
   background-size: cover; }
 
 .lesson-contain {

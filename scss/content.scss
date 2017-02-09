@@ -1,25 +1,28 @@
 @import 'application';
 
 .writing-background {
-  background: url("../img/content/writing-background.png") $background fixed;
+  background: url("../img/content/writing-screen.png") $background fixed;
   background-size: cover;
 }
 
-.writing-contain{
+.book{
   display: block;
-  height: 85%;
-  margin-top: 8%;
+  background: url("../img/content/book.png") $background;
+  background-size: contain;
+  height: 100%;
+  margin-top: 7.5%;
+  width: 96.4%;
+  margin-left: 2%
 }
 
 .content-panel{
   float: left;
   text-align: center;
-  font-weight: bold;
-  width: 34%;
-  height: 85%;
+  width: 35%;
+  height: 73%;
   display: inline-block;
   position: relative;
-  margin-left: 5%;
+  margin-left: 3%;
 }
 
 .content-title-numeric{
@@ -27,8 +30,7 @@
   position: relative;
   color: #000000;
   font-size: 16px;
-  margin-top: 6.5%;
-  margin-left: 0%;
+  margin-top: 10%;
 }
 
 .content-title{
@@ -47,22 +49,22 @@
 }
 
 .writing-panel{
-  height: 78%;
-  width: 48%;
+  height: 64%;
+  width: 47%;
   display: inline-block;
   position: relative;
-  background-color: white;
-  margin-top: 3%;
-  margin-left: 7%;
+  background-color: #fff;
+  margin-top: -4%;
+  margin-left: 8%;
   border-radius: 8%;
 }
 
 .writing-footer{
   display: inline-block;
   position: relative;
-  margin-left: 8%;
+  margin-left: 6%;
   height: 13%;
-  width: 85%;
+  width: 87%;
 }
 
 .writing-footer div {
@@ -70,6 +72,7 @@
   background-size: contain;
   width: 18%;
   height: 100%;
+  margin-top: -1%;
 }
 
 .previous{
@@ -84,4 +87,42 @@
 
 .next{
   background: transparent url("../img/content/next.png") $background;
+}
+
+.brush-setting{
+  width: 4%;
+  height: 21%;
+  display: inline-block;
+  float: right;
+  margin-top: 9%;
+  margin-right: -0.5%;
+  background: url("../img/content/brush-setting.png") $background;
+  background-size: contain;
+}
+
+.answer-popup{
+  .popup{
+    margin-left: -54%;
+    margin-top: 7% !important;
+    width: 35%!important;
+    height: 65%!important;
+    background: transparent !important;
+  }
+
+  .popup-body{
+    width: 100%;
+    height: 100%;
+  }
+
+  .container{
+    border-radius: 33px !important;
+    background-color: white;
+    width: 96%;
+    height: 96%;
+    margin-top: 4%;
+  }
+
+  .popup-head{
+    display: none;
+  }
 }

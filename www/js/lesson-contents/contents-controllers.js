@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $state, $cordovaMedia, BrushesServices, $ionicPlatform){
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $state, $cordovaMedia, BrushesServices, $ionicPlatform, $ionicPopup){
   var vm = $scope, canvas, signaturePad, brushSize, brushColor;
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
@@ -76,10 +76,24 @@ angular.module('app')
     signaturePad.clear();
   }
 
+  var popupAnswer;
+
+  vm.popupAnswer = function () {
+    popupAnswer = $ionicPopup.show({
+      templateUrl: 'templates/popup-answer.html',
+      scope: $scope,
+      cssClass: 'answer-popup'
+    });
+  }
+
+  vm.closeAnswerPopup = function(){
+    popupAnswer.close();
+  }
+
   function setBrushSizeAndColor() {
     brushSize = BrushesServices.getBrushSize();
     brushColor = BrushesServices.getBrushColor();
-    
+
     if(!brushSize){
       BrushSize = 6;
       BrushesServices.setBrushSize(BrushSize);
@@ -102,5 +116,6 @@ angular.module('app')
       });
     }
   });
+
 
 })
