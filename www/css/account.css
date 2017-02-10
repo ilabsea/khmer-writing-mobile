@@ -46,7 +46,6 @@ ion-view {
   width: 37%;
   height: 59%;
   position: fixed;
-  margin-top: 3%;
   margin-left: 7%; }
 
 .avatar-selection button:last-child {

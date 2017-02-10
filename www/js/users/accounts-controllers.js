@@ -76,5 +76,10 @@ angular.module('app')
     vm.user = {"grade" : "១", "type" : "ក"};
   }
 
+  if (ionic.Platform.isAndroid()) {
+    window.addEventListener('native.keyboardshow', function(){
+      document.body.classList.add('keyboard-open');
+    });
+  }
 
 })
