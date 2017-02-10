@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Daun Teav';
+  src: url("../fonts/DaunTeav.ttf");
+  src: url("../fonts/DaunTeav.ttf") format("truetype"), url("../fonts/DaunTeav.woff") format("woff"), url("../fonts/DaunTeav.woff2") format("woff2"), url("../fonts/DaunTeav.eot?#iefix") format("embedded-opentype"), url("../fonts/DaunTeav.svg#AngDaunTeav") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+ion-view {
+  font-family: "Daun Teav" !important; }
+
+.app-background {
+  background: url("../img/app-background.png") center center no-repeat fixed;
+  background-size: cover; }
+
+.activated {
+  opacity: .3; }
+
+.popup {
+  width: 60% !important;
+  font-size: 20px;
+  text-align: center; }
+
+.brush-background {
+  background: url("../img/brush/brush-screen.png") center center no-repeat fixed;
+  background-size: cover; }
+
+.brush-panel {
+  display: block;
+  background: url("../img/brush/brush-panel.png") center center no-repeat;
+  background-size: 92% 92%;
+  height: 90%;
+  margin-top: 3.5%;
+  width: 100%; }
+
+.brush-title {
+  display: block;
+  position: relative;
+  font-size: 32px;
+  color: #231F20;
+  text-align: center;
+  top: 14%;
+  left: 7.5%; }
+
+.brush-modify {
+  display: block;
+  position: relative;
+  background: url("../img/brush/panel-inside.png") center center no-repeat;
+  background-size: contain;
+  height: 64.5%;
+  margin-top: 10%; }
+
+.brush-size-bar {
+  position: relative;
+  background-color: #CEC2A5;
+  width: 48%;
+  height: 3%;
+  border-radius: 8px;
+  left: 26%;
+  top: 25%; }
+
+.brush-size {
+  width: 54%;
+  height: 10%;
+  display: inline-block;
+  margin-left: 24%; }
+
+.brush-size > span {
+  display: inline-block;
+  margin-top: 3%;
+  font-size: 28px;
+  margin-left: 34%; }
+
+.color-bar {
+  background: url("../img/brush/color-range.png") center center no-repeat;
+  background-size: contain;
+  width: 51%;
+  height: 31%;
+  margin-left: 23%;
+  margin-top: -7.7%; }
+
+.pencil {
+  background: url("../img/brush/pencil-icon.png") center center no-repeat;
+  background-size: contain;
+  width: 10%;
+  height: 21%;
+  float: left;
+  margin-top: 5%;
+  z-index: 10;
+  position: relative; }
+
+.color-selected {
+  background: url("../img/brush/selected-circle.png") center center no-repeat;
+  background-size: contain;
+  width: 5%;
+  height: 15.31%;
+  margin-top: 3%; }

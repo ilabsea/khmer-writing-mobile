@@ -3,9 +3,8 @@ angular.module('app')
 .controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices, $ionicHistory, $state) {
   var vm = $scope, currentGrade = GradesServices.getGrade();
 
-  var lesson = [];
   var index = 0;
-
+  var lessons = [];
   vm.lessonsBuilt = [];
   vm.next = next;
   vm.previous = previous;
@@ -20,7 +19,7 @@ angular.module('app')
     vm.lessonsBuilt = [];
     for(var i = 0; i<lessons.length; i++){
       var lesson = lessons[i];
-      if(Math.floor((lesson.code - 1) / 6) == index ){
+      if(Math.floor(i / 6) == index ){
         vm.lessonsBuilt.push(lesson);
       }
     }

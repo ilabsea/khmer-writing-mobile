@@ -3,7 +3,7 @@ function createTables($cordovaSQLite) {
   var users = "CREATE TABLE IF NOT EXISTS users (id integer primary key, name text, grade text, type text, avatar_id integer, avatar_name text)";
   var grades = "CREATE TABLE IF NOT EXISTS grades (id integer primary key, name text, code integer)";
   var writingMethods = "CREATE TABLE IF NOT EXISTS writing_methods (id integer primary key, name text, code integer)";
-  var lessons = "CREATE TABLE IF NOT EXISTS lessons (id integer primary key, name text, code integer, khmer_numeric text, grade_id integer)";
+  var lessons = "CREATE TABLE IF NOT EXISTS lessons (id integer primary key, name text, khmer_numeric text, grade_id integer)";
   var contents = "CREATE TABLE IF NOT EXISTS contents (id integer primary key, content text, content_in_khmer text, clue text, audio text, image text, writing_method_id integer, lesson_id integer)"
 
   var addGuest = "INSERT INTO users (name, grade, type, avatar_id, avatar_name) VALUES (? , ?, ? , ?, ?)";

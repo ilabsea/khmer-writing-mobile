@@ -23,10 +23,6 @@ angular.module('app')
       }
 
     });
-
-    // MethodsServices.getMethodsByLessonId(currentLesson.id).then(function(methods) {
-    //   vm.methods = methods;
-    // });
   }
 
   function setMethod(methodParam) {
