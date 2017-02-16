@@ -35,8 +35,9 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
   }, 100);
 
   if (window.StatusBar) {
+    console.log('here');
     StatusBar.hide();
-    ionic.Platform.fullScreen();
+    $ionicPlatform.fullScreen();
   }
 
 }

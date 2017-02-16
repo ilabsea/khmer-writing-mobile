@@ -4,12 +4,12 @@ angular.module('app')
 AccountsServices.$inject = ["$cordovaSQLite"]
 
 function AccountsServices($cordovaSQLite) {
-  var avatars = [ {'id': 1 , 'name': 'boy.png', 'selected' : false},
-                  {'id': 2 ,'name': 'girl.png', 'selected' : false},
-                  {'id': 3 ,'name': 'avatar.png', 'selected' : false},
-                  {'id': 4 ,'name': 'boy.png', 'selected' : false},
-                  {'id': 5 ,'name': 'girl.png', 'selected' : false},
-                  {'id': 6 ,'name': 'boy.png', 'selected' : false}];
+  var avatars = [ {'id': 1 , 'name': 'a.png', 'selected' : false},
+                  {'id': 2 ,'name': 'b.png', 'selected' : false},
+                  {'id': 3 ,'name': 'c.png', 'selected' : false},
+                  {'id': 4 ,'name': 'd.png', 'selected' : false},
+                  {'id': 5 ,'name': 'e.png', 'selected' : false},
+                  {'id': 6 ,'name': 'f.png', 'selected' : false}];
 
 
   function getAvatars() {

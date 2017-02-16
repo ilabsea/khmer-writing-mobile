@@ -27,9 +27,9 @@ ion-view {
 .book {
   display: block;
   background: url("../img/content/book.png") center center no-repeat;
-  background-size: contain;
+  background-size: 100% 87%;
   height: 100%;
-  margin-top: 7.5%;
+  margin-top: 4%;
   width: 96.4%;
   margin-left: 2%; }
 
@@ -40,14 +40,14 @@ ion-view {
   height: 73%;
   display: inline-block;
   position: relative;
-  margin-left: 3%; }
+  margin-left: -3%; }
 
 .content-title-numeric {
   display: block;
   position: relative;
   color: #000000;
   font-size: 16px;
-  margin-top: 10%; }
+  margin-top: 20%; }
 
 .content-title {
   display: block;
@@ -68,8 +68,7 @@ ion-view {
   display: inline-block;
   position: relative;
   background-color: #fff;
-  margin-top: -4%;
-  margin-left: 8%;
+  margin-left: 7%;
   border-radius: 8%; }
 
 .writing-footer {
@@ -102,7 +101,7 @@ ion-view {
   height: 21%;
   display: inline-block;
   float: right;
-  margin-top: 9%;
+  margin-top: 21% !important;
   margin-right: -0.5%;
   background: url("../img/content/brush-setting.png") center center no-repeat;
   background-size: contain; }
