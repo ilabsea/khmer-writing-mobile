@@ -43,14 +43,15 @@
 
 .delete-user{
   background: url(../img/setting/delete.png) $background;
-  width: 28% !important;
-  float: left;
+  width: 25% !important;
+  display: inline-block;
 }
 
 .sound{
+  display: inline-block;
   background: url("../img/setting/sound-close.png") $background;
-  margin-left: 36% !important;
-  width: 35% !important;
+  width: 28% !important;
+  margin-left: 0% !important;
 }
 
 .sound.open{

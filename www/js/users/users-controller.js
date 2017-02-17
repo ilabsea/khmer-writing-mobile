@@ -38,9 +38,6 @@ angular.module('app')
     });
   }
 
-  // numberOfUsers();
-  // getUsers();
-
   $ionicPlatform.ready(function() {
     var isDatabaseCopied = getDatabaseCopied();
     if(!isDatabaseCopied){
@@ -57,7 +54,6 @@ angular.module('app')
     }
     else{
       db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
-      createTables($cordovaSQLite);
       numberOfUsers();
       getUsers();
     }

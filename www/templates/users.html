@@ -9,7 +9,7 @@
         <div class="user-item" ng-repeat='user in users'>
           <img ng-src='img/avatar/{{user.avatar_name}}' style="width: 45%; margin-top: 26.5%; ">
           <p class="user-name">{{user.name}}</p>
-          <p class="user-grade">ថ្នាក់ទី {{user.grade}} " {{user.type}} " </p>
+          <p class="user-grade" ng-if='user.id != 1'>ថ្នាក់ទី {{user.grade}} " {{user.type}} " </p>
           <div ui-sref='grades' ng-click='setCurrentUser(user)'></div>
         </div>
       </div>

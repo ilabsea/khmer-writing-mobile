@@ -12,6 +12,7 @@ angular.module('app')
   vm.toggleSound = function() {
     vm.isOpen = !vm.isOpen;
   };
+  vm.download = download;
 
   var popup;
 
@@ -40,5 +41,9 @@ angular.module('app')
     }else{
       vm.valid = false;
     }
+  }
+
+  function download() {
+    
   }
 })

@@ -20,9 +20,6 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
       StatusBar.styleDefault();
     }
 
-    // db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100); // browser
-    // createTables($cordovaSQLite);
-
   });
 
   $ionicPlatform.registerBackButtonAction(function() {
@@ -35,7 +32,7 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
   }, 100);
 
   if (window.StatusBar) {
-    console.log('here');
+    console.log('window.StatusBar');
     StatusBar.hide();
     $ionicPlatform.fullScreen();
   }
