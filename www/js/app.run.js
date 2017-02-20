@@ -2,11 +2,11 @@ angular
 .module('app')
 .run(runBlock);
 
-runBlock.$inject = ['$ionicPlatform', '$cordovaSQLite', '$cordovaFile', "$rootScope", "$location", "$ionicHistory"];
+runBlock.$inject = ['$ionicPlatform', '$cordovaSQLite', '$cordovaFile', "$rootScope", "$location", "$ionicHistory", "$ionicLoading"];
 
 var db = null;
 
-function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $location, $ionicHistory) {
+function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $location, $ionicHistory, $ionicLoading) {
 
 
   $ionicPlatform.ready(function() {
@@ -24,6 +24,16 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
       db = $cordovaSQLite.openDB({ name: "khmer-writing.db" }); //device
     }else{
       db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100); // browser
+    }
+
+    $rootScope.showSpinner = function(templateUrl) {
+      $ionicLoading.show({
+        templateUrl: templateUrl
+      });
+    }
+
+    $rootScope.hideSpinner = function() {
+      $ionicLoading.hide();
     }
 
   });

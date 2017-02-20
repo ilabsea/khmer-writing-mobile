@@ -2,9 +2,9 @@ angular.module('app')
 
 .factory("ContentsServices", ContentsServices)
 
-ContentsServices.$inject = ['$cordovaSQLite'];
+ContentsServices.$inject = ['$cordovaSQLite', '$rootScope'];
 
-function ContentsServices($cordovaSQLite) {
+function ContentsServices($cordovaSQLite, $rootScope) {
 
   function getByLessonIdMethodId(lessonId, methodId) {
     var query = "SELECT * FROM contents WHERE lesson_id = ? AND writing_method_id = ?";
@@ -23,7 +23,7 @@ function ContentsServices($cordovaSQLite) {
     return contents;
   }
 
-  function insert(contents) {
+  function insert(contents, lastLessonId) {
     var i = 0,
         l = contents.length;
     for(; i < l ; i++){
@@ -34,8 +34,7 @@ function ContentsServices($cordovaSQLite) {
       var contentData = [content.content, content.id, content.writing_method_id, content.lesson_id, content.created_at,
                         content.updated_at, content.content_in_khmer, content.image_clue, content.audio, content.image, content.image_answer];
       $cordovaSQLite.execute(db, query, contentData).then(function(res) {
-        console.log('res : ', res);
-
+        $rootScope.hideSpinner();
       }, function(err){
         console.log('err in inserting contents : ', err);
       });

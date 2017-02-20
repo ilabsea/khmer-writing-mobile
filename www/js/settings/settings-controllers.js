@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state, SettingsServices, GradesServices, MethodsServices){
+.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state, SettingsServices, GradesServices, MethodsServices, $ionicLoading){
   var vm = $scope;
 
   vm.currentUser = UsersServices.getCurrentUser();
@@ -44,12 +44,13 @@ angular.module('app')
   }
 
   function download() {
+    vm.showSpinner('templates/loading.html');
     SettingsServices.downloadGrades().then(function(grades){
       GradesServices.insert(grades);
     });
     SettingsServices.downloadWritingMethods().then(function(methods){
-      console.log('methods : ', methods);
       MethodsServices.insert(methods);
     });
   }
+
 })

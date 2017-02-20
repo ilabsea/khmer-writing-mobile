@@ -23,11 +23,7 @@ function GradesServices($cordovaSQLite, SettingsServices, LessonsServices) {
       var grade = grades[i];
       var query = "INSERT INTO grades (grade_id_api, name, created_at, updated_at, code) VALUES (? , ? , ?, ?, ?) ";
       var gradeData = [grade.id, grade.name, grade.created_at, grade.updated_at, grade.code];
-      $cordovaSQLite.execute(db, query, gradeData).then(function(res) {
-        console.log('res : ', res);
-      }, function(error){
-        console.log('error : ', error);
-      });
+      $cordovaSQLite.execute(db, query, gradeData);
       SettingsServices.downloadLessons(grade.id).then(function(lessons){
         LessonsServices.insert(lessons);
       });

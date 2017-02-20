@@ -9,7 +9,6 @@ function SettingsServices($cordovaSQLite, $q, ENDPOINT, $http) {
     return $q(function(resolve, reject) {
       $http.get(ENDPOINT.api + "grades.json")
         .success(function(grades) {
-          console.log('grades : ', grades);
           resolve(grades)
         })
         .error(function(error){
