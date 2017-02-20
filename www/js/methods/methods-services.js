@@ -19,18 +19,13 @@ function MethodsServices($cordovaSQLite) {
         l = methods.length;
     for(; i < l ; i++){
       var method = methods[i];
-      var query = "INSERT INTO writing_methods (writing_method_id_api, name, created_at, updated_at, code) VALUES (?, ? , ?, ? , ?) ";
-      var methodData = [method.id, method.name, method.created_at, method.updated_at, method.code];
-      $cordovaSQLite.execute(db, query, methodData).then(function(res) {
-        console.log('res : ', res);
-      }, function(error){
-        console.log('error : ', error);
-      });
+      var query = "INSERT INTO writing_methods (writing_method_id_api, name, created_at, updated_at, code, icon) VALUES (?, ? , ?, ? , ? , ?) ";
+      var methodData = [method.id, method.name, method.created_at, method.updated_at, method.code, method.icon];
+      $cordovaSQLite.execute(db, query, methodData);
     }
   }
 
   function getMethodsByLessonId(lessonIdApi) {
-    console.log('lessonIdApi : ', lessonIdApi);
     var query = "SELECT DISTINCT writing_methods.* FROM writing_methods JOIN contents WHERE writing_methods.writing_method_id_api = contents.writing_method_id_api AND contents.lesson_id_api=?";
     var methods = $cordovaSQLite.execute(db, query, [lessonIdApi]).then(function(res) {
       var result = [];

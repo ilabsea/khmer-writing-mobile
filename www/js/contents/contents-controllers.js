@@ -23,7 +23,7 @@ angular.module('app')
 
 
   function setContents() {
-    ContentsServices.getByLessonIdMethodId(currentLesson.id, currentMethod.id).then(function (contents) {
+    ContentsServices.getByLessonIdMethodId(currentLesson.lesson_id_api, currentMethod.writing_method_id_api).then(function (contents) {
       vm.contents = contents;
       vm.content = vm.contents[index].content;
       canvas = document.getElementById('drawingCanvas');

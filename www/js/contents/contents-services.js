@@ -6,9 +6,9 @@ ContentsServices.$inject = ['$cordovaSQLite', '$rootScope'];
 
 function ContentsServices($cordovaSQLite, $rootScope) {
 
-  function getByLessonIdMethodId(lessonId, methodId) {
-    var query = "SELECT * FROM contents WHERE lesson_id = ? AND writing_method_id = ?";
-    var contents = $cordovaSQLite.execute(db, query, lessonId, methodId).then(function(res) {
+  function getByLessonIdMethodId(lessonIdApi, methodIdApi) {
+    var query = "SELECT * FROM contents WHERE lesson_id_api = ? AND writing_method_id_api = ?";
+    var contents = $cordovaSQLite.execute(db, query, [lessonIdApi, methodIdApi]).then(function(res) {
       var result = [];
       if(res.rows.length > 0){
         var i = 0,
@@ -17,6 +17,7 @@ function ContentsServices($cordovaSQLite, $rootScope) {
           result.push(res.rows.item(i));
         }
       }
+      console.log('result : ', result);
       return result;
     });
 
