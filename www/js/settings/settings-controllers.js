@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state){
+.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state, SettingsServices, GradesServices, MethodsServices){
   var vm = $scope;
 
   vm.currentUser = UsersServices.getCurrentUser();
@@ -44,6 +44,12 @@ angular.module('app')
   }
 
   function download() {
-    
+    SettingsServices.downloadGrades().then(function(grades){
+      GradesServices.insert(grades);
+    });
+    SettingsServices.downloadWritingMethods().then(function(methods){
+      console.log('methods : ', methods);
+      MethodsServices.insert(methods);
+    });
   }
 })

@@ -13,7 +13,7 @@ angular.module('app')
   setMethods();
 
   function setMethods() {
-    MethodsServices.getMethodsByLessonId(currentLesson.id).then(function(methods) {
+    MethodsServices.getMethodsByLessonId(currentLesson.lesson_id_api).then(function(methods) {
       vm.methods = methods;
     });
   }

@@ -41,19 +41,32 @@ angular.module('app')
   $ionicPlatform.ready(function() {
     var isDatabaseCopied = getDatabaseCopied();
     if(!isDatabaseCopied){
-      $cordovaFile.copyFile(cordova.file.applicationDirectory + 'www/', "khmer-writing.db", cordova.file.dataDirectory, "khmer-writing.db")
-        .then(function () {
-          db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
-          setDatabaseCopied(true);
-          createTables($cordovaSQLite);
-          numberOfUsers();
-          getUsers();
-      }, function (error) {
-        console.log('error file transfer : ', error);
-      });
+      if (window.cordova) {
+        db = $cordovaSQLite.openDB({ name: "khmer-writing.db" }); //device
+      }else{
+        db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100); // browser
+      }
+      setDatabaseCopied(true);
+      createTables($cordovaSQLite);
+      numberOfUsers();
+      getUsers();
+      // $cordovaFile.copyFile(cordova.file.applicationDirectory + 'www/', "khmer-writing.db", cordova.file.dataDirectory, "khmer-writing.db")
+      //   .then(function () {
+      //     db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
+      //     setDatabaseCopied(true);
+      //     createTables($cordovaSQLite);
+      //     numberOfUsers();
+      //     getUsers();
+      // }, function (error) {
+      //   console.log('error file transfer : ', error);
+      // });
     }
     else{
-      db = $cordovaSQLite.openDB({ name: "khmer-writing.db"});
+      if (window.cordova) {
+        db = $cordovaSQLite.openDB({ name: "khmer-writing.db" }); //device
+      }else{
+        db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100); // browser
+      }
       numberOfUsers();
       getUsers();
     }

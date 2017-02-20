@@ -20,7 +20,7 @@ angular.module('app')
     vm.lessonsBuilt = [];
     for(var i = 0; i<lessons.length; i++){
       var lesson = lessons[i];
-      if(Math.floor((lesson.code - 1) / 6) == index ){
+      if(Math.floor(i / 6) == index ){
         vm.lessonsBuilt.push(lesson);
       }
     }
@@ -49,7 +49,8 @@ angular.module('app')
   }
 
   function setLessons() {
-    LessonsServices.getByClassId(currentGrade.id).then(function (result) {
+    console.log('currentGrade : ', currentGrade);
+    LessonsServices.getByGradeIdApi(currentGrade.grade_id_api).then(function (result) {
       lessons = result;
       vm.totalLessons = lessons.length;
       setLessonsBuilt();
