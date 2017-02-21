@@ -8,9 +8,9 @@ angular.module('app')
 
   vm.currentLesson = currentLesson;
 
-  vm.gradeCode = currentGrade.code;
-  vm.lessonCode = currentLesson.code;
-  vm.methodCode = currentMethod.code;
+  vm.gradeIdApi = currentGrade.grade_id_api;
+  vm.lessonIdApi = currentLesson.lesson_id_api;
+  vm.writingMethodIdApi = currentMethod.writing_method_id_api;
 
   var index = 0;
 
@@ -20,7 +20,6 @@ angular.module('app')
   vm.playing = false;
 
   setContents();
-
 
   function setContents() {
     ContentsServices.getByLessonIdMethodId(currentLesson.lesson_id_api, currentMethod.writing_method_id_api).then(function (contents) {

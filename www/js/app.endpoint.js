@@ -1,5 +1,6 @@
 angular.module('app')
 
 .constant("ENDPOINT", {
-  api: 'http://localhost:3000/api/v1/'
+  url: 'http://192.168.1.134:3000',
+  api: 'http://192.168.1.134:3000/api/v1/'
 })
