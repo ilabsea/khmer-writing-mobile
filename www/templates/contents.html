@@ -12,26 +12,22 @@
           <span class='content-title'> {{currentLesson["name"]}}</span>
         </div>
 
-        <img ng-if='methodCode != 3' ng-src='img/grade{{gradeIdApi}}/lesson{{lessonIdApi}}/method{{writingMethodIdApi}}/{{content}}.png'>
+        <img ng-if='methodCode != 3' ng-src='{{image}}'>
         <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()" style='margin-top: 40%'></a>
 
       </div>
 
       <a ng-if='methodCode == 3 || methodCode == 4' class="button button-icon icon ion-check-search" ng-click='popupAnswer()'></a>
 
-      <div class='writing-panel' ng-if='methodCode == 4' >
-        <canvas width="470" height="365" id='drawingCanvas' style='background: transparent url(img/grade{{gradeCode}}/lesson{{lessonCode}}/method{{methodCode}}/{{content}}-clue.png) no-repeat center center; background-size: contain;'>
+      <div class='writing-panel' ng-if='methodCode == 4' style='margin-top: -3%;'>
+        <canvas width="470" height="365" id='drawingCanvas' style='background: transparent url({{imageClue}}) no-repeat center center; background-size: contain;'>
       </div>
 
-      <div class='writing-panel' ng-if='methodCode != 4 && lessonCode == 2 && gradeCode == 1' ng-style='{"margin-top": methodCode == 1 || methodCode == 2 ? "10%" : "-3%"}' >
-        <canvas width="470" height="365" id='drawingCanvas' style="background: transparent url(img/table.png) no-repeat center center; background-size: contain;">
+      <div class='writing-panel' ng-if='methodCode != 4' ng-style='{"margin-top": methodCode == 1 || methodCode == 2 ? "10%" : "-3%"}' >
+        <canvas width="470" height="365" id='drawingCanvas' style="background: transparent url({{imageBackground}}) no-repeat center center; background-size: contain;">
       </div>
 
-      <div class='writing-panel' ng-if='methodCode != 4 && ((lessonCode != 2 && gradeCode == 1) || (lessonCode == 2 && gradeCode != 1 ))' ng-style='{"margin-top": methodCode == 1 || methodCode == 2 ? "10%" : "-3%"}'>
-        <canvas width="470" height="365" id='drawingCanvas' style="background: transparent url(img/grid.png) no-repeat center center; background-size: contain;">
-      </div>
-
-      <a class="brush-setting" ui-sref='brush' ng-style='{"margin-top": methodCode == 1 || methodCode == 2 ? "11%" : "8%"}'></a>
+      <a class="brush-setting" ui-sref='brush' ng-style='{"margin-top": methodCode == 1 || methodCode == 2 ? "21%" : "8%"}'></a>
 
       <div class='writing-footer'>
         <div ng-click="previous()" ng-class="{'previous' : !isDisabledPrevious()}"></div>

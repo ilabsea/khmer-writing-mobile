@@ -19,8 +19,8 @@ function LessonsServices($cordovaSQLite, SettingsServices, ContentsServices) {
         l = lessons.length;
     for(; i < l ; i++){
       var lesson = lessons[i];
-      var query = "INSERT INTO lessons (name, grade_id_api, lesson_id_api, created_at, updated_at, khmer_numeric) VALUES (? , ? , ?, ?, ?, ?) ";
-      var lessonData = [lesson.name, lesson.grade_id,lesson.id, lesson.created_at, lesson.updated_at, lesson.khmer_numeric];
+      var query = "INSERT INTO lessons (name, grade_id_api, lesson_id_api, created_at, updated_at, khmer_numeric, background) VALUES (? , ? , ?, ?, ?, ?, ?) ";
+      var lessonData = [lesson.name, lesson.grade_id,lesson.id, lesson.created_at, lesson.updated_at, lesson.khmer_numeric, lesson.background];
       $cordovaSQLite.execute(db, query, lessonData);
       SettingsServices.downloadContents(lesson.id).then(function(contents){
         ContentsServices.insert(contents);

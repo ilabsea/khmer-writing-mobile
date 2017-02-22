@@ -2,6 +2,7 @@ angular.module('app')
 
 .controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $state, $cordovaMedia, BrushesServices, $ionicPlatform, $ionicPopup){
   var vm = $scope, canvas, signaturePad, brushSize, brushColor;
+
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
@@ -11,6 +12,15 @@ angular.module('app')
   vm.gradeIdApi = currentGrade.grade_id_api;
   vm.lessonIdApi = currentLesson.lesson_id_api;
   vm.writingMethodIdApi = currentMethod.writing_method_id_api;
+
+  vm.image = "";
+  vm.imageClue = "";
+  vm.imageAnswer = "";
+  vm.methodCode = currentMethod.code;
+
+  vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
+
+  var path = cordova.file.applicationStorageDirectory + "lesson" + vm.lessonIdApi + "/method" + vm.writingMethodIdApi + "/";
 
   var index = 0;
 
@@ -22,9 +32,17 @@ angular.module('app')
   setContents();
 
   function setContents() {
-    ContentsServices.getByLessonIdMethodId(currentLesson.lesson_id_api, currentMethod.writing_method_id_api).then(function (contents) {
+    ContentsServices.getByLessonIdMethodId(vm.lessonIdApi, vm.writingMethodIdApi).then(function (contents) {
       vm.contents = contents;
       vm.content = vm.contents[index].content;
+      console.log('vm.content : ', vm.content);
+      vm.image =  path + vm.contents[index]["image"];
+      vm.imageClue = path + vm.contents[index]["image_clue"];
+      vm.imageAnswer = path + vm.contents[index]["image_answer"];
+      console.log('vm.image : ', vm.image);
+      console.log('vm.imageClue : ', vm.imageClue);
+      console.log('vm.imageAnswer : ', vm.imageAnswer);
+
       canvas = document.getElementById('drawingCanvas');
       setBrushSizeAndColor();
 
@@ -62,12 +80,18 @@ angular.module('app')
   vm.next = function() {
     index++;
     vm.content = vm.contents[index].content;
+    vm.image =  path + vm.contents[index]["image"];
+    vm.imageClue = path + vm.contents[index]["image_clue"];
+    vm.imageAnswer = path + vm.contents[index]["image_answer"];
     signaturePad.clear();
   }
 
   vm.previous = function() {
     index--;
     vm.content = vm.contents[index].content;
+    vm.image =  path + vm.contents[index]["image"];
+    vm.imageClue = path + vm.contents[index]["image_clue"];
+    vm.imageAnswer = path + vm.contents[index]["image_answer"];
     signaturePad.clear();
   }
 

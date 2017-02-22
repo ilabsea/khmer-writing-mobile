@@ -101,7 +101,6 @@ ion-view {
   height: 21%;
   display: inline-block;
   float: right;
-  margin-top: 21% !important;
   margin-right: -0.5%;
   background: url("../img/content/brush-setting.png") center center no-repeat;
   background-size: contain; }
