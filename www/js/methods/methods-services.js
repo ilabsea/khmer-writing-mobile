@@ -1,10 +1,11 @@
 angular.module('app')
 .factory("MethodsServices", MethodsServices)
 
-MethodsServices.$inject = ['$cordovaSQLite']
+MethodsServices.$inject = ['$cordovaSQLite', 'LessonsServices']
 
-function MethodsServices($cordovaSQLite) {
-  var method;
+function MethodsServices($cordovaSQLite, LessonsServices) {
+  // tracks = {'methodCode' : {"index": "", "number_contents": "", "content_id_api": ""} , 'methodCode' : {}};
+  var method, tracks = {};
 
   function setMethod(methodParam) {
     method = methodParam;
@@ -44,11 +45,52 @@ function MethodsServices($cordovaSQLite) {
     return methods;
   }
 
+  function setTrack(track) {
+    if(tracks){
+      for(var key in track){
+
+        if(tracks[key]){
+          console.log('track[key] : ', track[key]);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  function storeTrack(track) {
+    console.log('===============  storeTrack:============================');
+    console.log('track : ', track);
+    for(var key in track){
+      console.log('key in StoreTrack : ', key);
+      tracks[key] = track[key];
+    }
+    var star = getStar(track);
+    console.log('tracks ; ', tracks);
+    LessonsServices.updateStarTracks(star, tracks);
+  }
+
+  function getStar(track) {
+    var star = 0;
+    if(track["2"]){
+      var percentageUserPlay = Math.round(track[2]["index"]/track[2]["number_contents"] *100);
+      if( percentageUserPlay == 100){
+        star = 3;
+      }else if(percentageUserPlay >= 60){
+        star = 2;
+      }else if(percentageUserPlay >= 30){
+        star = 1;
+      }
+    }
+    return star;
+  }
+
   return{
     getMethodsByLessonId: getMethodsByLessonId,
     setMethod: setMethod,
     getMethod: getMethod,
-    insert: insert
+    insert: insert,
+    storeTrack: storeTrack
   }
 
 }

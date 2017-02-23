@@ -29,11 +29,13 @@
   content: url("../img/icon/edit.png") !important; }
 
 .icon.ion-star {
-  width: 14.5%;
-  content: url(../img/icon/star.png) !important;
-  margin-left: -24%;
+  width: 17%;
+  content: url("../img/icon/star.png") !important;
   margin-top: 9%;
-  margin-right: -19%; }
+  margin-right: 7%; }
+
+.icon.ion-star.blur {
+  content: url("../img/icon/star-blur.png") !important; }
 
 .icon.ion-check-search {
   width: 8%;

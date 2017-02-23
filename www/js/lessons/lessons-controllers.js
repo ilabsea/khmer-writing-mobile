@@ -13,6 +13,7 @@ angular.module('app')
   vm.gradeName = currentGrade.name;
   vm.goBack = goBack;
   vm.totalLessons;
+  vm.range = range;
 
   setLessons();
 
@@ -25,6 +26,16 @@ angular.module('app')
       }
     }
   }
+
+  function range(min, max, step) {
+    step = step || 1;
+    var input = [];
+    for (var i = min; i <= max; i += step) {
+      input.push(i);
+    }
+    return input;
+  }
+
 
   function next() {
     if( Math.floor(lessons.length / 6) > index ){
@@ -58,6 +69,7 @@ angular.module('app')
   }
 
   function setLesson(lessonParam) {
+    console.log('lessonParam : ', lessonParam);
     LessonsServices.setLesson(lessonParam);
     $state.go('methods');
   }
