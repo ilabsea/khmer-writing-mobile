@@ -56,14 +56,14 @@ function MethodsServices($cordovaSQLite, LessonsServices) {
     for(var key in track){
       tracks[key] = track[key];
     }
-    var star = getStar(track);
+    var star = getStar(tracks);
     LessonsServices.updateStarTracks(star, tracks);
   }
 
-  function getStar(track) {
+  function getStar(tracks) {
     var star = 0;
-    if(track["2"]){
-      var percentageUserPlay = Math.round(track[2]["index"]/track[2]["number_contents"] *100);
+    if(tracks["2"]){
+      var percentageUserPlay = Math.round(tracks[2]["index"]/tracks[2]["number_contents"] *100);
       if( percentageUserPlay == 100){
         star = 3;
       }else if(percentageUserPlay >= 60){
