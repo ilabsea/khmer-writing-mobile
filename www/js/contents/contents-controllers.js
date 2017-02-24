@@ -31,11 +31,11 @@ angular.module('app')
 
   setContents();
 
+
   function setContents() {
     ContentsServices.getByLessonIdMethodId(vm.lessonIdApi, vm.writingMethodIdApi).then(function (contents) {
       var trackJson = currentLesson["tracks"] ? angular.fromJson(currentLesson["tracks"]) : "";
       index = trackJson && trackJson[vm.methodCode]? trackJson[vm.methodCode]["index"] : 0;
-      console.log('index : ', index);
       vm.contents = contents;
       setContentDataChange(contents);
       canvas = document.getElementById('drawingCanvas');
@@ -60,8 +60,6 @@ angular.module('app')
   function goBack() {
     $state.go('methods');
     var track = getCurrentTrack();
-    console.log('========================Go Back========================================');
-    console.log('track : ', track);
     MethodsServices.storeTrack(track);
     signaturePad.off();
   }
@@ -129,7 +127,6 @@ angular.module('app')
 
   function setContentDataChange(contents) {
     vm.content = contents[index].content;
-    console.log('vm.content : ', vm.content);
     vm.image =  path + contents[index]["image"];
     vm.imageClue = path + contents[index]["image_clue"];
     vm.imageAnswer = path + contents[index]["image_answer"];
@@ -138,9 +135,6 @@ angular.module('app')
   vm.$on('$stateChangeSuccess', function(event, toState) {
     if (toState.url== "/contents") {
       $ionicPlatform.ready(function () {
-        console.log('vm.currentLesson  ; ', currentLesson);
-        currentLesson = LessonsServices.getLesson();
-        console.log('vm.currentLesson  2; ', currentLesson);
         setBrushSizeAndColor();
         if(signaturePad){
           signaturePad.maxWidth = brushSize;

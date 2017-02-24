@@ -45,28 +45,18 @@ function MethodsServices($cordovaSQLite, LessonsServices) {
     return methods;
   }
 
-  function setTrack(track) {
-    if(tracks){
-      for(var key in track){
-
-        if(tracks[key]){
-          console.log('track[key] : ', track[key]);
-          return true;
-        }
-      }
-    }
-    return false;
+  function resetTracks() {
+    tracks = {};
   }
 
   function storeTrack(track) {
-    console.log('===============  storeTrack:============================');
-    console.log('track : ', track);
+    var lessonTracks = LessonsServices.getLesson()["tracks"];
+    tracks = lessonTracks? angular.fromJson(lessonTracks) : {};
+
     for(var key in track){
-      console.log('key in StoreTrack : ', key);
       tracks[key] = track[key];
     }
     var star = getStar(track);
-    console.log('tracks ; ', tracks);
     LessonsServices.updateStarTracks(star, tracks);
   }
 
@@ -90,7 +80,8 @@ function MethodsServices($cordovaSQLite, LessonsServices) {
     setMethod: setMethod,
     getMethod: getMethod,
     insert: insert,
-    storeTrack: storeTrack
+    storeTrack: storeTrack,
+    resetTracks: resetTracks
   }
 
 }

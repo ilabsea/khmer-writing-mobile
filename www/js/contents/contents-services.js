@@ -2,9 +2,9 @@ angular.module('app')
 
 .factory("ContentsServices", ContentsServices)
 
-ContentsServices.$inject = ['$cordovaSQLite', '$rootScope', '$cordovaFileTransfer', 'ENDPOINT'];
+ContentsServices.$inject = ['$cordovaSQLite', '$rootScope', '$cordovaFileTransfer', 'ENDPOINT', '$state'];
 
-function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDPOINT) {
+function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDPOINT, $state) {
 
   function getByLessonIdMethodId(lessonIdApi, methodIdApi) {
     var query = "SELECT * FROM contents WHERE lesson_id_api = ? AND writing_method_id_api = ?";
@@ -34,21 +34,28 @@ function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDP
 
       var imageClueName = "", audioName = "" , imageName  = "", imageAnswerName= "";
 
-      if(content["image_clue"]["url"])
+      if(content["image_clue"]["url"]){
         imageClueName = content["image_clue"]["url"].split("/").pop();
-      if(content["audio"]["url"])
+        mediaTransfer(content, content["image_clue"]["url"]);
+      }
+      if(content["audio"]["url"]){
         audioName = content["audio"]["url"].split("/").pop();
-      if(content["image"]["url"])
+        mediaTransfer(content, content["audio"]["url"]);
+      }
+      if(content["image"]["url"]){
         imageName = content["image"]["url"].split("/").pop();
-      if(content["image_answer"]["url"])
+        mediaTransfer(content, content["image"]["url"]);
+      }
+      if(content["image_answer"]["url"]){
         imageAnswerName = content["image_answer"]["url"].split("/").pop();
+        mediaTransfer(content, content["image_answer"]["url"]);
+      }
 
       var contentData = [content.content, content.id, content.writing_method_id, content.lesson_id, content.created_at,
                         content.updated_at, content.content_in_khmer, imageClueName, audioName, imageName, imageAnswerName];
-
-
       $cordovaSQLite.execute(db, query, contentData).then(function(res) {
         $rootScope.hideSpinner();
+        $state.go('grades');
       }, function(err){
         console.log('err in inserting contents : ', err);
       });
@@ -56,55 +63,17 @@ function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDP
     }
   }
 
-  function imageTransfer(){
+  function mediaTransfer(content, mediaUrl){
     var path = cordova.file.applicationStorageDirectory +  "lesson" + content.lesson_id + "/method" + content.writing_method_id + "/";
-
-    if(imageClueName){
-      var targetImageClue = path + imageClueName;
-      $cordovaFileTransfer.download(ENDPOINT.url + content["image_clue"]["url"], targetImageClue, {}, true).then(function (result) {
-        console.log('success targetImageClue : ', targetImageClue);
-      }, function (error) {
-        console.log('error targetImageClue: ', error);;
-      }, function (progress) {
-        a = (progress.loaded / progress.total) * 100;
-        console.log('a : ', a);
-      });
-    }
-
-    if(audioName){
-      var targetAudio = path + audioName;
-      $cordovaFileTransfer.download(ENDPOINT.url + content["audio"]["url"], targetAudio, {}, true).then(function (result) {
-        console.log('success audio : ', targetAudio);
-      }, function (error) {
-        console.log('error audio: ', error);;
-      }, function (progress) {
-        b = (progress.loaded / progress.total) * 100;
-        console.log('b : ', b);
-      });
-    }
-
-    if(imageName){
-      var targetImage = path + imageName;
-      $cordovaFileTransfer.download(ENDPOINT.url + content["image"]["url"], targetImage, {}, true).then(function (result) {
-        console.log('success targetImage : ', targetImage);
-      }, function (error) {
-            console.log('error targetImageClue: ', error);;
-      }, function (progress) {
-        c = (progress.loaded / progress.total) * 100;
-        console.log('c : ', c);
-      });
-    }
-    if(imageAnswerName){
-      var targetImageAnswer = path + imageAnswerName;
-      $cordovaFileTransfer.download(ENDPOINT.url + content["image_answer"]["url"], targetImageAnswer, {}, true).then(function (result) {
-        console.log('success targetImageAnswer  : ', targetImageAnswer);
-      }, function (error) {
-            console.log('error targetImageAnswer: ', error);;
-      }, function (progress) {
-        d = (progress.loaded / progress.total) * 100;
-        console.log('d : ', d);
-      });
-    }
+    var target = path + mediaUrl.split("/").pop();
+    $cordovaFileTransfer.download(ENDPOINT.url + mediaUrl, target, {}, true).then(function (result) {
+      console.log('success targetImage : ', target);
+    }, function (error) {
+          console.log('error targetImageClue: ', error);;
+    }, function (progress) {
+      c = (progress.loaded / progress.total) * 100;
+      console.log('c : ', c);
+    });
   }
 
   return {

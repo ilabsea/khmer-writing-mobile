@@ -11,11 +11,17 @@ angular.module('app')
     GradesServices.setGrade(grade);
   }
 
-  getGrades();
-
   function getGrades() {
     GradesServices.all().then(function(grades){
       vm.grades = grades;
     })
   }
+
+  vm.$on('$stateChangeSuccess', function(event, toState) {
+    if (toState.url== "/grades") {
+      $ionicPlatform.ready(function () {
+        getGrades();
+      });
+    }
+  });
 })

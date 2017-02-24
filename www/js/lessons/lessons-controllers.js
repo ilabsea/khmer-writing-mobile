@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices, $ionicHistory, $state) {
+.controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices, $ionicHistory, $state, MethodsServices) {
   var vm = $scope, currentGrade = GradesServices.getGrade();
 
   var lesson = [];
@@ -60,7 +60,6 @@ angular.module('app')
   }
 
   function setLessons() {
-    console.log('currentGrade : ', currentGrade);
     LessonsServices.getByGradeIdApi(currentGrade.grade_id_api).then(function (result) {
       lessons = result;
       vm.totalLessons = lessons.length;
@@ -71,6 +70,7 @@ angular.module('app')
   function setLesson(lessonParam) {
     console.log('lessonParam : ', lessonParam);
     LessonsServices.setLesson(lessonParam);
+    MethodsServices.resetTracks({});
     $state.go('methods');
   }
 })

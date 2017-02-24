@@ -52,11 +52,16 @@ function LessonsServices($cordovaSQLite, SettingsServices, ContentsServices) {
   }
 
   function updateStarTracks(star, tracks){
+    updateCurrentLesson(star, tracks);
+
     var query = "UPDATE lessons SET star=?, tracks=? WHERE id=?" ;
     var lessonUpdate = [star, tracks, lesson.id];
-    $cordovaSQLite.execute(db, query, lessonUpdate).then(function(res){
-      console.log('res update star tracks: ', res);
-    });
+    $cordovaSQLite.execute(db, query, lessonUpdate);
+  }
+
+  function updateCurrentLesson(star, tracks) {
+    lesson.star = star;
+    lesson.tracks = tracks;
   }
 
   return{
