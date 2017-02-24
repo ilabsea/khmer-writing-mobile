@@ -14,13 +14,16 @@ angular.module('app')
   vm.goBack = goBack;
   vm.totalLessons;
   vm.range = range;
+  vm.totalStarLessons = 0;
 
   setLessons();
 
   function setLessonsBuilt() {
+    vm.totalStarLessons = 0;
     vm.lessonsBuilt = [];
-    for(var i = 0; i<lessons.length; i++){
+    for(var i = 0; i < lessons.length; i++){
       var lesson = lessons[i];
+      vm.totalStarLessons = vm.totalStarLessons + lesson.star;
       if(Math.floor(i / 6) == index ){
         vm.lessonsBuilt.push(lesson);
       }
@@ -62,15 +65,25 @@ angular.module('app')
   function setLessons() {
     LessonsServices.getByGradeIdApi(currentGrade.grade_id_api).then(function (result) {
       lessons = result;
-      vm.totalLessons = lessons.length;
+      vm.totalLessons = lessons.length * 3;
       setLessonsBuilt();
     });
   }
 
   function setLesson(lessonParam) {
-    console.log('lessonParam : ', lessonParam);
     LessonsServices.setLesson(lessonParam);
     MethodsServices.resetTracks({});
     $state.go('methods');
   }
+
+  vm.$on('$stateChangeSuccess', function(event, toState) {
+    if (toState.url== "/lessons") {
+      vm.totalStarLessons = 0;
+      for(var i = 0; i < vm.lessonsBuilt.length; i++){
+        var lesson = vm.lessonsBuilt[i];
+        vm.totalStarLessons = vm.totalStarLessons + lesson.star;
+      }
+    }
+  });
+
 })
