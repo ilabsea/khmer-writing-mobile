@@ -1,11 +1,14 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices, ContentsServices, MethodsServices, $state, $cordovaMedia, BrushesServices, $ionicPlatform, $ionicPopup){
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices,
+            ContentsServices, MethodsServices, $state, $cordovaMedia,
+            BrushesServices, $ionicPlatform, $ionicPopup, TracksServices){
   var vm = $scope, canvas, signaturePad, brushSize, brushColor;
 
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
+  var currentTracks = TracksServices.getCurrentTrack();
 
   vm.currentLesson = currentLesson;
 
@@ -34,8 +37,8 @@ angular.module('app')
 
   function setContents() {
     ContentsServices.getByLessonIdMethodId(vm.lessonIdApi, vm.writingMethodIdApi).then(function (contents) {
-      var trackJson = currentLesson["tracks"] ? angular.fromJson(currentLesson["tracks"]) : "";
-      index = trackJson && trackJson[vm.methodCode]? trackJson[vm.methodCode]["index"] : 0;
+      var tracksJson = currentTracks["tracks"] ? angular.fromJson(currentTracks["tracks"]) : "";
+      index = tracksJson && tracksJson[vm.methodCode]? tracksJson[vm.methodCode]["index"] : 0;
       vm.contents = contents;
       setContentDataChange(contents);
       canvas = document.getElementById('drawingCanvas');
@@ -59,12 +62,12 @@ angular.module('app')
 
   function goBack() {
     $state.go('methods');
-    var track = getCurrentTrack();
-    MethodsServices.storeTrack(track);
+    var track = getTrackPerMethod();
+    TracksServices.storeTrack(track);
     signaturePad.off();
   }
 
-  function getCurrentTrack(){
+  function getTrackPerMethod(){
     var track = {};
     track[vm.methodCode] = {"index": index, "number_contents": vm.contents.length - 1 , "content_id_api": vm.contents[index]["content_id_api"]};
     return track;

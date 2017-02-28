@@ -4,8 +4,8 @@ angular.module('app')
 MethodsServices.$inject = ['$cordovaSQLite', 'LessonsServices']
 
 function MethodsServices($cordovaSQLite, LessonsServices) {
-  // tracks = {'methodCode' : {"index": "", "number_contents": "", "content_id_api": ""} , 'methodCode' : {}};
-  var method, tracks = {};
+
+  var method;
 
   function setMethod(methodParam) {
     method = methodParam;
@@ -45,43 +45,11 @@ function MethodsServices($cordovaSQLite, LessonsServices) {
     return methods;
   }
 
-  function resetTracks() {
-    tracks = {};
-  }
-
-  function storeTrack(track) {
-    var lessonTracks = LessonsServices.getLesson()["tracks"];
-    tracks = lessonTracks? angular.fromJson(lessonTracks) : {};
-
-    for(var key in track){
-      tracks[key] = track[key];
-    }
-    var star = getStar(tracks);
-    LessonsServices.updateStarTracks(star, tracks);
-  }
-
-  function getStar(tracks) {
-    var star = 0;
-    if(tracks["2"]){
-      var percentageUserPlay = Math.round(tracks[2]["index"]/tracks[2]["number_contents"] *100);
-      if( percentageUserPlay == 100){
-        star = 3;
-      }else if(percentageUserPlay >= 60){
-        star = 2;
-      }else if(percentageUserPlay >= 30){
-        star = 1;
-      }
-    }
-    return star;
-  }
-
   return{
     getMethodsByLessonId: getMethodsByLessonId,
     setMethod: setMethod,
     getMethod: getMethod,
-    insert: insert,
-    storeTrack: storeTrack,
-    resetTracks: resetTracks
+    insert: insert
   }
 
 }

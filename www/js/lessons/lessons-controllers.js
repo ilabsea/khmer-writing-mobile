@@ -1,9 +1,11 @@
 angular.module('app')
 
-.controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices, $ionicHistory, $state, MethodsServices) {
+.controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices,
+            $ionicHistory, $state, MethodsServices, $ionicPlatform, UsersServices, TracksServices) {
   var vm = $scope, currentGrade = GradesServices.getGrade();
 
-  var lesson = [];
+  var lessons = [];
+  var tracks = [];
   var index = 0;
 
   vm.lessonsBuilt = [];
@@ -16,18 +18,24 @@ angular.module('app')
   vm.range = range;
   vm.totalStarLessons = 0;
 
-  setLessons();
-
   function setLessonsBuilt() {
     vm.totalStarLessons = 0;
     vm.lessonsBuilt = [];
     for(var i = 0; i < lessons.length; i++){
       var lesson = lessons[i];
-      vm.totalStarLessons = vm.totalStarLessons + lesson.star;
+      for(var j = 0; j < tracks.length ; j++){
+        if(tracks[j]["lesson_id"] == lesson.id){
+          lesson.star = tracks[j].star;
+        }
+      }
+      console.log('lesson  : ', lesson);
+      if(lesson.star)
+        vm.totalStarLessons = vm.totalStarLessons + lesson.star;
       if(Math.floor(i / 6) == index ){
         vm.lessonsBuilt.push(lesson);
       }
     }
+  console.log('vm.lessonsBuilt setLessonsBuilt : ', vm.lessonsBuilt);
   }
 
   function range(min, max, step) {
@@ -66,23 +74,23 @@ angular.module('app')
     LessonsServices.getByGradeIdApi(currentGrade.grade_id_api).then(function (result) {
       lessons = result;
       vm.totalLessons = lessons.length * 3;
-      setLessonsBuilt();
+      console.log('UsersServices.getCurrentUser : ', UsersServices.getCurrentUser());
+      TracksServices.getByUserId(UsersServices.getCurrentUser().id).then(function(tracksRes){
+        tracks = tracksRes;
+        console.log('tracks : ', tracks);
+        setLessonsBuilt();
+      });
     });
   }
 
   function setLesson(lessonParam) {
     LessonsServices.setLesson(lessonParam);
-    MethodsServices.resetTracks({});
     $state.go('methods');
   }
 
   vm.$on('$stateChangeSuccess', function(event, toState) {
     if (toState.url== "/lessons") {
-      vm.totalStarLessons = 0;
-      for(var i = 0; i < vm.lessonsBuilt.length; i++){
-        var lesson = vm.lessonsBuilt[i];
-        vm.totalStarLessons = vm.totalStarLessons + lesson.star;
-      }
+      setLessons();
     }
   });
 
