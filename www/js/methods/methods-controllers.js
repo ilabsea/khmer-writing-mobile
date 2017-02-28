@@ -11,6 +11,7 @@ angular.module('app')
   vm.goBack = goBack;
 
   setMethods();
+  console.log('currentLesson : ', currentLesson);
 
   function setMethods() {
     MethodsServices.getMethodsByLessonId(currentLesson.lesson_id_api).then(function(methods) {

@@ -105,6 +105,9 @@ ion-view {
   background: url("../img/content/brush-setting.png") center center no-repeat;
   background-size: contain; }
 
+.resetTracks {
+  background: transparent url("../img/content/restart.png") center center no-repeat; }
+
 .answer-popup .popup {
   margin-left: -54%;
   margin-top: 7% !important;

@@ -98,6 +98,10 @@
   background-size: contain;
 }
 
+.resetTracks{
+  background: transparent url("../img/content/restart.png") $background;
+}
+
 .answer-popup{
   .popup{
     margin-left: -54%;

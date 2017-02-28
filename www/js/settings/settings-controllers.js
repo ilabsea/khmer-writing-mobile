@@ -13,6 +13,10 @@ angular.module('app')
     vm.isOpen = !vm.isOpen;
   };
   vm.download = download;
+  vm.isDatabaseDownloaded = SettingsServices.getDatabaseDownloaded();
+
+  vm.deleteUserStyle = { "width": vm.isDatabaseDownloaded ? "28%":"25%"};
+  vm.soundStyle = {"width": vm.isDatabaseDownloaded ? "35%":"25%", "margin-left": "0%"};
 
   var popup;
 
@@ -44,7 +48,7 @@ angular.module('app')
   }
 
   function download() {
-    vm.showSpinner('templates/loading.html');
+    $ionicLoading.show('templates/loading.html');
     SettingsServices.downloadGrades().then(function(grades){
       GradesServices.insert(grades);
     });

@@ -54,10 +54,20 @@ function SettingsServices($cordovaSQLite, $q, ENDPOINT, $http) {
     });
   }
 
+  function setDatabaseDownloaded(state) {
+    localStorage.setItem('databaseDownloaded', state)
+  }
+
+  function getDatabaseDownloaded() {
+    return localStorage.getItem('databaseDownloaded')
+  }
+
   return {
     downloadGrades: downloadGrades,
     downloadWritingMethods: downloadWritingMethods,
     downloadLessons: downloadLessons,
-    downloadContents: downloadContents
+    downloadContents: downloadContents,
+    setDatabaseDownloaded: setDatabaseDownloaded,
+    getDatabaseDownloaded: getDatabaseDownloaded
   }
 }

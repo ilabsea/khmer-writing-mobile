@@ -19,6 +19,7 @@ angular.module('app')
   vm.methodCode = currentMethod.code;
 
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
+  vm.resetCurrentTrack = resetCurrentTrack;
 
   var path = cordova.file.applicationStorageDirectory + "lesson" + vm.lessonIdApi + "/method" + vm.writingMethodIdApi + "/";
 
@@ -30,7 +31,6 @@ angular.module('app')
   vm.playing = false;
 
   setContents();
-
 
   function setContents() {
     ContentsServices.getByLessonIdMethodId(vm.lessonIdApi, vm.writingMethodIdApi).then(function (contents) {
@@ -130,6 +130,12 @@ angular.module('app')
     vm.image =  path + contents[index]["image"];
     vm.imageClue = path + contents[index]["image_clue"];
     vm.imageAnswer = path + contents[index]["image_answer"];
+  }
+
+  function resetCurrentTrack(){
+    index = 0 ;
+    setContentDataChange(vm.contents);
+    signaturePad.clear();
   }
 
   vm.$on('$stateChangeSuccess', function(event, toState) {

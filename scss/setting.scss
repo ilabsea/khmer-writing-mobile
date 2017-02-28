@@ -33,25 +33,22 @@
 }
 
 .new-user{
-  background: url(../img/setting/new.png) center center no-repeat;
+  background: url("../img/setting/new.png") $background;
 }
 
 .change-user{
-  background: url(../img/setting/change.png) $background;
+  background: url("../img/setting/change.png") $background;
   margin-top: 2%;
 }
 
 .delete-user{
-  background: url(../img/setting/delete.png) $background;
-  width: 25% !important;
+  background: url("../img/setting/delete.png") $background;
   display: inline-block;
 }
 
 .sound{
   display: inline-block;
   background: url("../img/setting/sound-close.png") $background;
-  width: 28% !important;
-  margin-left: 0% !important;
 }
 
 .sound.open{
@@ -59,12 +56,12 @@
 }
 
 .aboutus{
-  background: url(../img/setting/aboutus.png) $background;
+  background: url("../img/setting/aboutus.png") $background;
   margin-top: 2%;
 }
 
 .avatar {
-  background: url(../img/setting/avatar-box.png) center center no-repeat;
+  background: url("../img/setting/avatar-box.png") $background;
   background-size: contain;
   margin-top: 20%;
   margin-left: 36.5%;

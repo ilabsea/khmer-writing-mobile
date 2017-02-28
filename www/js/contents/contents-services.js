@@ -2,9 +2,9 @@ angular.module('app')
 
 .factory("ContentsServices", ContentsServices)
 
-ContentsServices.$inject = ['$cordovaSQLite', '$rootScope', '$cordovaFileTransfer', 'ENDPOINT', '$state'];
+ContentsServices.$inject = ['$cordovaSQLite', '$rootScope', '$cordovaFileTransfer', 'ENDPOINT', '$state', 'SettingsServices'];
 
-function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDPOINT, $state) {
+function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDPOINT, $state, SettingsServices) {
 
   function getByLessonIdMethodId(lessonIdApi, methodIdApi) {
     var query = "SELECT * FROM contents WHERE lesson_id_api = ? AND writing_method_id_api = ?";
@@ -33,7 +33,6 @@ function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDP
                   " image_clue, audio, image, image_answer) VALUES (? , ? , ? , ?, ?, ?, ? , ? , ?, ? , ?) ";
 
       var imageClueName = "", audioName = "" , imageName  = "", imageAnswerName= "";
-
       if(content["image_clue"]["url"]){
         imageClueName = content["image_clue"]["url"].split("/").pop();
         mediaTransfer(content, content["image_clue"]["url"]);
@@ -50,16 +49,13 @@ function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDP
         imageAnswerName = content["image_answer"]["url"].split("/").pop();
         mediaTransfer(content, content["image_answer"]["url"]);
       }
-
       var contentData = [content.content, content.id, content.writing_method_id, content.lesson_id, content.created_at,
                         content.updated_at, content.content_in_khmer, imageClueName, audioName, imageName, imageAnswerName];
       $cordovaSQLite.execute(db, query, contentData).then(function(res) {
-        $rootScope.hideSpinner();
         $state.go('grades');
       }, function(err){
         console.log('err in inserting contents : ', err);
       });
-
     }
   }
 

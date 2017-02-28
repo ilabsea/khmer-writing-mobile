@@ -49,32 +49,29 @@ ion-view {
   height: 21%; }
 
 .new-user {
-  background: url(../img/setting/new.png) center center no-repeat; }
+  background: url("../img/setting/new.png") center center no-repeat; }
 
 .change-user {
-  background: url(../img/setting/change.png) center center no-repeat;
+  background: url("../img/setting/change.png") center center no-repeat;
   margin-top: 2%; }
 
 .delete-user {
-  background: url(../img/setting/delete.png) center center no-repeat;
-  width: 25% !important;
+  background: url("../img/setting/delete.png") center center no-repeat;
   display: inline-block; }
 
 .sound {
   display: inline-block;
-  background: url("../img/setting/sound-close.png") center center no-repeat;
-  width: 28% !important;
-  margin-left: 0% !important; }
+  background: url("../img/setting/sound-close.png") center center no-repeat; }
 
 .sound.open {
   background-image: url("../img/setting/sound-open.png"); }
 
 .aboutus {
-  background: url(../img/setting/aboutus.png) center center no-repeat;
+  background: url("../img/setting/aboutus.png") center center no-repeat;
   margin-top: 2%; }
 
 .avatar {
-  background: url(../img/setting/avatar-box.png) center center no-repeat;
+  background: url("../img/setting/avatar-box.png") center center no-repeat;
   background-size: contain;
   margin-top: 20%;
   margin-left: 36.5%;
