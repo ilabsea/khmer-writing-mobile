@@ -14,9 +14,14 @@ angular.module('app')
   };
   vm.download = download;
   vm.isDatabaseDownloaded = SettingsServices.getDatabaseDownloaded();
+  vm.isGuestUser = function(){
+    console.log('vm.currentUser : ', vm.currentUser);
+    return vm.currentUser.id == 1;
+  }
 
   vm.deleteUserStyle = { "width": vm.isDatabaseDownloaded ? "28%":"25%"};
-  vm.soundStyle = {"width": vm.isDatabaseDownloaded ? "35%":"25%", "margin-left": "0%"};
+  vm.soundStyle = {"width": vm.isDatabaseDownloaded ? "35%":"25%", "margin-left": vm.isGuestUser() ? "20%" : "0%"};
+
 
   var popup;
 

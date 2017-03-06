@@ -65,10 +65,7 @@ function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDP
     $cordovaFileTransfer.download(ENDPOINT.url + mediaUrl, target, {}, true).then(function (result) {
       console.log('success targetImage : ', target);
     }, function (error) {
-          console.log('error targetImageClue: ', error);;
-    }, function (progress) {
-      c = (progress.loaded / progress.total) * 100;
-      console.log('c : ', c);
+      console.log('error targetImageClue: ', error);;
     });
   }
 
