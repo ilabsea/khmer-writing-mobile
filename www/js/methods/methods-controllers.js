@@ -26,9 +26,7 @@ angular.module('app')
   }
 
   function setTracks(){
-    console.log('UsersServices.getUsers() : ', UsersServices.getCurrentUser());
     TracksServices.get(currentLesson.id, UsersServices.getCurrentUser().id).then(function(tracks){
-      console.log('tracks in method controller : ', tracks);
       tracks = tracks ? tracks : "";
       TracksServices.setCurrentTracks(tracks);
     });

@@ -28,14 +28,12 @@ angular.module('app')
           lesson.star = tracks[j].star;
         }
       }
-      console.log('lesson  : ', lesson);
       if(lesson.star)
         vm.totalStarLessons = vm.totalStarLessons + lesson.star;
       if(Math.floor(i / 6) == index ){
         vm.lessonsBuilt.push(lesson);
       }
     }
-  console.log('vm.lessonsBuilt setLessonsBuilt : ', vm.lessonsBuilt);
   }
 
   function range(min, max, step) {
@@ -74,10 +72,8 @@ angular.module('app')
     LessonsServices.getByGradeIdApi(currentGrade.grade_id_api).then(function (result) {
       lessons = result;
       vm.totalLessons = lessons.length * 3;
-      console.log('UsersServices.getCurrentUser : ', UsersServices.getCurrentUser());
       TracksServices.getByUserId(UsersServices.getCurrentUser().id).then(function(tracksRes){
         tracks = tracksRes;
-        console.log('tracks : ', tracks);
         setLessonsBuilt();
       });
     });
