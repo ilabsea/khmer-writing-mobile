@@ -17,7 +17,6 @@ angular.module('app')
   }
 
   vm.setCurrentUser = function(user){
-    console.log('user : ', user);
     UsersServices.setCurrentUser(user);
   }
 

@@ -10,7 +10,6 @@ function TracksServices($cordovaSQLite, LessonsServices, UsersServices) {
   function insert(lessonId, userId, tracks, star){
     var query = "INSERT INTO tracks (lesson_id , user_id, tracks, star) VALUES (? , ? , ? , ?)" ;
     var data = [lessonId, userId, tracks, star];
-    console.log('data in insert : ', data);
     $cordovaSQLite.execute(db, query, data);
   }
 
@@ -36,7 +35,6 @@ function TracksServices($cordovaSQLite, LessonsServices, UsersServices) {
   }
 
   function storeTrack(track) {
-    console.log('userTracks storeTrack : ', userTracks);
     if(userTracks["id"]){
       tracks = userTracks["tracks"] ? angular.fromJson(userTracks["tracks"]) : {};
       for(var key in track){
@@ -45,7 +43,6 @@ function TracksServices($cordovaSQLite, LessonsServices, UsersServices) {
       var star = getStar(tracks);
       update(tracks, star);
     }else{
-      console.log('hello it is insert');
       var star = getStar(track);
       insert(LessonsServices.getLesson().id, UsersServices.getCurrentUser().id, track, star);
     }

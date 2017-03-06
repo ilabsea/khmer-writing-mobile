@@ -14,11 +14,9 @@ angular.module('app')
   function getGrades() {
     GradesServices.all().then(function(grades){
       if(grades.length > 0 && !SettingsServices.getDatabaseDownloaded()){
-        console.log('this condition');
         SettingsServices.setDatabaseDownloaded(true);
         $ionicLoading.hide();
       }
-      console.log('grades : ', grades);
       vm.grades = grades;
     })
   }
