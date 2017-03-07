@@ -54,7 +54,8 @@ angular.module('app')
   }
 
   function playSound() {
-    var src = '/android_asset/www/audio/grade' + vm.gradeCode + '/lesson' + vm.lessonCode + '/' + vm.content + '.wav';
+    var src = path + vm.contents[index]["audio"];
+    console.log('src : ', src);
     var media = $cordovaMedia.newMedia(src);
     vm.playing = true;
     media.play();
