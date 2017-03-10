@@ -1,0 +1,20 @@
+<ion-view class='method-background'>
+
+  <ion-content scroll='false'>
+
+    <a ui-sref='lessons' class="button button-icon icon ion-back"></a>
+
+    <div class='lesson-title-contain'>
+      <span class='method-lesson-text'> មេរៀនទី {{lessonKhmerNumeric}} ៖ </span>
+      <br>
+      <span class='lesson-title'> {{lessonTitle}} </spanp>
+    </div>
+
+    <div class='method-contain'>
+      <div ng-repeat='method in methods' ui-sref='contents' ng-click='setMethod(method)' class='method-item'>
+        <img ng-src='img/method/{{method.icon}}.png'>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

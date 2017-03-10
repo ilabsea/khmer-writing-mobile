@@ -1,0 +1,23 @@
+@import 'font';
+
+$font-stack: 'Daun Teav';
+$background: center center no-repeat;
+
+ion-view{
+  font-family: $font-stack !important;
+}
+
+.app-background {
+  background: url("../img/app-background.png") $background fixed;
+  background-size: cover;
+}
+
+.activated{
+  opacity: .3;
+}
+
+.popup {
+  width: 60% !important;
+  font-size: 20px;
+  text-align: center;
+}

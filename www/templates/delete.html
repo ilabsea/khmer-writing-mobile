@@ -1,0 +1,14 @@
+<br>
+<p> តើអ្នកពិតជាចង់លុបគណនីនេះមែនរីទេ? </p>
+<br>
+<p style='color: #1a498b'> សូមបញ្ចូលលេខ {{randomNumber}} ក្នុងប្រអប់ </br> </br> រួចសូមចុចពាក្យ "យល់ព្រម" ដេីម្បីលុប !!! </p>
+<br>
+
+<p style='color: red;' ng-if='!valid'> លេខដែលអ្នកបញ្ចូលមិនត្រឹមត្រូវ សូមបញ្ចូលម្តងទៀត !!! <br></p>
+
+<form name='formDelete' ng-submit='removeUser(randomInput)'>
+  <input type='text' ng-model='randomInput' placeholder="បញ្ចូលលេខ" required style='width: 50%; margin-left:25%;'>
+  <br>
+  <button class='button' ng-click='reset()'>អត់ទេ</button>
+  <button class='button button-balanced' type='submit' ng-disabled='formDelete.$invalid' >យល់ព្រម</button>
+</form>

@@ -2,34 +2,83 @@ angular
 .module('app')
 .config(routes);
 
-routes.$inject = ['$stateProvider', '$urlRouterProvider', '$compileProvider'];
+routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-function routes($stateProvider, $urlRouterProvider, $compileProvider) {
+function routes($stateProvider, $urlRouterProvider) {
   $stateProvider
-  .state('classes', {
-    url: '/classes',
-    templateUrl: 'js/classes/classes-list.html',
-    controller: 'ClassesCtrl'
+
+  .state('home', {
+    url: '/home',
+    cache: false,
+    templateUrl: 'templates/users.html',
+    controller: "UsersCtrl",
+    resolve:{
+      "isHome": function(){
+        return true;
+      }
+    }
   })
 
-  .state('lessons-in-class', {
-    url: '/classes/:classId',
-    templateUrl: 'js/lessons/lessons-list.html',
+  .state('users', {
+    url: '/users',
+    cache: false,
+    templateUrl: 'templates/users.html',
+    controller: "UsersCtrl",
+    resolve:{
+      "isHome": function(){
+        return false;
+      }
+    }
+  })
+
+  .state('grades', {
+    url: '/grades',
+    templateUrl: 'templates/grades-list.html',
+    controller: 'GradesCtrl'
+  })
+
+  .state('lessons', {
+    url: '/lessons',
+    templateUrl: 'templates/lessons-list.html',
     controller: 'LessonsCtrl'
   })
 
-  .state('lesson', {
-    url: '/lessons/:lessonId',
-    templateUrl: 'js/lessons/lesson.html',
-    controller: 'LessonCtrl'
+  .state('methods', {
+    url: '/methods',
+    templateUrl: 'templates/methods-list.html',
+    controller: 'MethodsCtrl'
   })
 
-  .state('how-to-write', {
-    url: '/lesson/how-to-write',
-    templateUrl: 'js/practice-categories/how-to-write.html',
-    controller: 'HowToWriteCtrl'
+  .state('contents', {
+    url: '/contents',
+    templateUrl: 'templates/contents.html',
+    controller: 'ContentsCtrl'
   })
 
+  .state('settings', {
+    url: '/settings',
+    cache: false,
+    templateUrl: 'templates/settings.html',
+    controller: 'SettingsCtrl'
+  })
 
-  $urlRouterProvider.otherwise('/classes')
+  .state('accounts', {
+    url: '/accounts/:state',
+    cache: false,
+    templateUrl: 'templates/account.html',
+    controller: 'AccountsCtrl'
+  })
+
+  .state('aboutus', {
+    url: '/aboutus',
+    templateUrl: 'templates/aboutus.html'
+  })
+
+  .state('brush', {
+    url: '/brush',
+    templateUrl: 'templates/brush.html',
+    controller: 'BrushesCtrl'
+  })
+
+  $urlRouterProvider.otherwise('/home')
 }

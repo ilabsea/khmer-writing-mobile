@@ -1,0 +1,28 @@
+<ion-view class="lesson-background">
+  <ion-content>
+    <a ui-sref='grades' class="button button-icon icon ion-back"></a>
+    <div class='lesson-grade'>
+      <p> ថ្នាក់ទី ១ </p>
+      <div>
+        <span> {{totalStarLessons}} <span style='color: #26bcf7;'> /{{totalLessons}} </span> </span>
+      </div>
+    </div>
+
+    <div class='lesson-contain'>
+      <div ng-repeat="lesson in lessonsBuilt track by $index" ui-sref='methods' ng-click='setLesson(lesson)' class='lesson-item'>
+        <span class='lesson-text'> មេរៀនទី </span>
+        <span class='lesson-numeric-text'> {{lesson["khmer_numeric"]}}</span>
+        <div class='lesson-star-bar'>
+          <i class='icon ion-star' ng-repeat='number in range(1, lesson.star)' ></i>
+          <i class='icon ion-star blur' ng-repeat='unstar in range(lesson.star + 1 , 3)'></i>
+        </div>
+      </div>
+    </div>
+
+    <div class='lesson-next-previous'>
+      <div class='lesson-previous' ng-click="previous()"></div>
+      <div class='lesson-next' ng-click="next()"></div>
+    </div>
+
+  </ion-content>
+</ion-view>

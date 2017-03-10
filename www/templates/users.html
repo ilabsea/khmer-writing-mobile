@@ -1,0 +1,27 @@
+<ion-view class='app-background'>
+
+  <ion-content scroll='false'>
+    <a class="button button-icon icon ion-close" ui-sref='grades' ng-if='!isHome'></a>
+    <div class='contain-panel'>
+      <div class="user-previous" ng-click='previous()' ng-if='offset > 0'></div>
+
+      <div style="margin-left: 11%;">
+        <div class="user-item" ng-repeat='user in users'>
+          <img ng-src='img/avatar/{{user.avatar_name}}' style="width: 45%; margin-top: 26.5%; ">
+          <p class="user-name">{{user.name}}</p>
+          <p class="user-grade" ng-if='user.id != 1'>ថ្នាក់ទី {{user.grade}} " {{user.type}} " </p>
+          <div ui-sref='grades' ng-click='setCurrentUser(user)'></div>
+        </div>
+      </div>
+
+      <div class="user-item" style="margin-left: 51%;" ng-if='isHome && offset == 0'>
+        <img src='img/avatar/add.png' style="width: 45%; margin-top: 26.5%;" ui-sref="accounts({ state: 'new'})">
+        <p class="user-name" style="margin-top: 13%;">បងេី្កតថ្មី</p>
+      </div>
+
+      <div class="user-next" ng-style='{"margin-top": isHome ? "23%" : "14%"}' ng-click='next()' ng-if='offset + limit < nbUsers'> </div>
+    </div>
+
+  </ion-content>
+
+</ion-view>

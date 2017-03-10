@@ -1,0 +1,25 @@
+@import 'application';
+
+.grade-background {
+  background: url("../img/grade/grade-background.png") $background fixed;
+  background-size: cover;
+}
+
+.grade-contain{
+  display: block;
+  float: right;
+  margin-right: 20%;
+  margin-top: 14%;
+  width: 45%;
+  height: 70%;
+}
+
+.grade-item {
+  width: 80%;
+  height: 28%;
+  margin-left: 14%;
+}
+
+.grade-item img{
+  width: 95%;
+}
