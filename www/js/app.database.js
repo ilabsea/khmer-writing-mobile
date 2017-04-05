@@ -40,3 +40,11 @@ function setDatabaseCopied(state) {
 function getDatabaseCopied() {
   return localStorage.getItem("databaseCopied");
 }
+
+function openDB() {
+  if (window.cordova) {
+    db = $cordovaSQLite.openDB({ name: "khmer-writing.db" }); //device
+  }else{
+    db = window.openDatabase("khmer-writing.db", '1.0', 'larvae report system database', 1024 * 1024 * 100); // browser
+  }
+}
