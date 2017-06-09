@@ -2,9 +2,9 @@ angular.module('app')
 
 .factory('GradesServices', GradesServices)
 
-GradesServices.$inject = ['$cordovaSQLite', 'SettingsServices', 'LessonsServices']
+GradesServices.$inject = ['$cordovaSQLite', 'SettingsServices', 'LessonsServices', '$q']
 
-function GradesServices($cordovaSQLite, SettingsServices, LessonsServices) {
+function GradesServices($cordovaSQLite, SettingsServices, LessonsServices, $q) {
 
   var grade;
 
