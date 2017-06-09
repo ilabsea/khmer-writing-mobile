@@ -24,7 +24,7 @@ angular.module('app')
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
   vm.resetCurrentTrack = resetCurrentTrack;
 
-  var path = cordova.file.applicationStorageDirectory + "lesson" + vm.lessonIdApi + "/method" + vm.writingMethodIdApi + "/";
+  var path = cordova.file.externalApplicationStorageDirectory + "lesson" + vm.lessonIdApi + "/method" + vm.writingMethodIdApi + "/";
 
   var index = 0;
 
@@ -55,7 +55,6 @@ angular.module('app')
 
   function playSound() {
     var src = path + vm.contents[index]["audio"];
-    console.log('src : ', src);
     var media = $cordovaMedia.newMedia(src);
     vm.playing = true;
     media.play();

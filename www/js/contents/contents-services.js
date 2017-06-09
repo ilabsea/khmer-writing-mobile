@@ -2,9 +2,9 @@ angular.module('app')
 
 .factory("ContentsServices", ContentsServices)
 
-ContentsServices.$inject = ['$cordovaSQLite', '$rootScope', '$cordovaFileTransfer', 'ENDPOINT', '$state', 'SettingsServices'];
+ContentsServices.$inject = ['$cordovaSQLite', '$rootScope', '$cordovaFileTransfer', 'ENDPOINT', '$state', 'SettingsServices', '$timeout'];
 
-function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDPOINT, $state, SettingsServices) {
+function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDPOINT, $state, SettingsServices, $timeout) {
 
   function getByLessonIdMethodId(lessonIdApi, methodIdApi) {
     var query = "SELECT * FROM contents WHERE lesson_id_api = ? AND writing_method_id_api = ?";
@@ -35,19 +35,15 @@ function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDP
       var imageClueName = "", audioName = "" , imageName  = "", imageAnswerName= "";
       if(content["image_clue"]["url"]){
         imageClueName = content["image_clue"]["url"].split("/").pop();
-        mediaTransfer(content, content["image_clue"]["url"]);
       }
       if(content["audio"]["url"]){
         audioName = content["audio"]["url"].split("/").pop();
-        mediaTransfer(content, content["audio"]["url"]);
       }
       if(content["image"]["url"]){
         imageName = content["image"]["url"].split("/").pop();
-        mediaTransfer(content, content["image"]["url"]);
       }
       if(content["image_answer"]["url"]){
         imageAnswerName = content["image_answer"]["url"].split("/").pop();
-        mediaTransfer(content, content["image_answer"]["url"]);
       }
       var contentData = [content.content, content.id, content.writing_method_id, content.lesson_id, content.created_at,
                         content.updated_at, content.content_in_khmer, imageClueName, audioName, imageName, imageAnswerName];
@@ -57,16 +53,6 @@ function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, ENDP
         console.log('err in inserting contents : ', err);
       });
     }
-  }
-
-  function mediaTransfer(content, mediaUrl){
-    var path = cordova.file.applicationStorageDirectory +  "lesson" + content.lesson_id + "/method" + content.writing_method_id + "/";
-    var target = path + mediaUrl.split("/").pop();
-    $cordovaFileTransfer.download(ENDPOINT.url + mediaUrl, target, {}, true).then(function (result) {
-      console.log('success targetImage : ', target);
-    }, function (error) {
-      console.log('error targetImageClue: ', error);;
-    });
   }
 
   return {
