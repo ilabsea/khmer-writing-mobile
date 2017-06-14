@@ -8,7 +8,7 @@ function UsersServices($cordovaSQLite) {
 
   function getUsers(offset, limit) {
     var query = "SELECT * FROM users LIMIT (?) OFFSET (?)";
-    return places = $cordovaSQLite.execute(db, query, [limit, offset]).then(function(res) {
+    return $cordovaSQLite.execute(db, query, [limit, offset]).then(function(res) {
       var result = [];
       if(res.rows.length > 0){
         var i = 0,

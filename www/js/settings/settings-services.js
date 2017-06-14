@@ -5,53 +5,36 @@ SettingsServices.$inject = ['$cordovaSQLite', '$q', 'ENDPOINT', '$http']
 
 function SettingsServices($cordovaSQLite, $q, ENDPOINT, $http) {
 
-  function downloadGrades() {
+  function fetch(apiUrl) {
     return $q(function(resolve, reject) {
-      $http.get(ENDPOINT.api + "grades.json")
-        .success(function(grades) {
-          resolve(grades)
+      $http.get(apiUrl)
+        .success(function(result) {
+          resolve(result)
         })
         .error(function(error){
           reject(error);
         });
     });
+  }
+
+  function downloadGrades() {
+    var apiUrl = ENDPOINT.api + "grades.json";
+    return fetch(apiUrl);
   }
 
   function downloadWritingMethods() {
-    return $q(function(resolve, reject) {
-      $http.get(ENDPOINT.api + "writing_methods.json")
-        .success(function(methods) {
-          resolve(methods);
-        })
-        .error(function(error){
-          reject(error);
-        });
-    });
+    var apiUrl = ENDPOINT.api + "writing_methods.json";
+    return fetch(apiUrl);
   }
 
-
   function downloadLessons(gradeId) {
-    return $q(function(resolve, reject) {
-      $http.get(ENDPOINT.api + "grades/" + gradeId + "/lessons.json")
-        .success(function(lessons) {
-          resolve(lessons);
-        })
-        .error(function(error){
-          reject(error);
-        });
-    });
+    var apiUrl = ENDPOINT.api + "grades/" + gradeId + "/lessons.json";
+    return fetch(apiUrl);
   }
 
   function downloadContents(lessonId) {
-    return $q(function(resolve, reject) {
-      $http.get(ENDPOINT.api + "lessons/" + lessonId + "/contents.json")
-        .success(function(contents) {
-          resolve(contents);
-        })
-        .error(function(error){
-          reject(error);
-        });
-    });
+    var apiUrl = ENDPOINT.api + "lessons/" + lessonId + "/contents.json";
+    return fetch(apiUrl);
   }
 
   function setDatabaseDownloaded(state) {
