@@ -40,18 +40,13 @@ angular.module('app')
 
   $ionicPlatform.ready(function() {
     var isDatabaseCopied = getDatabaseCopied();
+    openDB($cordovaSQLite);
     if(!isDatabaseCopied){
-      openDB();
       setDatabaseCopied(true);
       createTables($cordovaSQLite);
-      numberOfUsers();
-      getUsers();
     }
-    else{
-      openDB();
-      numberOfUsers();
-      getUsers();
-    }
+    numberOfUsers();
+    getUsers();
 
   })
 
