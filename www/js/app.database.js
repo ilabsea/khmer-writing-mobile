@@ -41,7 +41,7 @@ function getDatabaseCopied() {
   return localStorage.getItem("databaseCopied");
 }
 
-function openDB() {
+function openDB($cordovaSQLite) {
   if (window.cordova) {
     db = $cordovaSQLite.openDB({ name: "khmer-writing.db" }); //device
   }else{
