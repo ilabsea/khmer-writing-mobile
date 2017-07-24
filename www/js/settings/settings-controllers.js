@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state, SettingsServices, GradesServices, MethodsServices, $ionicLoading){
+.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state, GradesServices, MethodsServices, $ionicLoading){
   var vm = $scope;
 
   vm.currentUser = UsersServices.getCurrentUser();
@@ -12,15 +12,10 @@ angular.module('app')
   vm.toggleSound = function() {
     vm.isOpen = !vm.isOpen;
   };
-  vm.download = download;
-  vm.isDatabaseDownloaded = SettingsServices.getDatabaseDownloaded();
   vm.isGuestUser = function(){
     return vm.currentUser.id == 1;
   }
-
-  vm.deleteUserStyle = { "width": vm.isDatabaseDownloaded ? "28%":"25%"};
-  vm.soundStyle = {"width": vm.isDatabaseDownloaded ? "35%":"25%", "margin-left": vm.isGuestUser() && vm.isDatabaseDownloaded ? "20%" : "0%"};
-  vm.downloadStyle = {"margin-left": vm.isGuestUser() ? "18%":"0%"};
+  vm.soundStyle = {"width": "35%", "margin-left": vm.isGuestUser() ? "20%" : "0%"};
 
   var popup;
 
@@ -49,16 +44,6 @@ angular.module('app')
     }else{
       vm.valid = false;
     }
-  }
-
-  function download() {
-    $ionicLoading.show('templates/loading.html');
-    SettingsServices.downloadGrades().then(function(grades){
-      GradesServices.insert(grades);
-    });
-    SettingsServices.downloadWritingMethods().then(function(methods){
-      MethodsServices.insert(methods);
-    });
   }
 
 })

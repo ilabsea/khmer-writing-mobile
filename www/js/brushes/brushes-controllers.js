@@ -21,7 +21,6 @@ angular.module('app')
     }
   }
 
-
   vm.setSizeLevel = function(level){
     vm.sizeLevel = level;
     if(level == 0){

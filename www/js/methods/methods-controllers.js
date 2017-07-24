@@ -12,7 +12,7 @@ angular.module('app')
   vm.goBack = goBack;
 
   function setMethods() {
-    MethodsServices.getMethodsByLessonId(currentLesson.lesson_id_api).then(function(methods) {
+    MethodsServices.getMethodsByLessonId(currentLesson.id).then(function(methods) {
       vm.methods = methods;
     });
   }

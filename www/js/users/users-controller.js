@@ -38,17 +38,35 @@ angular.module('app')
     });
   }
 
+  function setDatabaseCopied(state) {
+    localStorage.setItem("databaseCopied", state);
+  }
+
+  function getDatabaseCopied() {
+    return localStorage.getItem("databaseCopied");
+  }
+
+  function copyFile(fileName){
+    $cordovaFile.copyFile(cordova.file.applicationDirectory + 'www/', fileName, cordova.file.dataDirectory, fileName)
+      .then(function (success) {
+        db = $cordovaSQLite.openDB(fileName);
+        setDatabaseCopied(true);
+        numberOfUsers();
+        getUsers();
+      }, function (error) {
+        console.log('error file transfer : ', error);
+      });
+  }
+
   $ionicPlatform.ready(function() {
     var isDatabaseCopied = getDatabaseCopied();
-    openDB($cordovaSQLite);
     if(!isDatabaseCopied){
-      setDatabaseCopied(true);
-      createTables($cordovaSQLite);
+      copyFile("khmer_writing.db");
+    }else{
+      db = $cordovaSQLite.openDB("khmer_writing.db");
+      numberOfUsers();
+      getUsers();
     }
-    numberOfUsers();
-    getUsers();
-
   })
-
 
 })
