@@ -7,8 +7,7 @@ plugins
 .DS_Store
 resources
 hooks
-www/khmer-writing.db
+www/khmer_writing.db
+www/img/ilabsea.instedd.khmerwriting
 www/res
-www/img/grade*
 www/css
-www/js/app.endpoint.js

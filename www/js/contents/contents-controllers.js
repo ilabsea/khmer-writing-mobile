@@ -4,6 +4,7 @@ angular.module('app')
             ContentsServices, MethodsServices, $state, $cordovaMedia,
             BrushesServices, $ionicPlatform, $ionicPopup, TracksServices){
   var vm = $scope, canvas, signaturePad, brushSize, brushColor;
+  var media;
 
   var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
@@ -12,9 +13,9 @@ angular.module('app')
 
   vm.currentLesson = currentLesson;
 
-  vm.gradeIdApi = currentGrade.grade_id_api;
-  vm.lessonIdApi = currentLesson.lesson_id_api;
-  vm.writingMethodIdApi = currentMethod.writing_method_id_api;
+  vm.gradeId = currentGrade.id;
+  vm.lessonId = currentLesson.id;
+  vm.writingMethodId = currentMethod.id;
 
   vm.image = "";
   vm.imageClue = "";
@@ -24,19 +25,18 @@ angular.module('app')
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
   vm.resetCurrentTrack = resetCurrentTrack;
 
-  var path = cordova.file.externalApplicationStorageDirectory + "lesson" + vm.lessonIdApi + "/method" + vm.writingMethodIdApi + "/";
+  var path = "img/ilabsea.instedd.khmerwriting/lesson" + vm.lessonId + "/method" + vm.writingMethodId + "/";
 
   var index = 0;
 
   vm.contents = [];
   vm.goBack = goBack;
   vm.playSound = playSound;
-  vm.playing = false;
 
   setContents();
 
   function setContents() {
-    ContentsServices.getByLessonIdMethodId(vm.lessonIdApi, vm.writingMethodIdApi).then(function (contents) {
+    ContentsServices.getByLessonIdMethodId(vm.lessonId, vm.writingMethodId).then(function (contents) {
       var tracksJson = currentTracks["tracks"] ? angular.fromJson(currentTracks["tracks"]) : "";
       index = tracksJson && tracksJson[vm.methodCode]? tracksJson[vm.methodCode]["index"] : 0;
       vm.contents = contents;
@@ -54,9 +54,10 @@ angular.module('app')
   }
 
   function playSound() {
-    var src = path + vm.contents[index]["audio"];
-    var media = $cordovaMedia.newMedia(src);
-    vm.playing = true;
+    if(media)
+      media.stop();
+    var src = "/android_asset/www/" + path + vm.contents[index]["audio"];
+    media = $cordovaMedia.newMedia(src);
     media.play();
   }
 
@@ -69,7 +70,9 @@ angular.module('app')
 
   function getTrackPerMethod(){
     var track = {};
-    track[vm.methodCode] = {"index": index, "number_contents": vm.contents.length - 1 , "content_id_api": vm.contents[index]["content_id_api"]};
+    track[vm.methodCode] = {"index": index,
+                            "number_contents": vm.contents.length - 1 ,
+                            "content_id": vm.contents[index]["id"]};
     return track;
   }
 
@@ -152,6 +155,5 @@ angular.module('app')
       });
     }
   });
-
 
 })

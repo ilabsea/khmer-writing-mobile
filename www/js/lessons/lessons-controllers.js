@@ -69,7 +69,7 @@ angular.module('app')
   }
 
   function setLessons() {
-    LessonsServices.getByGradeIdApi(currentGrade.grade_id_api).then(function (result) {
+    LessonsServices.getByGradeId(currentGrade.id).then(function (result) {
       lessons = result;
       vm.totalLessons = lessons.length * 3;
       TracksServices.getByUserId(UsersServices.getCurrentUser().id).then(function(tracksRes){

@@ -4,7 +4,6 @@ angular
 
 runBlock.$inject = ['$ionicPlatform', '$cordovaSQLite', '$cordovaFile', "$rootScope", "$location", "$ionicHistory", "$ionicLoading"];
 
-var db = null;
 
 function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $location, $ionicHistory) {
 
@@ -16,6 +15,7 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
   });
 
   $ionicPlatform.registerBackButtonAction(function() {
