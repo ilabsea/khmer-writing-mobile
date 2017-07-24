@@ -4,7 +4,7 @@ angular.module('app')
 TracksServices.$inject = ['$cordovaSQLite', 'LessonsServices', 'UsersServices']
 
 function TracksServices($cordovaSQLite, LessonsServices, UsersServices) {
-  // userTracks = {'methodCode' : {"index": "", "number_contents": "", "content_id_api": ""} , 'methodCode' : {}};
+  // userTracks = {'methodCode' : {"index": "", "number_contents": "", "content_id": ""} , 'methodCode' : {}};
   var userTracks;
 
   function insert(lessonId, userId, tracks, star){

@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller('GradesCtrl', function(GradesServices, $scope, $ionicPlatform, $ionicLoading, SettingsServices) {
+.controller('GradesCtrl', function(GradesServices, $scope, $ionicPlatform, $ionicLoading) {
   var vm = $scope;
 
   vm.grades = [];
@@ -13,10 +13,6 @@ angular.module('app')
 
   function getGrades() {
     GradesServices.all().then(function(grades){
-      if(grades.length > 0 && !SettingsServices.getDatabaseDownloaded()){
-        SettingsServices.setDatabaseDownloaded(true);
-        $ionicLoading.hide();
-      }
       vm.grades = grades;
     })
   }
