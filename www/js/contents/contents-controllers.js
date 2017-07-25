@@ -1,19 +1,19 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices,
+.controller("ContentsCtrl", function($scope, LessonsServices,
             ContentsServices, MethodsServices, $state, $cordovaMedia,
             BrushesServices, $ionicPlatform, $ionicPopup, TracksServices){
+
   var vm = $scope, canvas, signaturePad, brushSize, brushColor;
   var media;
 
-  var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
   var currentTracks = TracksServices.getCurrentTrack();
 
   vm.currentLesson = currentLesson;
 
-  vm.gradeId = currentGrade.id;
+  vm.gradeId = 1;
   vm.lessonId = currentLesson.id;
   vm.writingMethodId = currentMethod.id;
 
@@ -25,7 +25,9 @@ angular.module('app')
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
   vm.resetCurrentTrack = resetCurrentTrack;
 
-  var path = "img/ilabsea.instedd.khmerwriting/lesson" + vm.lessonId + "/method" + vm.writingMethodId + "/";
+  var path = "img/ilabsea.instedd.khmerwriting/grade"
+            + vm.gradeId + "/lesson" + vm.lessonId
+            + "/method" + vm.writingMethodId + "/";
 
   var index = 0;
 

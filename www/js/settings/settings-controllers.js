@@ -1,6 +1,7 @@
 angular.module('app')
 
-.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices, $ionicPopup, $state, GradesServices, MethodsServices, $ionicLoading){
+.controller("SettingsCtrl", function($scope, UsersServices, AccountsServices,
+          $ionicPopup, $state, MethodsServices, $ionicLoading){
   var vm = $scope;
 
   vm.currentUser = UsersServices.getCurrentUser();

@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("MethodsCtrl", function($stateParams, $scope, MethodsServices,
+.controller("MethodsCtrl", function($scope, MethodsServices,
             LessonsServices, $state, $ionicPlatform, UsersServices, TracksServices){
   vm = $scope;
   var currentLesson = LessonsServices.getLesson();
