@@ -1,7 +1,9 @@
 //Mobile device
-@media only screen and (min-device-width: 320px)
-                   and (max-device-width: 640px)
-                   and (orientation: landscape) {
+@media only screen
+  and (min-device-width: 500px)
+  and (min-device-height: 320px)
+  and (orientation: landscape) {
+
   $font-size: 11px;
   $font-color: #763617;
 
@@ -31,10 +33,9 @@
 
   .select-grade .input-label {
     margin-left: 8%;
-    font-size: 15px;
     margin-top: 2%;
     font-size: 14px;
-    width: 100% !important;
+    width: 56%;
   }
 
   .select-grade .item-select{
@@ -73,10 +74,100 @@
   }
 }
 
+
+@media only screen
+  and (min-device-width: 640px)
+  and (min-device-height: 360px)
+  and (orientation: landscape){
+  $font-size: 11px;
+  $font-color: #763617;
+
+  .avatar-image {
+    margin-top: 22%;
+  }
+
+  .avatar-image img {
+    width: 70%;
+  }
+
+  .account-name {
+    width: 79%;
+    height: 11%;
+    margin-left: 19%;
+    margin-top: 0%!important;
+  }
+
+  input[type="text"]#name::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+
+  .select-grade{
+    margin-left: 10%;
+    margin-top: -12%;
+  }
+
+  .select-grade span{
+    margin-left: 3%;
+    margin-top: 6%;
+    font-size: $font-size;
+    color: white;
+  }
+
+  .select-grade .input-label {
+    margin-left: 11%;
+    margin-top: 3%;
+    font-size: 14px;
+    color: $font-color;
+  }
+
+  .select-grade .item-select{
+    font-size: 14px;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+
+  .select-grade select {
+    background-color: transparent !important;
+    font-size: 14px !important;
+    color: $font-color !important;
+    margin-top: -1%;
+    left: 48%;
+  }
+
+  .select-type{
+    margin-left: -2%;
+    height: 52px;
+    margin-top: -3%;
+  }
+
+  .select-type .item-select{
+    width: 90%;
+    height: 73%;
+  }
+
+  .select-type select {
+    background-color: transparent !important;
+    font-size: $font-size !important;
+    color: rgb(118, 54, 23) !important;
+  }
+
+  .avatar p{
+    color: $font-color;
+    text-align: center;
+    font-size: $font-size;
+  }
+
+  .avatar-selection button:last-child {
+    margin-left: 16%;
+    margin-top: -3%;
+  }
+}
+
 //Tablet Galaxy
-@media only screen and (min-device-width: 800px)
-                   and (max-device-width: 1280px)
-                   and (orientation: landscape) {
+@media only screen
+  and (min-device-width: 1020px)
+  and (min-device-height: 600px)
+  and (orientation: landscape) {
   $font-size: 22px;
   $font-color: #763617;
 
@@ -97,7 +188,7 @@
   .select-grade .item-select{
     font-size: $font-size;
     margin-left: 15%;
-    margin-top: 5%;
+    margin-top: 25%;
     width: 81%;
     height: 51px;
   }

@@ -46,9 +46,10 @@
 }
 
 // Phone
-@media only screen and (min-device-width: 320px)
-                   and (max-device-width: 640px)
-                   and (orientation: landscape) {
+@media only screen
+  and (min-device-width: 500px)
+  and (min-device-height: 320px)
+  and (orientation: landscape)  {
 
   .icon.ion-close{
     width: 50px;
@@ -58,9 +59,23 @@
   }
 }
 
+@media only screen
+  and (min-device-width: 640px)
+  and (min-device-height: 360px)
+  and (orientation: landscape){
+
+  .icon.ion-close{
+    content: url(../img/icon/close.png)!important;
+    min-height: 40px!important;
+    width: 100%;
+    left: -19%;
+    margin-top: 7%;
+  }
+}
+
 //Tablet Galaxy
-@media only screen and (min-device-width: 800px)
-                   and (max-device-width: 1280px)
+@media only screen and (min-device-width: 1020px)
+                   and (min-device-height: 600px)
                    and (orientation: landscape) {
 
   .icon.ion-close{
