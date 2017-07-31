@@ -10,7 +10,7 @@ ion-view {
 
 .app-background {
   background: url("../img/app-background.png") center center no-repeat fixed;
-  background-size: cover; }
+  background-size: 100% 100%; }
 
 .activated {
   opacity: .3; }
@@ -69,14 +69,6 @@ ion-view {
 .aboutus {
   background: url("../img/setting/aboutus.png") center center no-repeat;
   margin-top: 2%; }
-
-.avatar {
-  background: url("../img/setting/avatar-box.png") center center no-repeat;
-  background-size: contain;
-  margin-top: 20%;
-  margin-left: 36.5%;
-  width: 37%;
-  height: 33%; }
 
 .name {
   color: #FFF;

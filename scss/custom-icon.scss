@@ -18,14 +18,6 @@
   content: url("../img/icon/setting.png")!important;
 }
 
-.icon.ion-close{
-  width: 8%;
-  float: right;
-  margin-top: 5.5%;
-  margin-right: 6.2%;
-  content: url("../img/icon/close.png")!important;
-}
-
 .icon.ion-edit{
   width: 14.5%;
   margin-top: 41.5%;
@@ -44,7 +36,6 @@
   content: url("../img/icon/star-blur.png")!important;
 }
 
-
 .icon.ion-check-search{
   width: 8%;
   float: right;
@@ -52,4 +43,31 @@
   margin-right: 3.5%;
   content: url("../img/icon/check-search.png")!important;
   z-index: 10;
+}
+
+// Phone
+@media only screen and (min-device-width: 320px)
+                   and (max-device-width: 640px)
+                   and (orientation: landscape) {
+
+  .icon.ion-close{
+    width: 50px;
+    float: right;
+    min-height: 40px !important;
+    content: url(../img/icon/close.png)!important
+  }
+}
+
+//Tablet Galaxy
+@media only screen and (min-device-width: 800px)
+                   and (max-device-width: 1280px)
+                   and (orientation: landscape) {
+
+  .icon.ion-close{
+    width: 89%;
+    margin-top: 16%;
+    margin-left: -13%;
+    content: url("../img/icon/close.png")!important;
+  }
+
 }

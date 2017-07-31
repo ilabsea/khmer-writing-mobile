@@ -1,51 +1,68 @@
 <ion-view class='app-background' ng-init='initUser()'>
   <ion-content scroll='false'>
 
-    <a class="button button-icon icon ion-close" ng-click='goBack()'></a>
+
     <div class='account-panel'>
 
-      <form name="formAccount" ng-submit="!form.$invalid && save(user)" style='height: 90%;'>
-        <div class='split-left'>
-          <div style='margin-top: 25%; margin-left: 39%;'><img ng-src='img/avatar/{{selectedAvatar.name}}' style='width: 67%;' class="hide-on-keyboard-open"></div>
-          <label class="item-input account-name">
-            <input type="text"
-                  name='username'
-                  placeholder="បំពេញឈ្មោះនៅទីនេះ" id='name'
-                  ng-model="user.name" required>
-          </label>
-
-          <label class="item-input item-select select-grade">
-            <span style='margin-left:6%; margin-top: 4%; font-size: 19px; color: white;'> {{user.grade}} </span>
-            <div class="input-label"  style='margin-top: 2%; margin-left: 13%;'>
-              ថ្នាក់ទី
+      <form name="formAccount" ng-submit="!form.$invalid && save(user)">
+        <div class="row row-top">
+          <div class="col col-40">
+            <div class='avatar-image'>
+              <img ng-src='img/avatar/{{selectedAvatar.name}}'
+                   class="hide-on-keyboard-open">
             </div>
-            <select  name='grade' style='background-color: transparent; font-size: 22px; color: #763617;' ng-model="user.grade" required>
-                <option>១</option>
-                <option>២</option>
-                <option>៣</option>
-            </select>
-          </label>
+            <label class="item-input account-name">
+              <input type="text"
+                    name='username'
+                    placeholder="ឈ្មោះ" id='name'
+                    ng-model="user.name" required>
+            </label>
 
-          <label class="item-input item-select select-type">
-            <select name='type' style='background-color: transparent; font-size: 22px; color: rgb(118, 54, 23); left: -6px; width: 100%;' ng-model="user.type" required>
-                <option>ក</option>
-                <option>ខ</option>
-                <option>គ</option>
-            </select>
-          </label>
-        </div>
-
-        <div class='split-right'>
-          <p style='color: #763617; text-align: center; font-size: 20px;'>ជ្រេីសរេីសរូបតំណាង</p>
-          <div class="avatar-selection">
-            <div class="avatar-item" ng-repeat='avatar in avatars'
-                  ng-click='select(avatar)'
-                  ng-class="{'selected': avatar.selected}" style="background-image: url(img/avatar/{{avatar.name}})">
+            <div class="row row-top">
+              <div class='col col-60 select-grade'>
+                <label class="item-input item-select">
+                  <span> {{user.grade}} </span>
+                  <div class="input-label">
+                    ថ្នាក់ទី
+                  </div>
+                  <select name='grade'
+                          ng-model="user.grade" required>
+                      <option>១</option>
+                      <option>២</option>
+                      <option>៣</option>
+                  </select>
+                </label>
+              </div>
+              <div class='col col-40 select-type'>
+                <label class="item-input item-select">
+                  <select name='type'
+                          ng-model="user.type" required>
+                      <option>ក</option>
+                      <option>ខ</option>
+                      <option>គ</option>
+                  </select>
+                </label>
+              </div>
             </div>
-            <button type='submit' class='button' ng-click='checkValidation(formAccount)'></button>
           </div>
-        </div>
 
+          <div class="col col-50 avatar">
+            <p>ជ្រេីសរេីសរូបតំណាង</p>
+            <div class="avatar-selection">
+              <div class="avatar-item" ng-repeat='avatar in avatars'
+                    ng-click='select(avatar)'
+                    ng-class="{'selected': avatar.selected}"
+                    style="background-image: url(img/avatar/{{avatar.name}})">
+              </div>
+              <button type='submit' class='button' ng-click='checkValidation(formAccount)'></button>
+            </div>
+          </div>
+
+          <div class="col col-10 div-icon-close">
+            <a class="button button-icon icon ion-close" ng-click='goBack()'></a>
+          </div>
+
+        </div>
       </form>
     </div>
 
