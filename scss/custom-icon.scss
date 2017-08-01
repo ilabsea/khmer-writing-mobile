@@ -58,6 +58,7 @@
   .icon.ion-close{
     width: 50px;
     min-height: 40px !important;
+    margin-left: -24%;
   }
 
   .icon.ion-back{
@@ -84,6 +85,7 @@
     width: 100%;
     left: -19%;
     margin-top: 7%;
+    margin-left: 0%;
   }
 
   .icon.ion-back{
@@ -107,13 +109,19 @@
   .icon.ion-close{
     width: 89%;
     margin-top: 16%;
-    margin-left: -13%;
+    margin-left: 4%;
   }
 
   .icon.ion-back{
     width: 8.2%;
     min-height: inherit;
     margin-left: 1%;
+  }
+
+  .col img {
+    width: 35%;
+    margin-left: 38%;
+    margin-top: 1%;
   }
 
 }

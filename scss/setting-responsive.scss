@@ -1,0 +1,129 @@
+//Mobile device
+@media only screen
+  and (min-device-width: 500px)
+  and (min-device-height: 320px)
+  and (orientation: landscape) {
+  .name {
+    margin-top: 9%;
+    font-size: 20px;
+    margin-left: 9%;
+  }
+
+  .grade {
+    margin-top: 5%;
+    font-size: 19px;
+    margin-left: 39%;
+  }
+
+  .new-user {
+    width: 68%;
+    height: 38px;
+    margin-top: -2%;
+  }
+
+  .change-user, .aboutus{
+    width: 68%;
+    height: 38px;
+    margin-top: 5%;
+  }
+
+  .delete-user {
+    width: 30%;
+    height: 30px;
+    margin-top: 5%;
+  }
+
+  .sound{
+    width: 37%;
+    height: 30px;
+  }
+}
+
+
+@media only screen
+  and (min-device-width: 640px)
+  and (min-device-height: 360px)
+  and (orientation: landscape){
+
+  .name {
+    margin-top: 9%;
+    font-size: 20px;
+    margin-left: 9%;
+  }
+
+  .grade {
+    margin-top: 5%;
+    font-size: 19px;
+    margin-left: 39%;
+  }
+
+  .new-user{
+    width: 68%;
+    height: 46px;
+    margin-top: -2%;
+  }
+
+  .change-user , .aboutus{
+    width: 68%;
+    height: 46px;
+    margin-top: 4%;
+  }
+
+  .delete-user {
+    width: 30%;
+    height: 32px;
+    margin-top: 4%;
+  }
+
+  .sound{
+    width: 37%;
+    height: 32px;
+  }
+
+}
+
+//Tablet Galaxy
+@media only screen
+  and (min-device-width: 1020px)
+  and (min-device-height: 600px)
+  and (orientation: landscape) {
+
+  .name {
+    margin-top: 12%;
+    font-size: 32px;
+    margin-left: 10%;
+  }
+
+  .grade {
+    margin-top: 7.5%;
+    font-size: 30px;
+    margin-left: 39.5%;
+  }
+
+  .col.setting {
+    margin-left: 2.5%;
+  }
+
+  .new-user {
+    width: 66%;
+    height: 75px;
+    margin-top: 0%;
+  }
+
+  .change-user , .aboutus{
+    width: 66%;
+    height: 75px;
+    margin-top: 4%;
+  }
+
+  .delete-user {
+    width: 29%;
+    height: 54px;
+    margin-top: 4%;
+  }
+
+  .sound{
+    width: 37%;
+    height: 54px;
+  }
+}
