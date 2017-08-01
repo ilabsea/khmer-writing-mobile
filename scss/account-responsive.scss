@@ -1,3 +1,4 @@
+$font-color: #763617;
 //Mobile device
 @media only screen
   and (min-device-width: 500px)
@@ -5,7 +6,6 @@
   and (orientation: landscape) {
 
   $font-size: 11px;
-  $font-color: #763617;
 
   .account-name {
     width: 79.5%;
@@ -80,7 +80,6 @@
   and (min-device-height: 360px)
   and (orientation: landscape){
   $font-size: 11px;
-  $font-color: #763617;
 
   .avatar-image {
     margin-top: 22%;
@@ -169,7 +168,6 @@
   and (min-device-height: 600px)
   and (orientation: landscape) {
   $font-size: 22px;
-  $font-color: #763617;
 
   .account-name {
     height: 51px;

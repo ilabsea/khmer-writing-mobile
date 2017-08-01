@@ -1,0 +1,65 @@
+//Mobile device
+@media only screen
+  and (min-device-width: 500px)
+  and (min-device-height: 320px)
+  and (orientation: landscape) {
+
+  .content-title-numeric{
+    margin-top: 2%;
+    font-size: 11px;
+  }
+
+  .content-title{
+    font-size: 12px;
+    margin-top: -7%;
+  }
+
+  canvas {
+    width: 260px;
+    height: 204px;
+  }
+}
+
+
+@media only screen
+  and (min-device-width: 640px)
+  and (min-device-height: 360px)
+  and (orientation: landscape){
+
+  .content-title-numeric{
+    margin-top: 2%;
+    font-size: 11px;
+  }
+
+  .content-title{
+    font-size: 12px;
+    margin-top: -7%;
+  }
+
+  canvas{
+    width: 260px;
+    height: 230px;
+  }
+}
+
+//Tablet Galaxy
+@media only screen
+  and (min-device-width: 1020px)
+  and (min-device-height: 600px)
+  and (orientation: landscape) {
+
+  .content-title-numeric{
+    margin-top: 6%;
+    font-size: 18px;
+  }
+
+  .content-title{
+    font-size: 22px;
+    margin-top: 3%;
+  }
+
+  canvas {
+    width: 470px;
+    height: 365px;
+  }
+}

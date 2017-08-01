@@ -2,14 +2,6 @@
   content: url('../img/icon/play.png') !important;
 }
 
-.icon.ion-back{
-  width: 8%;
-  float: left;
-  margin-top: 0.5%;
-  margin-left: 0.6%;
-  content: url("../img/icon/back.png")!important;
-}
-
 .icon.ion-setting{
   width: 8%;
   float: right;
@@ -45,6 +37,18 @@
   z-index: 10;
 }
 
+.icon.ion-back{
+  width: 9%;
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 0.6%;
+  content: url("../img/icon/back.png")!important;
+}
+
+.icon.ion-close{
+  content: url(../img/icon/close.png)!important
+}
+
 // Phone
 @media only screen
   and (min-device-width: 500px)
@@ -53,9 +57,12 @@
 
   .icon.ion-close{
     width: 50px;
-    float: right;
     min-height: 40px !important;
-    content: url(../img/icon/close.png)!important
+  }
+
+  .icon.ion-back{
+    width: 9.2%;
+    min-height: 12.2%;
   }
 }
 
@@ -65,11 +72,15 @@
   and (orientation: landscape){
 
   .icon.ion-close{
-    content: url(../img/icon/close.png)!important;
     min-height: 40px!important;
     width: 100%;
     left: -19%;
     margin-top: 7%;
+  }
+
+  .icon.ion-back{
+    width: 9%;
+    min-height: inherit;
   }
 }
 
@@ -82,7 +93,12 @@
     width: 89%;
     margin-top: 16%;
     margin-left: -13%;
-    content: url("../img/icon/close.png")!important;
+  }
+
+  .icon.ion-back{
+    width: 8.2%;
+    min-height: inherit;
+    margin-left: 1%;
   }
 
 }
