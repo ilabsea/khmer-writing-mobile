@@ -65,7 +65,6 @@ angular.module('app')
   }
 
   function setLessons() {
-    console.log('gradeId : ', gradeId);
     LessonsServices.getByGradeId(gradeId).then(function (result) {
       lessons = result;
       vm.totalLessons = lessons.length * 3;

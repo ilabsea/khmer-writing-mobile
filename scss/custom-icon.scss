@@ -64,6 +64,14 @@
     width: 9.2%;
     min-height: 12.2%;
   }
+
+  .icon.ion-setting{
+    width: 9.2%;
+    float: right;
+    margin-top: 0.6%;
+    margin-right: 0.5%;
+    min-height: 12.2%;
+  }
 }
 
 @media only screen
@@ -81,6 +89,13 @@
   .icon.ion-back{
     width: 9%;
     min-height: inherit;
+  }
+
+  .icon.ion-setting{
+    width: 9%;
+    float: right;
+    margin-top: 0.6%;
+    margin-right: 0.5%;
   }
 }
 
