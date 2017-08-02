@@ -9,7 +9,7 @@ ion-view {
   font-family: "Daun Teav" !important; }
 
 .app-background {
-  background: url("../img/setting/setting-screen.png") center center no-repeat fixed;
+  background: url("../img/app-background.png") center center no-repeat fixed;
   background-size: 100% 100%; }
 
 .activated {
@@ -20,6 +20,10 @@ ion-view {
   font-size: 20px;
   text-align: center; }
 
+.aboutus-background {
+  background: url("../img/aboutus/aboutus-background.png") center center no-repeat;
+  background-size: 100% 100%; }
+
 .aboutus-panel {
   display: block;
   background: url("../img/aboutus/aboutus-panel.png") center center no-repeat;
@@ -28,22 +32,6 @@ ion-view {
   width: 100%;
   margin-top: 3.5%; }
 
-.aboutus-left {
-  float: left;
-  width: 40%;
-  height: 100%; }
-
-.aboutus-right {
-  width: 50%;
-  height: 60%; }
-
-.split-account-right {
-  display: inline-block;
-  position: relative;
+.about-sponspor {
   background: url("../img/aboutus/box.png") center center no-repeat;
-  background-size: contain;
-  height: 76%;
-  width: 49%;
-  text-align: center;
-  font-size: 20px;
-  margin-top: -2.5%; }
+  background-size: 91% 100%; }

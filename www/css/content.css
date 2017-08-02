@@ -9,7 +9,7 @@ ion-view {
   font-family: "Daun Teav" !important; }
 
 .app-background {
-  background: url("../img/setting/setting-screen.png") center center no-repeat fixed;
+  background: url("../img/app-background.png") center center no-repeat fixed;
   background-size: 100% 100%; }
 
 .activated {
@@ -46,7 +46,7 @@ ion-view {
   color: #442C0C;
   text-align: center; }
 
-.col img {
+.book .col img {
   max-width: 75%;
   min-width: 30%;
   max-height: 54%;
