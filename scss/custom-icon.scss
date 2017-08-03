@@ -29,10 +29,10 @@
 }
 
 .icon.ion-check-search{
-  width: 8%;
+  width: 13%;
   float: right;
-  margin-top: 6%;
-  margin-right: 3.5%;
+  margin-top: 2%;
+  margin-right: -3.5%;
   content: url("../img/icon/check-search.png")!important;
   z-index: 10;
 }
@@ -73,6 +73,18 @@
     margin-right: 0.5%;
     min-height: 12.2%;
   }
+
+  .icon.ion-play {
+    margin-top: 30%;
+    margin-left: 30%;
+  }
+
+  .icon.ion-check-search {
+    min-height: 15%;
+    width: 23%;
+    margin-top: -2%;
+    margin-right: -9.5%;
+  }
 }
 
 @media only screen
@@ -99,6 +111,17 @@
     margin-top: 0.6%;
     margin-right: 0.5%;
   }
+
+  .icon.ion-play {
+    margin-top: 30%;
+    margin-left: 30%;
+  }
+
+  .icon.ion-check-search {
+    width: 18%;
+    margin-top: -2%;
+    margin-right: -8.5%;
+  }
 }
 
 //Tablet Galaxy
@@ -116,6 +139,17 @@
     width: 8.2%;
     min-height: inherit;
     margin-left: 1%;
+  }
+
+  .icon.ion-play {
+    margin-top: 40%;
+    margin-left: 40%;
+  }
+
+  .icon.ion-check-search{
+    width: 13%;
+    margin-top: 2%;
+    margin-right: -3.5%;
   }
 
 }

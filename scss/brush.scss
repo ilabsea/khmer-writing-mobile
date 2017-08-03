@@ -14,23 +14,20 @@
   width: 100%;
 }
 
-.brush-title{
-  display: block;
-  position: relative;
-  font-size: 32px;
+.brush-title {
+  font-size: 30px;
   color: #231F20;
   text-align: center;
-  top: 14%;
-  left: 7.5%;
+  margin-top: -2.5%;
 }
 
 .brush-modify{
   display: block;
   position: relative;
   background: url("../img/brush/panel-inside.png") $background;
-  background-size: contain;
-  height: 64.5%;
-  margin-top: 10%;
+  background-size: 70% 100%;
+  height: 65%;
+  margin-top: 1%;
 }
 
 .brush-size-bar{
@@ -40,7 +37,7 @@
   height: 3%;
   border-radius: 8px;
   left: 26%;
-  top: 25%;
+  top: 31%;
 }
 
 .brush-size{
@@ -54,7 +51,38 @@
   display: inline-block;
   margin-top: 3%;
   font-size: 28px;
-  margin-left: 34%;
+  margin-right: 34%;
+}
+
+.brush-size > span:last-child{
+  margin-right: 0%;
+}
+
+.small-bullet {
+  width: 4%;
+  height: 60%;
+  background-color: black;
+  border-radius: 10px;
+  display: inline-block;
+  margin-left: 2%;
+}
+
+.medium-bullet{
+  width: 5%;
+  height: 80%;
+  background-color: black;
+  border-radius: 16px;
+  display: inline-block;
+  margin-left: 39%;
+}
+
+.big-bullet{
+  width: 6%;
+  height: 100%;
+  background-color: black;
+  border-radius: 22px;
+  display: inline-block;
+  margin-left: 39%;
 }
 
 .color-bar{
@@ -66,13 +94,30 @@
   margin-top: -7.8%;
 }
 
+.color-bar > div:last-child {
+  width: 6%;
+  height: 28%;
+  display: inline-block;
+  margin-left: 1.3%;
+  margin-top: 7%
+}
+
+.color-index {
+  width: 6%;
+  height: 28%;
+  display: inline-block;
+  margin-left: 1.2%;
+  margin-right: 3%;
+  margin-top: 7%;
+}
+
 .pencil{
   background: url("../img/brush/pencil-icon.png") $background;
   background-size: contain;
   width: 10%;
   height: 21%;
   float: left;
-  margin-top: 5%;
+  margin-top: 7%;
   z-index: 10;
   position: relative;
 }

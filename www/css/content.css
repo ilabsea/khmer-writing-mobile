@@ -55,11 +55,11 @@ ion-view {
   margin: auto; }
 
 .writing-panel {
+  margin-top: 11%;
   height: 64%;
-  width: 85%;
+  width: 92%;
   background-color: #fff;
   margin-left: 9%;
-  margin-top: 4%;
   border-radius: 8%; }
 
 .writing-footer {
@@ -67,14 +67,14 @@ ion-view {
   position: relative;
   margin-left: 6%;
   height: 13%;
-  width: 87%; }
+  width: 87%;
+  margin-top: -3%; }
 
 .writing-footer div {
   display: inline-block;
   background-size: contain;
   width: 18%;
-  height: 100%;
-  margin-top: -1%; }
+  height: 100%; }
 
 .previous {
   background: transparent url("../img/content/previous.png") center center no-repeat; }
@@ -87,12 +87,14 @@ ion-view {
 .next {
   background: transparent url("../img/content/next.png") center center no-repeat; }
 
+.writing-canvas {
+  margin-left: 3%; }
+
 .brush-setting {
-  width: 4%;
-  height: 21%;
-  display: inline-block;
-  float: right;
-  margin-right: -0.5%;
+  margin-top: 33%;
+  margin-left: 1.5%;
+  width: 66%;
+  height: 100px;
   background: url("../img/content/brush-setting.png") center center no-repeat;
   background-size: contain; }
 

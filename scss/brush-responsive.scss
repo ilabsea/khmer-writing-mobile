@@ -1,0 +1,114 @@
+//Mobile device
+@media only screen
+  and (min-device-width: 500px)
+  and (min-device-height: 320px)
+  and (orientation: landscape) {
+
+  .brush-title {
+    font-size: 19px;
+    color: #231F20;
+    text-align: center;
+    margin-top: -3.5%;
+  }
+
+  .brush-size>span {
+    font-size: 16px;
+  }
+
+  .brush-size-bar {
+    top: 29%;
+  }
+
+  .pencil {
+    margin-top: 6%;
+  }
+
+  .color-selected {
+    margin-top: 2%;
+  }
+
+  .medium-bullet , .big-bullet{
+    margin-left: 38.5%
+  }
+
+  .color-bar {
+    margin-top: -8%;
+  }
+
+  .color-bar > div:last-child {
+    margin-left: 0.3%;
+  }
+}
+
+@media only screen
+  and (min-device-width: 640px)
+  and (min-device-height: 360px)
+  and (orientation: landscape){
+
+  .brush-title {
+    font-size: 19px;
+    color: #231F20;
+    text-align: center;
+    margin-top: -3.5%;
+  }
+
+  .brush-size>span {
+    font-size: 16px;
+  }
+
+  .brush-size-bar {
+    top: 29%;
+  }
+
+  .pencil {
+    margin-top: 6%;
+  }
+
+  .color-selected {
+    margin-top: 2%;
+  }
+
+  .medium-bullet , .big-bullet{
+    margin-left: 38.5%
+  }
+
+  .color-bar > div:last-child {
+    margin-left: 0.3%;
+  }
+}
+
+//Tablet Galaxy
+@media only screen
+  and (min-device-width: 1020px)
+  and (min-device-height: 600px)
+  and (orientation: landscape) {
+
+  .brush-title {
+    font-size: 30px;
+    margin-top: -2.5%;
+  }
+
+  .brush-size>span {
+    font-size: 28px;
+  }
+
+  .brush-size-bar {
+    top: 31%;
+  }
+
+  .pencil {
+    margin-top: 7%;
+  }
+
+  .color-selected {
+    margin-top: 3%;
+  }
+
+  .medium-bullet , .big-bullet{
+    margin-left: 39%;
+  }
+
+  .color-bar > div:last-child {
+    margin-left: 1.3%;
+  }
+}
