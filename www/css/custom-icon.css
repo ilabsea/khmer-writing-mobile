@@ -62,7 +62,12 @@
     min-height: 15%;
     width: 23%;
     margin-top: -2%;
-    margin-right: -9.5%; } }
+    margin-right: -9.5%; }
+  .icon.ion-edit {
+    min-height: 12.2%;
+    width: 18.5%;
+    margin-top: 23%;
+    margin-left: -14%; } }
 
 @media only screen and (min-device-width: 640px) and (min-device-height: 360px) and (orientation: landscape) {
   .icon.ion-close {
@@ -85,7 +90,11 @@
   .icon.ion-check-search {
     width: 18%;
     margin-top: -2%;
-    margin-right: -8.5%; } }
+    margin-right: -8.5%; }
+  .icon.ion-edit {
+    width: 19%;
+    margin-top: 20.5%;
+    margin-left: -13%; } }
 
 @media only screen and (min-device-width: 1020px) and (min-device-height: 600px) and (orientation: landscape) {
   .icon.ion-close {
@@ -102,4 +111,9 @@
   .icon.ion-check-search {
     width: 13%;
     margin-top: 2%;
-    margin-right: -3.5%; } }
+    margin-right: -3.5%; }
+  .icon.ion-edit {
+    width: 15%;
+    margin-top: 24.5%;
+    margin-left: -12%;
+    min-height: 5.2%; } }

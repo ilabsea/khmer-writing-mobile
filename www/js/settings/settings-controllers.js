@@ -16,7 +16,7 @@ angular.module('app')
   vm.isGuestUser = function(){
     return vm.currentUser.id == 1;
   }
-  vm.soundStyle = {"width": "35%", "margin-left": vm.isGuestUser() ? "20%" : "0%"};
+  vm.soundStyle = {"margin-left": vm.isGuestUser() ? "14%" : "1%"};
 
   var popup;
 
