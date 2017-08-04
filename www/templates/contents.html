@@ -4,7 +4,7 @@
     <a ng-click='goBack()' class="button button-icon icon ion-back"></a>
     <div class="setting" ng-click='setting()'></div>
     <div class="book">
-      <div class="row row-top">
+      <div class="row row-top" style='height: 74%;'>
         <div class="col col-40">
           <p class='content-title-numeric'> មេរៀនទី {{currentLesson["khmer_numeric"]}}</p>
           <p class='content-title'> {{currentLesson["name"]}}</p>
@@ -25,15 +25,18 @@
                  ng-click='popupAnswer()'>
               </a>
 
-              <div class='writing-panel' ng-if='methodCode == 4'>
+              <div class='writing-panel' ng-if='methodCode == 4'
+                  ng-class="{'adjust-size': methodCode == 3 || methodCode == 4}">
                 <canvas id='drawingCanvas'
                   style='background: transparent url({{imageClue}}) no-repeat center center; background-size: contain;'>
               </div>
 
-              <div class='writing-panel' ng-if='methodCode != 4'>
+              <div class='writing-panel' ng-if='methodCode != 4'
+                  ng-class="{'adjust-size': methodCode == 3 || methodCode == 4}">
                 <canvas id='drawingCanvas'
-                  style="background: transparent url({{'img/grid.png'}}) no-repeat center center; background-size: contain;">
+                  style="background: transparent url({{imageBackground}}) no-repeat center center; background-size: contain;">
               </div>
+              
             </div>
 
             <div class="col col-10 brush-setting"

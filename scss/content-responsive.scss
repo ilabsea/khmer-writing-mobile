@@ -4,6 +4,10 @@
   and (min-device-height: 320px)
   and (orientation: landscape) {
 
+  .book .col img {
+    max-height: 78%;
+  }
+
   .content-title-numeric{
     margin-top: 2%;
     font-size: 11px;
@@ -16,12 +20,23 @@
 
   canvas {
     width: 228px;
-    height: 165px;
+    height: 209px;
+  }
+
+  .writing-panel.adjust-size canvas {
+    width: 228px;
+    height: 188px;
   }
 
   .writing-panel {
-    margin-top: 11%;
+    margin-top: 1%;
     height: 88%;
+    width: 102%;
+    margin-left: 3%;
+  }
+
+  .writing-panel.adjust-size {
+    margin-top: 7%;
   }
 
   .brush-setting {
@@ -54,6 +69,10 @@
   and (min-device-height: 360px)
   and (orientation: landscape){
 
+  .book .col img {
+    max-height: 190px;
+  }
+
   .content-title-numeric{
     margin-top: 2%;
     font-size: 11px;
@@ -64,14 +83,23 @@
     margin-top: -7%;
   }
 
-  canvas{
-    width: 260px;
-    height: 197px;
+  canvas {
+    width: 301px;
+    height: 233px;
+  }
+
+  .writing-panel.adjust-size canvas {
+    width: 291px;
+    height: 189px;
   }
 
   .writing-panel {
-    margin-top: 11%;
-    height: 88%;
+    margin-top: 2%;
+    height: 98%;
+  }
+
+  .writing-panel.adjust-size {
+    margin-top: 10%;
   }
 
   .brush-setting {
@@ -95,6 +123,10 @@
   and (min-device-height: 600px)
   and (orientation: landscape) {
 
+  .book .col img {
+    max-height: 78%;
+  }
+
   .content-title-numeric{
     margin-top: 6%;
     font-size: 18px;
@@ -107,12 +139,22 @@
 
   canvas {
     width: 470px;
-    height: 365px;
+    height: 398px;
   }
 
   .writing-panel {
-    margin-top: 11%;
+    margin-top: 5%;
+    width: 97%;
     height: 64%;
+  }
+
+  .writing-panel.adjust-size {
+    margin-top: 11%;
+  }
+
+  .writing-panel.adjust-size canvas {
+    width: 475px;
+    height: 366px;
   }
 
   .brush-setting {

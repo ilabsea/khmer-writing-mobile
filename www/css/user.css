@@ -9,7 +9,7 @@ ion-view {
   font-family: "Daun Teav" !important; }
 
 .app-background {
-  background: url("../img/user/change-users.png") center center no-repeat fixed;
+  background: url("../img/app-background.png") center center no-repeat fixed;
   background-size: 100% 100%; }
 
 .activated {
@@ -49,13 +49,6 @@ ion-view {
 
 div.user-item:nth-last-of-type(2) {
   margin-left: 40%; }
-
-.user-item p {
-  margin-top: 6%;
-  font-size: 29px; }
-
-.user-item p + p {
-  font-size: 24px; }
 
 .user-item div {
   background: url(../img/user/save.png) center center no-repeat;

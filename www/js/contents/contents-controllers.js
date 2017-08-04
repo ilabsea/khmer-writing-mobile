@@ -4,7 +4,7 @@ angular.module('app')
             ContentsServices, MethodsServices, $state, $cordovaMedia,
             BrushesServices, $ionicPlatform, $ionicPopup, TracksServices){
 
-  var vm = $scope, canvas, signaturePad, brushSize, brushColor;
+  var vm = $scope, signaturePad, brushSize, brushColor;
   var media;
 
   var currentLesson = LessonsServices.getLesson();
@@ -43,7 +43,7 @@ angular.module('app')
       index = tracksJson && tracksJson[vm.methodCode]? tracksJson[vm.methodCode]["index"] : 0;
       vm.contents = contents;
       setContentDataChange(contents);
-      canvas = document.getElementById('drawingCanvas');
+      var canvas = document.getElementById('drawingCanvas');
       setBrushSizeAndColor();
 
       if(canvas){

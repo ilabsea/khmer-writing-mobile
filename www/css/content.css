@@ -9,7 +9,7 @@ ion-view {
   font-family: "Daun Teav" !important; }
 
 .app-background {
-  background: url("../img/user/change-users.png") center center no-repeat fixed;
+  background: url("../img/app-background.png") center center no-repeat fixed;
   background-size: 100% 100%; }
 
 .activated {
@@ -47,12 +47,12 @@ ion-view {
   text-align: center; }
 
 .book .col img {
-  max-width: 75%;
+  max-width: 78%;
   min-width: 30%;
-  max-height: 54%;
-  margin-top: 8%;
+  max-height: 100%;
   display: block;
-  margin: auto; }
+  margin: auto;
+  margin-top: 8%; }
 
 .writing-panel {
   margin-top: 11%;
@@ -67,8 +67,7 @@ ion-view {
   position: relative;
   margin-left: 6%;
   height: 13%;
-  width: 87%;
-  margin-top: -3%; }
+  width: 87%; }
 
 .writing-footer div {
   display: inline-block;

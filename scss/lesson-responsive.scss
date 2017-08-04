@@ -3,6 +3,7 @@
   and (min-device-width: 500px)
   and (min-device-height: 320px)
   and (orientation: landscape) {
+
   .lesson-grade > p{
     font-size: 34px;
     margin-left: -8%;
@@ -75,6 +76,10 @@
     top: 26%;
     font-size: 14px;
     left: 11%;
+  }
+
+  .lesson-contain {
+    margin-top: 1.8%;
   }
 
   .lesson-text {
