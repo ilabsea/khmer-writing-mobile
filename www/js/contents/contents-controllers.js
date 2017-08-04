@@ -2,9 +2,10 @@ angular.module('app')
 
 .controller("ContentsCtrl", function($scope, LessonsServices,
             ContentsServices, MethodsServices, $state, $cordovaMedia,
-            BrushesServices, $ionicPlatform, $ionicPopup, TracksServices){
+            BrushesServices, $ionicPlatform, $ionicPopup, TracksServices,
+            $window){
 
-  var vm = $scope, signaturePad, brushSize, brushColor;
+  var vm = $scope, canvas, signaturePad, brushSize, brushColor;
   var media;
 
   var currentLesson = LessonsServices.getLesson();
@@ -25,6 +26,7 @@ angular.module('app')
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
   vm.resetCurrentTrack = resetCurrentTrack;
 
+
   var path = "img/ilabsea.instedd.khmerwriting/grade"
             + vm.gradeId + "/lesson" + vm.lessonId
             + "/method" + vm.writingMethodId + "/";
@@ -43,7 +45,9 @@ angular.module('app')
       index = tracksJson && tracksJson[vm.methodCode]? tracksJson[vm.methodCode]["index"] : 0;
       vm.contents = contents;
       setContentDataChange(contents);
-      var canvas = document.getElementById('drawingCanvas');
+      canvas = document.getElementById('drawingCanvas');
+      setCanvasSize(canvas);
+
       setBrushSizeAndColor();
 
       if(canvas){
@@ -53,6 +57,34 @@ angular.module('app')
         });
       }
     });
+  }
+
+  function setCanvasSize(canvas) {
+    var deviceWidth = $window.innerWidth;
+    var deviceHeight = $window.innerHeight;
+    if(deviceWidth >= 1020 && deviceHeight >= 600 ) {
+      canvas.width = 470;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 366;
+      }else{
+        canvas.height = 398;
+      }
+    } else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
+      canvas.width = 301;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 189;
+      }else{
+        canvas.height = 233;
+      }
+    } else if(deviceWidth >= 500  && deviceHeight >= 320 ){
+      canvas.width = 228;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 188;
+      }else{
+        canvas.height = 209;
+      }
+    }
+
   }
 
   function playSound() {
