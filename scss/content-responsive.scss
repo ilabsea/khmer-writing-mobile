@@ -97,6 +97,50 @@
   }
 }
 
+
+@media only screen
+  and (min-device-width: 700px)
+  and (min-device-height: 400px)
+  and (orientation: landscape){
+
+  .book .col img {
+    max-height: 190px;
+  }
+
+  .content-title-numeric {
+    margin-top: 2%;
+    font-size: 11px;
+  }
+
+  .content-title {
+    font-size: 12px;
+    margin-top: -3%;
+  }
+
+  .writing-panel {
+    margin-top: 2%;
+    height: 93%;
+  }
+
+  .writing-panel.adjust-size {
+    margin-top: 10%;
+  }
+
+  .brush-setting {
+    margin-top: 30%;
+    margin-left: 2.7%;
+    height: 65px;
+  }
+
+  .answer-popup{
+    .container a {
+      width: 23%;
+      margin-top: -7%;
+      margin-left: 100%;
+    }
+  }
+
+}
 //Tablet Galaxy
 @media only screen
   and (min-device-width: 1020px)

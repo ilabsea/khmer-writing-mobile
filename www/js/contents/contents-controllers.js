@@ -69,7 +69,14 @@ angular.module('app')
       }else{
         canvas.height = 398;
       }
-    } else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
+    } else if (deviceWidth >= 700 && deviceHeight >= 400) {
+      canvas.width = 358;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 189;
+      }else{
+        canvas.height = 273;
+      }
+    }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
       canvas.width = 301;
       if(vm.methodCode == 3 || vm.methodCode == 4){
         canvas.height = 189;

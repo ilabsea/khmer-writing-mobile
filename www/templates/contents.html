@@ -46,8 +46,11 @@
         </div>
       </div>
       <div class='writing-footer'>
-        <div ng-click="previous()" ng-class="{'previous' : !isDisabledPrevious()}"></div>
-        <div class='delete' ng-click="redraw()"></div>
+        <div ng-if='isDisabledPrevious()'></div>
+        <div ng-if='!isDisabledPrevious()'
+             ng-click="previous()" class='previous'></div>
+        <div class='delete'
+            ng-click="redraw()"></div>
         <div class='next' ng-click='next()' ng-hide='isDisabledNext()'></div>
         <div class='resetTracks' ng-click='resetCurrentTrack()' ng-show='isDisabledNext()'></div>
       </div>
