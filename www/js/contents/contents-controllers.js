@@ -95,10 +95,6 @@ angular.module('app')
   }
 
   function playSound() {
-    if(media)
-      media.stop();
-    var src = "/android_asset/www/" + path + vm.contents[index]["audio"];
-    media = $cordovaMedia.newMedia(src);
     media.play();
   }
 
@@ -177,6 +173,15 @@ angular.module('app')
     vm.image =  path + contents[index]["image"];
     vm.imageClue = path + contents[index]["image_clue"];
     vm.imageAnswer = path + contents[index]["image_answer"];
+
+    if (vm.methodCode == 3) {
+      if (media) {
+        media.stop();
+        media.release();
+      }
+      var src = "/android_asset/www/" + path + vm.contents[index]["audio"];
+      media = $cordovaMedia.newMedia(src);
+    }
   }
 
   function resetCurrentTrack(){
