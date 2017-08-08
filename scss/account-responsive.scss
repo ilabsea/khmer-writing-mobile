@@ -48,6 +48,9 @@ $font-color: #763617;
     background-color: transparent !important;
     font-size: 14px !important;
     color: $font-color !important;
+    max-width: 100% !important;
+    left: 42%;
+    top: -2%;
   }
 
   .select-type{
@@ -63,8 +66,10 @@ $font-color: #763617;
 
   .select-type select {
     background-color: transparent !important;
-    font-size: $font-size !important;
+    font-size: 14px !important;
     color: rgb(118, 54, 23) !important;
+    max-width: 133%!important;
+    left: -8%;
   }
 
   .avatar p{
@@ -129,8 +134,8 @@ $font-color: #763617;
     background-color: transparent !important;
     font-size: 14px !important;
     color: $font-color !important;
-    margin-top: -1%;
-    left: 48%;
+    margin-top: 0%;
+    left: 46%;
   }
 
   .select-type{
@@ -146,8 +151,9 @@ $font-color: #763617;
 
   .select-type select {
     background-color: transparent !important;
-    font-size: $font-size !important;
+    font-size: 14px !important;
     color: rgb(118, 54, 23) !important;
+    left: 8%;
   }
 
   .avatar p{
@@ -161,6 +167,18 @@ $font-color: #763617;
     margin-top: -3%;
   }
 }
+
+
+@media only screen
+  and (min-device-width: 700px)
+  and (min-device-height: 400px)
+  and (orientation: landscape){
+
+  .select-type select {
+    left: 11%;
+  }
+}
+
 
 //Tablet Galaxy
 @media only screen
@@ -209,7 +227,6 @@ $font-color: #763617;
     background-color: transparent !important;
     font-size: $font-size !important;
     color: $font-color !important;
-    margin-top: -2%;
   }
 
   .select-type{
