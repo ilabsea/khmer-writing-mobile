@@ -109,7 +109,8 @@ ion-view {
 
 .answer-popup .popup-body {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 .answer-popup .container {
   border-radius: 33px !important;

@@ -70,21 +70,31 @@
 
   .content-title{
     font-size: 12px;
-    margin-top: -7%;
+    margin-top: -5%;
   }
 
   .writing-panel {
     margin-top: 2%;
-    height: 98%;
+    height: 99%;
+  }
+
+  .writing-footer div {
+    width: 15%;
+  }
+
+  .delete{
+    width: 11% !important;
+    margin-left: 57%;
   }
 
   .writing-panel.adjust-size {
     margin-top: 10%;
+    height: 90%;
   }
 
   .brush-setting {
     margin-top: 30%;
-    margin-left: 2.7%;
+    margin-left: 3%;
     height: 65px;
   }
 
@@ -113,23 +123,33 @@
   }
 
   .content-title {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: -3%;
   }
 
   .writing-panel {
     margin-top: 2%;
-    height: 93%;
+    height: 98%;
   }
 
   .writing-panel.adjust-size {
     margin-top: 10%;
+    height: 90%;
   }
 
   .brush-setting {
-    margin-top: 30%;
-    margin-left: 2.7%;
-    height: 65px;
+    margin-top: 29%;
+    margin-left: 2.6%;
+    height: 75px;
+  }
+
+  .writing-footer div {
+    width: 15%;
+  }
+
+  .delete{
+    width: 11% !important;
+    margin-left: 57%;
   }
 
   .answer-popup{
@@ -141,6 +161,7 @@
   }
 
 }
+
 //Tablet Galaxy
 @media only screen
   and (min-device-width: 1020px)
@@ -163,7 +184,7 @@
 
   .writing-panel {
     margin-top: 5%;
-    width: 97%;
+    width: 100%;
     height: 64%;
   }
 

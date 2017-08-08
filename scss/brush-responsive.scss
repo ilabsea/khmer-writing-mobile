@@ -77,6 +77,35 @@
   }
 }
 
+
+@media only screen
+  and (min-device-width: 700px)
+  and (min-device-height: 400px)
+  and (orientation: landscape) {
+
+  .brush-title {
+    font-size: 22px;
+    margin-top: -3.3%;
+  }
+
+  .pencil {
+    margin-top: 7%;
+  }
+
+  .brush-size {
+    margin-top: -0.5%;
+  }
+
+  .brush-size>span {
+    font-size: 18px;
+  }
+
+  .color-selected {
+    margin-top: 2.2%;
+    height: 17%;
+  }
+}
+
 //Tablet Galaxy
 @media only screen
   and (min-device-width: 1020px)

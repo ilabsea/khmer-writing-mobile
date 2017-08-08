@@ -96,6 +96,11 @@
     margin-top: 20.5%;
     margin-left: -13%; } }
 
+@media only screen and (min-device-width: 700px) and (min-device-height: 400px) and (orientation: landscape) {
+  .icon.ion-play {
+    margin-top: 30%;
+    margin-left: 36%; } }
+
 @media only screen and (min-device-width: 1020px) and (min-device-height: 600px) and (orientation: landscape) {
   .icon.ion-close {
     width: 89%;
