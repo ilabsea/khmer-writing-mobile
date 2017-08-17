@@ -65,30 +65,30 @@ angular.module('app')
     if(deviceWidth >= 1020 && deviceHeight >= 600 ) {
       canvas.width = 495;
       if(vm.methodCode == 3 || vm.methodCode == 4){
-        canvas.height = 366;
+        canvas.height = 370;
       }else{
-        canvas.height = 398;
+        canvas.height = 407;
       }
     } else if (deviceWidth >= 700 && deviceHeight >= 400) {
       canvas.width = 350;
       if(vm.methodCode == 3 || vm.methodCode == 4){
-        canvas.height = 230;
+        canvas.height = 240;
       }else{
-        canvas.height = 273;
+        canvas.height = 280;
       }
     }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
       canvas.width = 301;
       if(vm.methodCode == 3 || vm.methodCode == 4){
-        canvas.height = 205;
+        canvas.height = 212;
       }else{
-        canvas.height = 233;
+        canvas.height = 242;
       }
     } else if(deviceWidth >= 500  && deviceHeight >= 320 ){
-      canvas.width = 245;
+      canvas.width = 250;
       if(vm.methodCode == 3 || vm.methodCode == 4){
-        canvas.height = 185;
+        canvas.height = 190;
       }else{
-        canvas.height = 209;
+        canvas.height = 219;
       }
     }
 
