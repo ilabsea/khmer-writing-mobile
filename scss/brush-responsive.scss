@@ -33,10 +33,24 @@
 
   .color-bar {
     margin-top: -8%;
+    margin-left: 23%;
   }
 
   .color-bar > div:last-child {
-    margin-left: 0.3%;
+    margin-left: 1%;
+    margin-right: 0%;
+  }
+
+  .color-index {
+    width: 17px;
+    height: 17px;
+    margin-right: 3.25%;
+  }
+
+  .color-selected {
+    width: 28px;
+    height: 26px;
+    margin-top: 3.2%;
   }
 }
 
@@ -54,6 +68,7 @@
 
   .brush-size>span {
     font-size: 16px;
+    margin-right: 34%;
   }
 
   .brush-size-bar {
@@ -65,7 +80,9 @@
   }
 
   .color-selected {
-    margin-top: 2%;
+    margin-top: 3%;
+    width: 38px;
+    height: 33px;
   }
 
   .medium-bullet , .big-bullet{
@@ -74,6 +91,17 @@
 
   .color-bar > div:last-child {
     margin-left: 0.3%;
+  }
+
+  .color-bar {
+    margin-left: 23.5%;
+  }
+
+  .color-index {
+    width: 20px;
+    height: 20px;
+    margin-left: 1.25%;
+    margin-right: 3.35%;
   }
 }
 
@@ -98,11 +126,28 @@
 
   .brush-size>span {
     font-size: 18px;
+    margin-right: 33%;
+  }
+
+  .color-bar {
+    margin-left: 23%;
   }
 
   .color-selected {
     margin-top: 2.2%;
     height: 17%;
+    width: 38px;
+  }
+
+  .color-index {
+    width: 24px;
+    height: 24px;
+    margin-right: 3.05%;
+  }
+
+  .color-bar>div:last-child {
+    margin-left: 0.5%;
+    margin-right: 0%;
   }
 }
 
@@ -119,6 +164,7 @@
 
   .brush-size>span {
     font-size: 28px;
+    margin-right: 33.5%;
   }
 
   .brush-size-bar {
@@ -137,7 +183,22 @@
     margin-left: 39%;
   }
 
+  .color-bar {
+    margin-left: 23%;
+  }
+
   .color-bar > div:last-child {
     margin-left: 1.3%;
+  }
+
+  .color-selected {
+    height: 50px;
+    width: 54px;
+  }
+
+  .color-index {
+    width: 34px;
+    height: 34px;
+    margin-right: 3%;
   }
 }

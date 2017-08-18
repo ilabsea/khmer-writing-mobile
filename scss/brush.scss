@@ -51,7 +51,7 @@
   display: inline-block;
   margin-top: 3%;
   font-size: 28px;
-  margin-right: 34%;
+  margin-right: 32%;
 }
 
 .brush-size > span:last-child{
@@ -88,7 +88,7 @@
 .color-bar{
   background: url("../img/brush/color-range.png") $background;
   background-size: contain;
-  width: 51%;
+  width: 55%;
   height: 31%;
   margin-left: 23%;
   margin-top: -7.8%;
@@ -103,8 +103,6 @@
 }
 
 .color-index {
-  width: 6%;
-  height: 28%;
   display: inline-block;
   margin-left: 1.2%;
   margin-right: 3%;
@@ -126,6 +124,6 @@
   background: url("../img/brush/selected-circle.png") $background;
   background-size: contain;
   width: 5%;
-  height: 15.31%;
+  height: 14%;
   margin-top: 3%;
 }
