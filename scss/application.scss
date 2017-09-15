@@ -3,13 +3,13 @@
 $font-stack: 'Daun Teav';
 $background: center center no-repeat;
 
-ion-view{
+ion-view {
   font-family: $font-stack !important;
 }
 
 .app-background {
   background: url("../img/app-background.png") $background fixed;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .activated{

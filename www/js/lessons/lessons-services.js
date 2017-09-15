@@ -1,9 +1,9 @@
 angular.module('app')
 .factory("LessonsServices", LessonsServices)
 
-LessonsServices.$inject = ['$cordovaSQLite', 'ContentsServices']
+LessonsServices.$inject = ['$cordovaSQLite']
 
-function LessonsServices($cordovaSQLite, ContentsServices) {
+function LessonsServices($cordovaSQLite) {
   var lesson;
 
   function setLesson(lessonParam) {

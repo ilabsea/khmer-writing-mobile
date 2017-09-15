@@ -1,19 +1,20 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices,
+.controller("ContentsCtrl", function($scope, LessonsServices,
             ContentsServices, MethodsServices, $state, $cordovaMedia,
-            BrushesServices, $ionicPlatform, $ionicPopup, TracksServices){
+            BrushesServices, $ionicPlatform, $ionicPopup, TracksServices,
+            $window){
+
   var vm = $scope, canvas, signaturePad, brushSize, brushColor;
   var media;
 
-  var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
   var currentTracks = TracksServices.getCurrentTrack();
 
   vm.currentLesson = currentLesson;
 
-  vm.gradeId = currentGrade.id;
+  vm.gradeId = 1;
   vm.lessonId = currentLesson.id;
   vm.writingMethodId = currentMethod.id;
 
@@ -25,7 +26,10 @@ angular.module('app')
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
   vm.resetCurrentTrack = resetCurrentTrack;
 
-  var path = "img/ilabsea.instedd.khmerwriting/lesson" + vm.lessonId + "/method" + vm.writingMethodId + "/";
+
+  var path = "img/ilabsea.instedd.khmerwriting/grade"
+            + vm.gradeId + "/lesson" + vm.lessonId
+            + "/method" + vm.writingMethodId + "/";
 
   var index = 0;
 
@@ -42,6 +46,8 @@ angular.module('app')
       vm.contents = contents;
       setContentDataChange(contents);
       canvas = document.getElementById('drawingCanvas');
+      setCanvasSize(canvas);
+
       setBrushSizeAndColor();
 
       if(canvas){
@@ -53,11 +59,42 @@ angular.module('app')
     });
   }
 
+  function setCanvasSize(canvas) {
+    var deviceWidth = $window.innerWidth;
+    var deviceHeight = $window.innerHeight;
+    if(deviceWidth >= 1020 && deviceHeight >= 600 ) {
+      canvas.width = 495;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 370;
+      }else{
+        canvas.height = 407;
+      }
+    } else if (deviceWidth >= 700 && deviceHeight >= 400) {
+      canvas.width = 350;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 240;
+      }else{
+        canvas.height = 280;
+      }
+    }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
+      canvas.width = 301;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 212;
+      }else{
+        canvas.height = 242;
+      }
+    } else if(deviceWidth >= 500  && deviceHeight >= 320 ){
+      canvas.width = 250;
+      if(vm.methodCode == 3 || vm.methodCode == 4){
+        canvas.height = 190;
+      }else{
+        canvas.height = 219;
+      }
+    }
+
+  }
+
   function playSound() {
-    if(media)
-      media.stop();
-    var src = "/android_asset/www/" + path + vm.contents[index]["audio"];
-    media = $cordovaMedia.newMedia(src);
     media.play();
   }
 
@@ -136,6 +173,15 @@ angular.module('app')
     vm.image =  path + contents[index]["image"];
     vm.imageClue = path + contents[index]["image_clue"];
     vm.imageAnswer = path + contents[index]["image_answer"];
+
+    if (vm.methodCode == 3) {
+      if (media) {
+        media.stop();
+        media.release();
+      }
+      var src = "/android_asset/www/" + path + vm.contents[index]["audio"];
+      media = $cordovaMedia.newMedia(src);
+    }
   }
 
   function resetCurrentTrack(){
