@@ -8,7 +8,7 @@
 .lesson-contain{
   display: block;
   float: right;
-  margin-top: 10%;
+  margin-top: 2%;
   width: 55%;
   height: 65%;
 }
@@ -20,7 +20,7 @@
   width: 25%;
   height: 37%;
   margin-bottom: 13%;
-  margin-left: 4%;
+  margin-left: 3.6%;
   background-size: contain;
   text-align: center;
 }
@@ -31,20 +31,17 @@
   margin-top: 10%;
   width: 27%;
   height: 65%;
-  margin-left: 7%;
+  margin-left: 15%;
   text-align: center;
 }
 
 .lesson-grade > p{
   margin-top: 52%;
   color: #26bcf7;
-  font-size: 61px;
 }
 
 .lesson-grade div > span{
   position: relative;
-  top: 38%;
-  font-size: 26px;
   left: 11%;
   color: #EFCA2B;
 }
@@ -54,8 +51,6 @@
   background-size: contain;
   width: 55%;
   height: 15%;
-  margin-top: 26%;
-  margin-left: 22%;
 }
 
 .lesson-text{
@@ -66,13 +61,11 @@
   margin-top: 18%;
 }
 
-.lesson-numeric-text{
+.lesson-numeric-text {
   display: block;
   position: relative;
   color: #EFCA2B;
-  font-size: 63px;
   text-align: center;
-  margin-top: 25%;
 }
 
 .lesson-next-previous{
@@ -90,8 +83,8 @@
   position: relative;
   background: transparent url("../img/lesson/next.png") $background;
   margin-left: 3%;
-  width: 9%;
   height: 95%;
+  width: 9%;
   background-size: contain;
 }
 
@@ -111,6 +104,4 @@
   height: 17%;
   border-radius: 12px;
   background-color: #FFFFFF;
-  margin-top: 14%;
-  margin-left: 8%;
 }

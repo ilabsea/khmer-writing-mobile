@@ -4,38 +4,56 @@
     <a ng-click='goBack()' class="button button-icon icon ion-back"></a>
     <div class="setting" ng-click='setting()'></div>
     <div class="book">
+      <div class="row row-top" style='height: 74%;'>
+        <div class="col col-40">
+          <p class='content-title-numeric'> មេរៀនទី {{currentLesson["khmer_numeric"]}}</p>
+          <p class='content-title'> {{currentLesson["name"]}}</p>
 
-      <div class='content-panel'>
-
-        <div>
-          <span class='content-title-numeric'> មេរៀនទី {{currentLesson["khmer_numeric"]}}</span>
-          <span class='content-title'> {{currentLesson["name"]}}</span>
+          <img ng-if='methodCode != 3' ng-src='{{image}}'>
+          <a ng-if='methodCode == 3'
+             class="button button-icon icon ion-play"
+             ng-click="playSound()">
+          </a>
         </div>
 
-        <img ng-if='methodCode != 3' ng-src='{{image}}'>
-        <a ng-if='methodCode == 3' class="button button-icon icon ion-play" ng-click="playSound()" style='margin-top: 40%'></a>
+        <div class="col col-60">
+          <div class='row'>
+            <div class='col col-90 writing-canvas'>
 
+              <a ng-if='methodCode == 3 || methodCode == 4'
+                 class="button button-icon icon ion-check-search"
+                 ng-click='popupAnswer()'>
+              </a>
+
+              <div class='writing-panel' ng-if='methodCode == 4'
+                  ng-class="{'adjust-size': methodCode == 3 || methodCode == 4}">
+                <canvas id='drawingCanvas'
+                  style='background: transparent url({{imageClue}}) no-repeat center center; background-size: contain;'>
+              </div>
+
+              <div class='writing-panel' ng-if='methodCode != 4'
+                  ng-class="{'adjust-size': methodCode == 3 || methodCode == 4}">
+                <canvas id='drawingCanvas'
+                  style="background: transparent url({{imageBackground}}) no-repeat center center; background-size: contain;">
+              </div>
+
+            </div>
+
+            <div class="col col-10 brush-setting"
+                 ui-sref='brush'>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <a ng-if='methodCode == 3 || methodCode == 4' class="button button-icon icon ion-check-search" ng-click='popupAnswer()'></a>
-
-      <div class='writing-panel' ng-if='methodCode == 4' style='margin-top: -3%;'>
-        <canvas width="470" height="365" id='drawingCanvas' style='background: transparent url({{imageClue}}) no-repeat center center; background-size: contain;'>
-      </div>
-
-      <div class='writing-panel' ng-if='methodCode != 4' ng-style='{"margin-top": methodCode == 1 || methodCode == 2 ? "10%" : "-3%"}' >
-        <canvas width="470" height="365" id='drawingCanvas' style="background: transparent url({{imageBackground}}) no-repeat center center; background-size: contain;">
-      </div>
-
-      <a class="brush-setting" ui-sref='brush' ng-style='{"margin-top": methodCode == 1 || methodCode == 2 ? "21%" : "8%"}'></a>
-
       <div class='writing-footer'>
-        <div ng-click="previous()" ng-class="{'previous' : !isDisabledPrevious()}"></div>
-        <div class='delete' ng-click="redraw()"></div>
+        <div ng-if='isDisabledPrevious()'></div>
+        <div ng-if='!isDisabledPrevious()'
+             ng-click="previous()" class='previous'></div>
+        <div class='delete'
+            ng-click="redraw()"></div>
         <div class='next' ng-click='next()' ng-hide='isDisabledNext()'></div>
         <div class='resetTracks' ng-click='resetCurrentTrack()' ng-show='isDisabledNext()'></div>
       </div>
-
     </div>
 
   </ion-content>

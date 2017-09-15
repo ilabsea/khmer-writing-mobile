@@ -1,23 +1,31 @@
 <ion-view class='app-background'>
 
   <ion-content scroll='false'>
-
-    <a class="button button-icon icon ion-close" ui-sref='grades'></a>
-
     <div class='setting-panel'>
-      <div class='user-panel'>
-        <img ng-src='img/avatar/{{currentUser.avatar_name}}' style='width: 34%; margin-top: 20%; margin-left: 13%;'>
-        <a class="button button-icon icon ion-edit" ui-sref="accounts({ state: 'edit'})" ng-if='currentUser.id != 1'></a>
-        <p class='name'>{{currentUser.name}}</p>
-        <p class='grade' ng-if='currentUser.id != 1'>ថ្នាក់ទី {{currentUser.grade}} " {{currentUser.type}} "</p>
+
+      <div class="row row-top">
+        <div class="col col-90">
+        </div>
+        <div class="col col-10 div-icon-close">
+          <a class="button button-icon icon ion-close" ui-sref='lessons'></a>
+        </div>
       </div>
 
-      <div class='editing-panel'>
-        <div class="new-user" ui-sref="accounts({ state: 'new'})"></div>
-        <div class="change-user" ui-sref='users'></div>
-        <div class="delete-user" style='width: 25%;' ng-click='deleteUser()' ng-hide='isGuestUser()'></div>
-        <div class="sound" ng-style='soundStyle' ng-class="{'open': isOpen}" ng-click='toggleSound()'></div>
-        <div class="aboutus" ui-sref='aboutus'></div>
+      <div class="row row-top">
+        <div class="col col-50">
+          <img ng-src='img/avatar/{{currentUser.avatar_name}}'>
+          <a class="button button-icon icon ion-edit" ui-sref="accounts({ state: 'edit'})" ng-if='currentUser.id != 1'></a>
+          <p class='name'>{{currentUser.name}}</p>
+          <p class='grade' ng-if='currentUser.id != 1'>ថ្នាក់ទី {{currentUser.grade}} " {{currentUser.type}} "</p>
+        </div>
+
+        <div class="col col-50 setting">
+          <div class="new-user" ui-sref="accounts({ state: 'new'})"></div>
+          <div class="change-user" ui-sref='users'></div>
+          <div class="delete-user" ng-click='deleteUser()' ng-hide='isGuestUser()'></div>
+          <div class="sound" ng-style='soundStyle' ng-class="{'open': isOpen}" ng-click='toggleSound()'></div>
+          <div class="aboutus" ui-sref='aboutus'></div>
+        </div>
       </div>
 
     </div>

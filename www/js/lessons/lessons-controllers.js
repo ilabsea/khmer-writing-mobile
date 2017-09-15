@@ -1,8 +1,9 @@
 angular.module('app')
 
-.controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices,
-            $ionicHistory, $state, MethodsServices, $ionicPlatform, UsersServices, TracksServices) {
-  var vm = $scope, currentGrade = GradesServices.getGrade();
+.controller('LessonsCtrl', function ($scope, LessonsServices, $ionicHistory,
+          $state, MethodsServices, UsersServices, TracksServices) {
+
+  var vm = $scope, gradeId = 1;
 
   var lessons = [];
   var tracks = [];
@@ -12,8 +13,7 @@ angular.module('app')
   vm.next = next;
   vm.previous = previous;
   vm.setLesson = setLesson;
-  vm.gradeName = currentGrade.name;
-  vm.goBack = goBack;
+  vm.gradeName = "ថ្នាក់ទី ១";
   vm.totalLessons;
   vm.range = range;
   vm.totalStarLessons = 0;
@@ -64,12 +64,8 @@ angular.module('app')
     setLessonsBuilt();
   }
 
-  function goBack() {
-    $state.go('grades')
-  }
-
   function setLessons() {
-    LessonsServices.getByGradeId(currentGrade.id).then(function (result) {
+    LessonsServices.getByGradeId(gradeId).then(function (result) {
       lessons = result;
       vm.totalLessons = lessons.length * 3;
       TracksServices.getByUserId(UsersServices.getCurrentUser().id).then(function(tracksRes){

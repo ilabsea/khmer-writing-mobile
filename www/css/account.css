@@ -10,7 +10,7 @@ ion-view {
 
 .app-background {
   background: url("../img/app-background.png") center center no-repeat fixed;
-  background-size: cover; }
+  background-size: 100% 100%; }
 
 .activated {
   opacity: .3; }
@@ -28,25 +28,13 @@ ion-view {
   margin-top: 3.5%;
   width: 100%; }
 
-.split-left {
-  display: inline-block;
-  position: relative;
-  float: left;
-  width: 40%;
-  height: 100%; }
-
-.split-right {
-  display: inline-block;
-  position: relative;
-  width: 50%;
-  height: 60%; }
-
 .avatar-selection {
   display: inline-block;
   width: 37%;
   height: 59%;
   position: fixed;
-  margin-left: 7%; }
+  margin-left: 6%;
+  margin-top: -2%; }
 
 .avatar-selection button:last-child {
   position: relative;
@@ -55,7 +43,7 @@ ion-view {
   width: 67%;
   height: 16%;
   margin-left: 17%;
-  margin-top: 1%;
+  margin-top: -6%;
   border: none; }
 
 .avatar-selection .selected {
@@ -69,49 +57,41 @@ ion-view {
   height: 35%;
   background-size: contain;
   margin-right: 2%;
-  margin-left: 1.5%;
+  margin-left: 2%;
   cursor: pointer;
   opacity: .3; }
 
 .account-name {
   background: url(../img/account/name.png) center center no-repeat;
-  background-size: contain;
-  width: 79.5%;
-  margin-left: 19.5% !important;
-  margin-top: 3.8% !important;
-  height: 11%; }
+  background-size: contain; }
 
 input[type="text"]#name::-webkit-input-placeholder {
   color: #763617;
   font-size: 22px; }
 
-.select-grade {
-  background: url(../img/account/grade.png) center center no-repeat;
-  background-size: contain;
-  margin-top: 4%;
-  margin-left: 22%;
-  width: 43.5%;
-  height: 11%;
-  float: left; }
+.select-grade .item-select {
+  background: url("../img/account/grade.png") center center no-repeat;
+  background-size: contain; }
 
-.select-grade .input-label {
-  font-size: 20px;
-  color: #763617;
-  margin-left: 25%; }
-
-.select-type {
+.select-type .item-select {
   background: url("../img/account/grade-type.png") center center no-repeat;
-  background-size: contain;
-  margin-top: 4%;
-  width: 34%;
-  height: 11%; }
-
-.select-type select {
-  margin-left: 20%;
-  background-color: white; }
+  background-size: contain; }
 
 .item-select:after {
   content: none !important; }
 
 .select-type select option:checked {
   color: red; }
+
+.avatar {
+  margin-top: 7%; }
+
+.avatar-image {
+  margin-top: 24%;
+  margin-left: 37%; }
+
+.avatar-image img {
+  width: 73%; }
+
+.div-icon-close {
+  margin-left: -3%; }
