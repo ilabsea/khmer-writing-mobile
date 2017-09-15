@@ -11,27 +11,13 @@ $font-size: 22px;
   width: 100%;
 }
 
-.split-left{
-  display: inline-block;
-  position: relative;
-  float: left;
-  width: 40%;
-  height: 100%;
-}
-
-.split-right{
-  display: inline-block;
-  position: relative;
-  width: 50%;
-  height: 60%;
-}
-
 .avatar-selection{
   display: inline-block;
   width: 37%;
   height: 59%;
   position: fixed;
-  margin-left: 7%;
+  margin-left: 6%;
+  margin-top: -2%;
 }
 
 .avatar-selection button:last-child{
@@ -41,7 +27,7 @@ $font-size: 22px;
   width: 67%;
   height: 16%;
   margin-left: 17%;
-  margin-top: 1%;
+  margin-top: -6%;
   border: none;
 }
 
@@ -57,7 +43,7 @@ $font-size: 22px;
   height: 35%;
   background-size: contain;
   margin-right: 2%;
-  margin-left: 1.5%;
+  margin-left: 2%;
   cursor: pointer;
   opacity: .3;
 }
@@ -65,10 +51,6 @@ $font-size: 22px;
 .account-name{
   background: url(../img/account/name.png) $background;
   background-size: contain;
-  width: 79.5%;
-  margin-left: 19.5%!important;
-  margin-top: 3.8%!important;
-  height: 11%;
 }
 
 input[type="text"]#name::-webkit-input-placeholder {
@@ -76,33 +58,14 @@ input[type="text"]#name::-webkit-input-placeholder {
   font-size: $font-size;
 }
 
-.select-grade{
-  background: url(../img/account/grade.png) $background;
+.select-grade .item-select{
+  background: url('../img/account/grade.png') $background;
   background-size: contain;
-  margin-top: 4%;
-  margin-left: 22%;
-  width: 43.5%;
-  height: 11%;
-  float: left;
 }
 
-.select-grade .input-label{
-  font-size: 20px;
-  color: $font-color;
-  margin-left: 25%;
-}
-
-.select-type{
+.select-type .item-select{
   background: url("../img/account/grade-type.png") $background;
   background-size: contain;
-  margin-top: 4%;
-  width: 34%;
-  height: 11%;
-}
-
-.select-type select{
-  margin-left: 20%;
-  background-color: white;
 }
 
 .item-select:after {
@@ -111,4 +74,21 @@ input[type="text"]#name::-webkit-input-placeholder {
 
 .select-type select option:checked {
   color: red;
+}
+
+.avatar {
+  margin-top: 7%;
+}
+
+.avatar-image {
+  margin-top: 24%;
+  margin-left: 37%;
+}
+
+.avatar-image img{
+  width: 73%;
+}
+
+.div-icon-close{
+  margin-left: -3%;
 }

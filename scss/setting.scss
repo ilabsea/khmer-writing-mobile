@@ -9,46 +9,40 @@
   margin-top: 3.5%;
 }
 
-.user-panel {
-  display: inline-block;
-  position: relative;
-  float: left;
+.setting-panel .col img {
+  width: 35%;
+  margin-left: 37%;
+}
+
+.name{
+  color: #FFF;
   text-align: center;
-  width: 50%;
-  height: 100%;
-}
-
-.editing-panel {
-  display: inline-block;
-  position: relative;
-  height: 75%;
-  width: 50%;
-}
-
-.editing-panel div{
-  background-size: contain;
-  margin-left: 6%;
-  width: 65%;
-  height: 21%;
 }
 
 .new-user{
   background: url("../img/setting/new.png") $background;
+  background-size: 100% 100%;
+}
+
+.col.setting{
+  margin-left: 2%;
 }
 
 .change-user{
   background: url("../img/setting/change.png") $background;
-  margin-top: 2%;
+  background-size: 100% 100%;
 }
 
 .delete-user{
-  background: url("../img/setting/delete.png") $background;
   display: inline-block;
+  background: url("../img/setting/delete.png") $background;
+  background-size: 100% 100%;
 }
 
 .sound{
   display: inline-block;
   background: url("../img/setting/sound-close.png") $background;
+  background-size: 100% 100%;
 }
 
 .sound.open{
@@ -57,23 +51,8 @@
 
 .aboutus{
   background: url("../img/setting/aboutus.png") $background;
+  background-size: 100% 100%;
   margin-top: 2%;
-}
-
-.avatar {
-  background: url("../img/setting/avatar-box.png") $background;
-  background-size: contain;
-  margin-top: 20%;
-  margin-left: 36.5%;
-  width: 37%;
-  height: 33%;
-}
-
-.name{
-  color: #FFF;
-  margin-top: 6%;
-  font-size: 33px;
-  margin-left: 10%;
 }
 
 .grade{

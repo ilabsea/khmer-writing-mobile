@@ -19,7 +19,6 @@ $font-color: #763617;
   width: 2.8%;
   height: 8%;
   margin-left: 7.2%;
-  margin-top: 23%;
 }
 
 .user-item{
@@ -34,15 +33,6 @@ $font-color: #763617;
 
 div.user-item:nth-last-of-type(2){
   margin-left: 40%;
-}
-
-.user-item p{
-  margin-top: 6%;
-  font-size: 29px;
-}
-
-.user-item p+p{
-  font-size: 24px;
 }
 
 .user-item div{

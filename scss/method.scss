@@ -9,14 +9,9 @@
   background: transparent url("../img/method/lesson-title-bar.png") $background;
   background-size: contain;
   text-align: center;
-  line-height: 1.5;
-  margin-top: 6%;
+  line-height: 1.4;
+  margin-top: 7%;
   padding: 1.5%;
-}
-
-.method-lesson-text{
-  color: #f8f8f8;
-  font-size: 120%;
 }
 
 .lesson-title{
@@ -41,4 +36,58 @@
 
 .method-item img{
   width: 95%;
+}
+
+//Mobile device
+@media only screen
+  and (min-device-width: 500px)
+  and (min-device-height: 320px)
+  and (orientation: landscape) {
+
+  .method-lesson-text {
+    color: #f8f8f8;
+    font-size: 12px;
+  }
+
+  .lesson-title {
+    color: #FCDE00;
+    font-size: 14px;
+  }
+
+}
+
+@media only screen
+  and (min-device-width: 640px)
+  and (min-device-height: 360px)
+  and (orientation: landscape){
+
+  .method-lesson-text {
+    color: #f8f8f8;
+    font-size: 12px;
+  }
+
+  .lesson-title {
+    color: #FCDE00;
+    font-size: 14px;
+  }
+
+}
+
+
+//Tablet Galaxy
+@media only screen
+  and (min-device-width: 1020px)
+  and (min-device-height: 600px)
+  and (orientation: landscape) {
+
+  .method-lesson-text {
+    color: #f8f8f8;
+    font-size: 20px;
+  }
+
+  .lesson-title {
+    color: #FCDE00;
+    font-size: 26px;
+  }
+
 }

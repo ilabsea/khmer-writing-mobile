@@ -2,9 +2,9 @@ angular.module('app')
 
 .factory("ContentsServices", ContentsServices)
 
-ContentsServices.$inject = ['$cordovaSQLite', '$rootScope', '$cordovaFileTransfer', '$state', '$timeout'];
+ContentsServices.$inject = ['$cordovaSQLite'];
 
-function ContentsServices($cordovaSQLite, $rootScope, $cordovaFileTransfer, $state, $timeout) {
+function ContentsServices($cordovaSQLite) {
 
   function getByLessonIdMethodId(lessonId, methodId) {
     var query = "SELECT * FROM contents WHERE lesson_id = ? AND writing_method_id = ?";
