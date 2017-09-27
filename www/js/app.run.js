@@ -2,10 +2,10 @@ angular
 .module('app')
 .run(runBlock);
 
-runBlock.$inject = ['$ionicPlatform', '$cordovaSQLite', '$cordovaFile', "$rootScope", "$location", "$ionicHistory", "$ionicLoading"];
+runBlock.$inject = ['$ionicPlatform', "$location", "$ionicHistory"];
 
 
-function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $location, $ionicHistory) {
+function runBlock ($ionicPlatform, $location, $ionicHistory) {
 
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -15,11 +15,10 @@ function runBlock ($ionicPlatform, $cordovaSQLite, $cordovaFile, $rootScope, $lo
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
   });
 
   $ionicPlatform.registerBackButtonAction(function() {
-    if ($location.path() === "/home" || $location.path() === "/grades") {
+    if ($location.path() === "/home" || $location.path() === "/lessons") {
       navigator.app.exitApp();
     }
     else {

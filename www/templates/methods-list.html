@@ -11,7 +11,9 @@
     </div>
 
     <div class='method-contain'>
-      <div ng-repeat='method in methods' ui-sref='contents' ng-click='setMethod(method)' class='method-item'>
+      <div ng-repeat='method in methods'
+          ui-sref='contents' ng-click='setMethod(method)'
+          class='method-item'>
         <img ng-src='img/method/{{method.icon}}.png'>
       </div>
     </div>

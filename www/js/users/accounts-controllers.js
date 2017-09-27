@@ -34,12 +34,12 @@ angular.module('app')
   vm.save = function(userParams) {
     if(userParams.id)
       AccountsServices.editUser(userParams, vm.selectedAvatar).then(function (user) {
-        $state.go('grades');
+        $state.go('lessons');
         UsersServices.setCurrentUser(user);
       });
     else
       AccountsServices.addUser(userParams, vm.selectedAvatar).then(function (user) {
-        $state.go('grades');
+        $state.go('lessons');
         UsersServices.setCurrentUser(user);
       });
   }
