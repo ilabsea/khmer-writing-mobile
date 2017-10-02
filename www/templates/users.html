@@ -8,7 +8,7 @@
         </div>
         <div class="col col-10 div-icon-close">
           <a class="button button-icon icon ion-close"
-             ui-sref='lessons'>
+             ui-sref='grades'>
           </a>
         </div>
       </div>
@@ -23,7 +23,7 @@
             style="width: 45%; ">
           <p class="user-name">{{user.name}}</p>
           <p class="user-grade" ng-if='user.id != 1'>ថ្នាក់ទី {{user.grade}} " {{user.type}} " </p>
-          <div ui-sref='lessons' ng-click='setCurrentUser(user)'></div>
+          <div ui-sref='grades' ng-click='setCurrentUser(user)'></div>
         </div>
       </div>
 

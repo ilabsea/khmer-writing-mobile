@@ -27,7 +27,7 @@ angular.module('app')
   vm.resetCurrentTrack = resetCurrentTrack;
 
 
-  var path = "img/ilabsea.instedd.khmerwriting/grade"
+  var path = "content://ilabsea.instedd.khmerwriting/main_expansion/grade"
             + vm.gradeId + "/lesson" + vm.lessonId
             + "/method" + vm.writingMethodId + "/";
 

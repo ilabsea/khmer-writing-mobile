@@ -18,7 +18,7 @@ function runBlock ($ionicPlatform, $location, $ionicHistory) {
   });
 
   $ionicPlatform.registerBackButtonAction(function() {
-    if ($location.path() === "/home" || $location.path() === "/lessons") {
+    if ($location.path() === "/home" || $location.path() === "/grades") {
       navigator.app.exitApp();
     }
     else {
