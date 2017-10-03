@@ -71,7 +71,8 @@ function routes($stateProvider, $urlRouterProvider) {
 
   .state('aboutus', {
     url: '/aboutus',
-    templateUrl: 'templates/aboutus.html'
+    templateUrl: 'templates/aboutus.html',
+    controller: 'AboutusCtrl'
   })
 
   .state('brush', {

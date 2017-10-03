@@ -1,30 +1,41 @@
 <ion-view class='aboutus-background'>
-
   <ion-content scroll='false'>
-
-    <div class="row row-top">
-      <div class="col col-90">
+    <div class='aboutus-panel'>
+      <div class="row">
+        <div class="col col-90">
+        </div>
+        <div class="col col-10 div-icon-close">
+          <a class="button button-icon icon ion-close" ui-sref='grades'></a>
+        </div>
       </div>
-      <div class="col col-10 div-close">
-        <a class="button button-icon" ui-sref='lessons'></a>
+
+      <div class="row row-top">
+        <div class="col col-40 info">
+          <img ng-src='img/aboutus/app-logo.png'>
+          <div>
+            <p> ជំនាន់ទី {{AppVersion}} </p>
+            <p> កម្មវិធីនេះត្រូវបានរៀបចំនិង ចងក្រងឡេីងដោយ ក្រុមការងារនៃអង្គការ KAPE និង អង្គការ InSTEDD តាមរយៈគំនិតផ្តួចផ្តេីមក្នុងកម្មវិធី iCamp</p>
+          </div>
+        </div>
+        <div class="col col-60 box-background">
+          <p> កម្មវិធីនេះបង្កេីតឡេីងក្រោមកិច្ចសហការរវាង </p>
+          <div class='ilab-logo'>
+            <a href='http://www.ilabsoutheastasia.org'>
+              <img src='img/aboutus/ilab-logo.png'>
+            </a>
+          </div>
+          <div class='kape-logo'>
+            <a href='http://www.kapekh.org'>
+              <img src='img/aboutus/kape-logo.png'>
+            </a>
+          </div>
+          <p class='sponsoredby'>ដោយទទួលមូលនិធិគាំទ្រពី</p>
+          <a href='http://spidercenter.org' class='spider-logo'>
+            <img src='img/aboutus/spider-logo.png'>
+          </a>
+        </div>
       </div>
     </div>
-
-    <a href='http://www.ilabsoutheastasia.org'>
-      <div class='ilab-logo'>
-      </div>
-    </a>
-
-
-    <a href='http://www.kapekh.org' target='_new'>
-      <div class='kape-logo' ng-click="redirectTo('http://www.kapekh.org')">
-      </div>
-    </a>
-
-    <a href='http://spidercenter.org' target='_new'>
-      <div class='spider-logo' ng-click="redirectTo('http://spidercenter.org')">
-      </div>
-    </a>
 
   </ion-content>
 

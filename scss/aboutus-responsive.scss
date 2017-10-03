@@ -4,36 +4,137 @@
   and (min-device-height: 320px)
   and (orientation: landscape) {
 
-  .div-close a {
-    width: 39px !important;
-    margin-top: 40%;
-    margin-left: -44%;
+  .box-background {
+    background-size: 77% 100%;
+    margin-top: -3.5%;
+    height: 220px !important;
+  }
+
+  .info img{
+    width: 42%;
+    margin-left: 40%;
+  }
+
+  .info div{
+    text-align: center;
+    margin-left: 22%;
+    margin-top: 6%;
+    font-size: 16px;
+    width: 77%;
+  }
+
+  .info div > p:first-child {
+    color: #763617;
+    font-size: 5vh;
+  }
+
+  .info div p + p {
+    margin-top: 6%;
+    line-height: 1.6;
+    font-size: 3vh;
   }
 
   .ilab-logo {
-    display: inline-block;
-    width: 23%;
-    height: 10%;
-    margin-left: 46%;
-    margin-top: 0%;
+    float: left;
+    width: 60%;
+  }
+
+  .ilab-logo img {
+    width: 67%;
+    margin-left: 31%;
+    margin-top: 3%;
   }
 
   .kape-logo{
-    display: inline-block;
-    width: 9%;
-    height: 15%;
-    margin-top: 3%;
-    margin-left: 4%;
+    width: 30%;
+    float: right;
   }
 
-  .spider-logo {
-    width: 25%;
-    height: 14%;
-    margin-left: 52%;
-    margin-top: 8.6%;
+  .kape-logo img{
+    width: 50%;
+    margin-left: -10%;
+    margin-top: -8%;
+  }
+
+  .spider-logo img{
+    width: 45%;
+    margin-top: 4%;
+    margin-left: 28%;
+  }
+
+  .box-background p:first-child {
+    margin-top: 6%;
+    margin-left: 21%;
+    font-size: 3vh;
+  }
+
+  .sponsoredby {
+    float: none;
+    margin-top: 22%;
+    margin-left: 31%;
+    font-size: 3.5vh;
   }
 }
 
+@media only screen
+  and (min-device-width: 640px)
+  and (min-device-height: 360px)
+  and (orientation: landscape){
+
+  .box-background {
+    height: 250px!important;
+  }
+
+  .info img{
+    margin-top: -2%;
+  }
+
+  .info div > p:first-child {
+    margin-top: -2%;
+  }
+
+  .spider-logo img{
+    margin-top: 3%;
+  }
+
+  .box-background p:first-child {
+    font-size: 3.4vh;
+  }
+
+  .sponsoredby {
+    margin-top: 21%;
+    font-size: 3.8vh;
+  }
+}
+
+@media only screen
+  and (min-device-width: 700px)
+  and (min-device-height: 400px)
+  and (orientation: landscape){
+  .box-background {
+    height: 278px!important;
+  }
+
+  .info img{
+    margin-top: -2%;
+  }
+
+  .info div > p:first-child {
+    margin-top: -2%;
+  }
+
+  .spider-logo img{
+    margin-top: 3%;
+  }
+
+  .box-background p:first-child {
+    margin-top: 7%;
+  }
+
+  .kape-logo img {
+    margin-top: -2%;
+  }
+}
 
 //Tablet Galaxy
 @media only screen
@@ -41,33 +142,73 @@
   and (min-device-height: 600px)
   and (orientation: landscape) {
 
-  .div-close {
-    max-width: 6% !important;
+  .box-background {
+    background-size: contain;
+    margin-top: -2.5%;
+  }
+
+  .info img{
+    width: 42%;
+    margin-left: 40%;
+  }
+
+  .info div{
+    text-align: center;
+    margin-left: 22%;
     margin-top: 6%;
-    margin-left: -3%;
+    font-size: 16px;
+    width: 77%;
+  }
+
+  .info div > p:first-child {
+    color: #763617;
+    font-size: 30px;
+  }
+
+  .info div p + p {
+    margin-top: 6%;
+    line-height: 1.6;
   }
 
   .ilab-logo {
-    display: inline-block;
-    width: 23%;
-    height: 10%;
-    margin-left: 46%;
-    margin-top: 8%;
+    float: left;
+    width: 60%;
+  }
+
+  .ilab-logo img {
+    width: 66%;
+    margin-left: 30%;
+    margin-top: 6%;
   }
 
   .kape-logo{
-    display: inline-block;
-    width: 9%;
-    height: 15%;
-    margin-top: 6.3%;
-    margin-left: 4%;
+    width: 30%;
+    float: right;
   }
 
-  .spider-logo {
-    width: 25%;
-    height: 14%;
-    margin-left: 52%;
-    margin-top: 8.6%;
+  .kape-logo img{
+    width: 50%;
+    margin-left: -15%;
+    margin-top: 3%;
+  }
+
+  .spider-logo img{
+    width: 45%;
+    margin-top: 5%;
+    margin-left: 26%;
+  }
+
+  .box-background p:first-child {
+    margin-top: 8%;
+    margin-left: 21%;
+    font-size: 20px;
+  }
+
+  .sponsoredby {
+    float: none;
+    margin-top: 23%;
+    margin-left: 31%;
+    font-size: 20px;
   }
 
 }

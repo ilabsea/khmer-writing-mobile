@@ -35,3 +35,7 @@ ion-view {
 .about-sponspor {
   background: url("../img/aboutus/box.png") center center no-repeat;
   background-size: 91% 100%; }
+
+.box-background {
+  background: url("../img/aboutus/box.png") center center no-repeat;
+  margin-left: -5.5%; }
