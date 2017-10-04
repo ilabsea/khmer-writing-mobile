@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ilabsea.instedd.khmerwriting" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ilabsea.instedd.khmerwriting" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>សរសេរខ្មែរ</name>
     <description>
         Khmer writing is allowed user especially kinder-garden kids to able to learn writing khmer.
@@ -73,4 +73,19 @@
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
     <plugin name="cordova-plugin-file" spec="~4.3.1" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
+    <plugin name="com.flyingsoftgames.xapkreader" spec="https://github.com/agamemnus/cordova-plugin-xapkreader.git#cordova-6.5.0">
+        <variable name="XAPK_EXPANSION_AUTHORITY" value="ilabsea.instedd.khmerwriting" />
+        <variable name="XAPK_PUBLIC_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiwvJxF+V/wUtcixokUIBt45ARbG78hPWAQDIGnMyxcet8dUG2Jbu34GqdoxYpj1P59hCjtFutqognTpRURiA+gez1Mp1KKcFZaDBMrvAO/Z2iRzvosR9zyy8e6XHSOhp0+mO/O98jfOzEl7YuME+kEGk0gTNWpu9TT5q1Q/gcrwXs62D9JrkNqmX2/+7/Ecu6b70XZhuh4+vgucSlEuwDQVKmJJNd7KoXfSLe8i1j/yE1zMCPQOrImLCtd+MOz6uYtWtEPjyfPtuZ2EZ+PtAG6CwnGxS/QyHWZznYFBbgMHhNeIBeKw6RFg+f8eiGpFQrRz1lr+Q4o8WRBOyNllJcwIDAQAB" />
+        <variable name="XAPK_TEXT_DL_ASSETS" value="Downloading assets…" />
+        <variable name="XAPK_TEXT_PR_ASSETS" value="Preparing assets…" />
+        <variable name="XAPK_TEXT_DL_FAILED" value="Download failed." />
+        <variable name="XAPK_TEXT_ERROR" value="Error." />
+        <variable name="XAPK_TEXT_CLOSE" value="Close." />
+        <variable name="XAPK_MAIN_VERSION" value="0" />
+        <variable name="XAPK_PATCH_VERSION" value="0" />
+        <variable name="XAPK_MAIN_FILESIZE" value="0" />
+        <variable name="XAPK_PATCH_FILESIZE" value="0" />
+        <variable name="XAPK_AUTO_DOWNLOAD" value="false" />
+        <variable name="XAPK_PROGRESS_FORMAT" value="percent" />
+    </plugin>
 </widget>

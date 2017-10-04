@@ -5,7 +5,7 @@ angular.module('app')
             BrushesServices, $ionicPlatform, $ionicPopup, TracksServices,
             $window){
 
-  var vm = $scope, canvas, signaturePad, brushSize, brushColor;
+  var vm = $scope, canvas, signaturePad, signaturePad1, brushSize, brushColor;
   var media;
 
   var currentLesson = LessonsServices.getLesson();
@@ -46,8 +46,9 @@ angular.module('app')
       vm.contents = contents;
       setContentDataChange(contents);
       canvas = document.getElementById('drawingCanvas');
+      paintingCanvas = document.getElementById('paintingCanvas');
       setCanvasSize(canvas);
-
+      setPaintingCanvasSize(paintingCanvas)
       setBrushSizeAndColor();
 
       if(canvas){
@@ -56,7 +57,32 @@ angular.module('app')
           penColor: brushColor
         });
       }
+
+      if(paintingCanvas){
+        signaturePad1 = new SignaturePad(paintingCanvas, {
+          maxWidth: brushSize,
+          penColor: brushColor
+        });
+      }
     });
+  }
+
+  function setPaintingCanvasSize(canvas) {
+    var deviceWidth = $window.innerWidth;
+    var deviceHeight = $window.innerHeight;
+    if(deviceWidth >= 1020 && deviceHeight >= 600 ) {
+      canvas.width = 450;
+      canvas.height = 370;
+    } else if (deviceWidth >= 700 && deviceHeight >= 400) {
+      canvas.width = 330;
+      canvas.height = 240;
+    }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
+      canvas.width = 270;
+      canvas.height = 200;
+    } else if(deviceWidth >= 500  && deviceHeight >= 320 ){
+      canvas.width = 170;
+      canvas.height = 180
+    }
   }
 
   function setCanvasSize(canvas) {
@@ -91,7 +117,6 @@ angular.module('app')
         canvas.height = 219;
       }
     }
-
   }
 
   function playSound() {
@@ -103,6 +128,7 @@ angular.module('app')
     var track = getTrackPerMethod();
     TracksServices.storeTrack(track);
     signaturePad.off();
+    signaturePad1.off();
   }
 
   function getTrackPerMethod(){
@@ -127,16 +153,19 @@ angular.module('app')
     index++;
     setContentDataChange(vm.contents);
     signaturePad.clear();
+    signaturePad1.clear();
   }
 
   vm.previous = function() {
     index--;
     setContentDataChange(vm.contents);
     signaturePad.clear();
+    signaturePad1.clear();
   }
 
   vm.redraw = function () {
     signaturePad.clear();
+    signaturePad1.clear();
   }
 
   var popupAnswer;
@@ -188,6 +217,7 @@ angular.module('app')
     index = 0 ;
     setContentDataChange(vm.contents);
     signaturePad.clear();
+    signaturePad1.clear();
   }
 
   vm.$on('$stateChangeSuccess', function(event, toState) {
@@ -197,6 +227,11 @@ angular.module('app')
         if(signaturePad){
           signaturePad.maxWidth = brushSize;
           signaturePad.penColor = brushColor;
+        }
+
+        if(signaturePad1){
+          signaturePad1.maxWidth = brushSize;
+          signaturePad1.penColor = brushColor;
         }
       });
     }

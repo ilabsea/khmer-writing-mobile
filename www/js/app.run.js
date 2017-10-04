@@ -15,6 +15,14 @@ function runBlock ($ionicPlatform, $location, $ionicHistory) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    if (window.XAPKReader) {
+      window.XAPKReader.downloadExpansionIfAvailable(function () {
+        console.log("Expansion file check/download success.");
+      }, function (err) {
+        console.log(err);
+        throw "Failed to download expansion file.";
+      })
+    }
   });
 
   $ionicPlatform.registerBackButtonAction(function() {

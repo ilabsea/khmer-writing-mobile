@@ -9,7 +9,12 @@
           <p class='content-title-numeric'> មេរៀនទី {{currentLesson["khmer_numeric"]}}</p>
           <p class='content-title'> {{currentLesson["name"]}}</p>
 
-          <img ng-if='methodCode != 3' ng-src='{{image}}'>
+          <img ng-if='methodCode != 3 && methodCode != 4' ng-src='{{image}}'>
+          <div ng-if='methodCode == 4' style='margin-left: 6%;'>
+            <canvas id='paintingCanvas'
+              style='background: transparent url({{image}}) no-repeat center center; background-size: contain;'>
+          </div>
+
           <a ng-if='methodCode == 3'
              class="button button-icon icon ion-play"
              ng-click="playSound()">
