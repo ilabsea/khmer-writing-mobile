@@ -75,7 +75,7 @@
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
     <plugin name="com.flyingsoftgames.xapkreader" spec="https://github.com/agamemnus/cordova-plugin-xapkreader.git#cordova-6.5.0">
         <variable name="XAPK_EXPANSION_AUTHORITY" value="ilabsea.instedd.khmerwriting" />
-        <variable name="XAPK_PUBLIC_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiwvJxF+V/wUtcixokUIBt45ARbG78hPWAQDIGnMyxcet8dUG2Jbu34GqdoxYpj1P59hCjtFutqognTpRURiA+gez1Mp1KKcFZaDBMrvAO/Z2iRzvosR9zyy8e6XHSOhp0+mO/O98jfOzEl7YuME+kEGk0gTNWpu9TT5q1Q/gcrwXs62D9JrkNqmX2/+7/Ecu6b70XZhuh4+vgucSlEuwDQVKmJJNd7KoXfSLe8i1j/yE1zMCPQOrImLCtd+MOz6uYtWtEPjyfPtuZ2EZ+PtAG6CwnGxS/QyHWZznYFBbgMHhNeIBeKw6RFg+f8eiGpFQrRz1lr+Q4o8WRBOyNllJcwIDAQAB" />
+        <variable name="XAPK_PUBLIC_KEY" value="PUBLIC KEY API">
         <variable name="XAPK_TEXT_DL_ASSETS" value="Downloading assets…" />
         <variable name="XAPK_TEXT_PR_ASSETS" value="Preparing assets…" />
         <variable name="XAPK_TEXT_DL_FAILED" value="Download failed." />
@@ -88,4 +88,5 @@
         <variable name="XAPK_AUTO_DOWNLOAD" value="false" />
         <variable name="XAPK_PROGRESS_FORMAT" value="percent" />
     </plugin>
+    <plugin name="cordova-plugin-app-version" spec="https://github.com/whiteoctober/cordova-plugin-app-version.git" />
 </widget>

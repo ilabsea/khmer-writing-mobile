@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, LessonsServices,
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices,
             ContentsServices, MethodsServices, $state, $cordovaMedia,
             BrushesServices, $ionicPlatform, $ionicPopup, TracksServices,
             $window){
@@ -8,13 +8,14 @@ angular.module('app')
   var vm = $scope, canvas, signaturePad, signaturePad1, brushSize, brushColor;
   var media;
 
+  var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
   var currentTracks = TracksServices.getCurrentTrack();
 
   vm.currentLesson = currentLesson;
 
-  vm.gradeId = 1;
+  vm.gradeId = currentGrade.id;
   vm.lessonId = currentLesson.id;
   vm.writingMethodId = currentMethod.id;
 

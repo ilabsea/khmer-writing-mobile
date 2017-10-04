@@ -20,10 +20,6 @@ ion-view {
   font-size: 20px;
   text-align: center; }
 
-.aboutus-background {
-  background: url("../img/aboutus/aboutus-background.png") center center no-repeat;
-  background-size: 100% 100%; }
-
 .aboutus-panel {
   display: block;
   background: url("../img/aboutus/aboutus-panel.png") center center no-repeat;
