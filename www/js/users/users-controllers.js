@@ -1,6 +1,7 @@
 angular.module('app')
 
-.controller('UsersCtrl', function($scope, isHome, UsersServices, $ionicPlatform, $cordovaFile, $cordovaSQLite) {
+.controller('UsersCtrl', function($scope, isHome, UsersServices, $ionicPlatform,
+            $cordovaFile, $cordovaSQLite) {
   var vm = $scope;
   vm.isHome = isHome;
   vm.offset = 0;
@@ -57,6 +58,7 @@ angular.module('app')
         console.log('error file transfer : ', error);
       });
   }
+
 
   $ionicPlatform.ready(function() {
     var isDatabaseCopied = getDatabaseCopied();
