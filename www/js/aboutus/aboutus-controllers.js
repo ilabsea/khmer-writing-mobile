@@ -1,13 +1,17 @@
 angular.module('app')
 
-.controller("AboutusCtrl", function($scope, $cordovaAppVersion, $ionicPlatform){
+.controller("AboutusCtrl", function($scope, $cordovaAppVersion, $ionicPlatform,
+            SoundServices, $timeout){
   var vm = $scope;
   vm.appVersion = '១.០';
 
   $ionicPlatform.ready(function () {
     $cordovaAppVersion.getVersionNumber().then(function (version) {
-      console.log('version : ', version);
       vm.appVersion = version;
     });
+    SoundServices.stop('setting');
+    $timeout(function(){
+      SoundServices.play('aboutus');
+    }, 1000)
   });
 })

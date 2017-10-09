@@ -1,7 +1,8 @@
 angular.module('app')
 
 .controller("SettingsCtrl", function($scope, UsersServices, AccountsServices,
-          $ionicPopup, $state, MethodsServices, $ionicLoading){
+          $ionicPopup, $state, MethodsServices, $ionicLoading, SoundServices,
+          $ionicPlatform, $timeout){
   var vm = $scope;
 
   vm.currentUser = UsersServices.getCurrentUser();
@@ -46,5 +47,13 @@ angular.module('app')
       vm.valid = false;
     }
   }
+
+  $ionicPlatform.ready(function() {
+    SoundServices.stop('grade');
+    $timeout(function(){
+      SoundServices.play('setting');
+    }, 1000);
+
+  })
 
 })

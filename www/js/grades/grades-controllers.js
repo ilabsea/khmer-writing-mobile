@@ -1,6 +1,7 @@
 angular.module('app')
 
-.controller('GradesCtrl', function(GradesServices, $scope, $ionicPlatform, $ionicLoading) {
+.controller('GradesCtrl', function(GradesServices, $scope, $ionicPlatform,
+            $ionicLoading, SoundServices, $timeout) {
   var vm = $scope;
 
   vm.grades = [];
@@ -21,7 +22,14 @@ angular.module('app')
     if (toState.url== "/grades") {
       $ionicPlatform.ready(function () {
         getGrades();
+        SoundServices.stop('intro');
+        SoundServices.stop('setting');
+        SoundServices.stop('lesson');
+        $timeout(function () {
+          SoundServices.play('grade');
+        }, 1000)
       });
     }
   });
+
 })

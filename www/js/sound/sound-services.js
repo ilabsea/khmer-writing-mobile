@@ -1,7 +1,7 @@
 angular.module('app')
 .factory("SoundServices", SoundServices)
 
-SoundServices.$inject = [$cordovaNativeAudio]
+SoundServices.$inject = ['$cordovaNativeAudio']
 
 function SoundServices($cordovaNativeAudio) {
 
@@ -9,19 +9,10 @@ function SoundServices($cordovaNativeAudio) {
     $cordovaNativeAudio
       .preloadSimple(id, path)
       .then(function (msg) {
-        console.log("message success : ", msg);
+        console.log("msg : ", msg);
+        console.log("id : ", id);
       }, function (error) {
-        console.log("error success : ", error);
-      });
-  }
-
-  function preloadComplex() {
-    $cordovaNativeAudio
-      .preloadComplex(id, path)
-      .then(function (msg) {
-        console.log("message2 success : ", msg);
-      }, function (error) {
-        console.log("error2 success : ", error);
+        console.log("error  : ", error);
       });
   }
 
@@ -35,7 +26,8 @@ function SoundServices($cordovaNativeAudio) {
 
   return {
     preloadSimple: preloadSimple,
-    preloadComplex: preloadComplex
+    play: play,
+    stop: stop
   }
 
 }

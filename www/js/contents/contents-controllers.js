@@ -3,7 +3,7 @@ angular.module('app')
 .controller("ContentsCtrl", function($scope, GradesServices, LessonsServices,
             ContentsServices, MethodsServices, $state, $cordovaMedia,
             BrushesServices, $ionicPlatform, $ionicPopup, TracksServices,
-            $window){
+            $window, SoundServices, $timeout){
 
   var vm = $scope, canvas, signaturePad, signaturePad1, brushSize, brushColor;
   var media;
@@ -49,7 +49,6 @@ angular.module('app')
       canvas = document.getElementById('drawingCanvas');
       paintingCanvas = document.getElementById('paintingCanvas');
       setCanvasSize(canvas);
-      setPaintingCanvasSize(paintingCanvas)
       setBrushSizeAndColor();
 
       if(canvas){
@@ -60,6 +59,7 @@ angular.module('app')
       }
 
       if(paintingCanvas){
+        setPaintingCanvasSize(paintingCanvas)
         signaturePad1 = new SignaturePad(paintingCanvas, {
           maxWidth: brushSize,
           penColor: brushColor
@@ -129,7 +129,8 @@ angular.module('app')
     var track = getTrackPerMethod();
     TracksServices.storeTrack(track);
     signaturePad.off();
-    signaturePad1.off();
+    if (signaturePad1)
+      signaturePad1.off();
   }
 
   function getTrackPerMethod(){
@@ -234,6 +235,12 @@ angular.module('app')
           signaturePad1.maxWidth = brushSize;
           signaturePad1.penColor = brushColor;
         }
+        SoundServices.stop('brush');
+        SoundServices.stop('lesson');
+
+        $timeout(function() {
+          SoundServices.play('content');
+        }, 1000)
       });
     }
   });

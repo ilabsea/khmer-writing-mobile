@@ -1,6 +1,8 @@
 angular.module('app')
 
-.controller("AccountsCtrl", function ($scope, AccountsServices, $state, UsersServices, $ionicHistory, $ionicPopup) {
+.controller("AccountsCtrl", function ($scope, AccountsServices, $state,
+          UsersServices, $ionicHistory, $ionicPopup, $ionicPlatform, $timeout,
+          SoundServices) {
   var vm = $scope;
   var currentUser = UsersServices.getCurrentUser();
 
@@ -81,5 +83,13 @@ angular.module('app')
       document.body.classList.add('keyboard-open');
     });
   }
+
+  $ionicPlatform.ready(function() {
+    SoundServices.stop('setting');
+    SoundServices.stop('intro');
+    $timeout(function(){
+      SoundServices.play('create-account');
+    }, 1000)
+  })
 
 })

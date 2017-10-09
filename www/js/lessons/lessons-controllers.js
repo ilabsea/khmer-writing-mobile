@@ -1,7 +1,8 @@
 angular.module('app')
 
 .controller('LessonsCtrl', function ($scope, GradesServices, LessonsServices, $ionicHistory,
-          $state, MethodsServices, UsersServices, TracksServices) {
+          $state, MethodsServices, UsersServices, TracksServices, SoundServices,
+          $ionicPlatform, $timeout) {
 
   var vm = $scope, currentGrade = GradesServices.getGrade();;
 
@@ -85,5 +86,13 @@ angular.module('app')
       setLessons();
     }
   });
+
+  $ionicPlatform.ready(function() {
+    SoundServices.stop('grade');
+    SoundServices.stop('methods');
+    $timeout(function(){
+      SoundServices.play('lesson');
+    }, 1000)
+  })
 
 })

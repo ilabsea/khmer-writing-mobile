@@ -1,7 +1,7 @@
 angular.module('app')
 
 .controller('UsersCtrl', function($scope, isHome, UsersServices, $ionicPlatform,
-            $cordovaFile, $cordovaSQLite) {
+            $cordovaFile, $cordovaSQLite, SoundServices) {
   var vm = $scope;
   vm.isHome = isHome;
   vm.offset = 0;
@@ -69,6 +69,8 @@ angular.module('app')
       numberOfUsers();
       getUsers();
     }
+
+    SoundServices.play('intro');
   })
 
 })
