@@ -75,8 +75,8 @@ angular.module('app')
       canvas.width = 450;
       canvas.height = 370;
     } else if (deviceWidth >= 700 && deviceHeight >= 400) {
-      canvas.width = 330;
-      canvas.height = 240;
+      canvas.width = 240;
+      canvas.height = 230;
     }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
       canvas.width = 270;
       canvas.height = 200;

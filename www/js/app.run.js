@@ -15,13 +15,6 @@ function runBlock ($ionicPlatform, $location, $ionicHistory, SoundServices) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    if (window.XAPKReader) {
-      window.XAPKReader.downloadExpansionIfAvailable(function () {
-        console.log("Expansion file check/download success.");
-      }, function (err) {
-        throw "Failed to download expansion file.";
-      })
-    }
 
     SoundServices.preloadSimple('intro', 'audio/intro.mp3');
     SoundServices.preloadSimple('grade', 'audio/grade.wav');
