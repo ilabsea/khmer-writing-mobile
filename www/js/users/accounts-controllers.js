@@ -85,11 +85,13 @@ angular.module('app')
   }
 
   $ionicPlatform.ready(function() {
-    SoundServices.stop('setting');
-    SoundServices.stop('intro');
-    $timeout(function(){
-      SoundServices.play('create-account');
-    }, 1000)
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('setting');
+      SoundServices.stop('intro');
+      $timeout(function(){
+        SoundServices.play('create-account');
+      }, 1000)
+    }
   })
 
 })

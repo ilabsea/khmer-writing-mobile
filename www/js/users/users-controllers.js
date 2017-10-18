@@ -70,7 +70,9 @@ angular.module('app')
       getUsers();
     }
 
-    SoundServices.play('intro');
+    if(SoundServices.getIsActive()){
+      SoundServices.play('intro');
+    }
   })
 
 })

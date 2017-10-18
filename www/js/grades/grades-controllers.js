@@ -22,12 +22,15 @@ angular.module('app')
     if (toState.url== "/grades") {
       $ionicPlatform.ready(function () {
         getGrades();
-        SoundServices.stop('intro');
-        SoundServices.stop('setting');
-        SoundServices.stop('lesson');
-        $timeout(function () {
-          SoundServices.play('grade');
-        }, 1000)
+        console.log('SoundServices.getIsActive() : ', SoundServices.getIsActive());
+        if(SoundServices.getIsActive()){
+          SoundServices.stop('intro');
+          SoundServices.stop('setting');
+          SoundServices.stop('lesson');
+          $timeout(function () {
+            SoundServices.play('grade');
+          }, 1000)
+        }
       });
     }
   });

@@ -35,11 +35,13 @@ angular.module('app')
   $ionicPlatform.ready(function() {
     setMethods();
     setTracks();
-    SoundServices.stop('lesson');
-    SoundServices.stop('content');
-    $timeout(function(){
-      SoundServices.play('method');
-    }, 1000);
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('lesson');
+      SoundServices.stop('content');
+      $timeout(function(){
+        SoundServices.play('method');
+      }, 1000);
+    }
   });
 
 })

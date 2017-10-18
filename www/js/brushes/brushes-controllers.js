@@ -39,10 +39,12 @@ angular.module('app')
   }
 
   $ionicPlatform.ready(function(){
-    SoundServices.stop('content');
-    $timeout(function () {
-      SoundServices.play('brush');
-    },1000)
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('content');
+      $timeout(function () {
+        SoundServices.play('brush');
+      },1000)
+    }
   })
 
 })

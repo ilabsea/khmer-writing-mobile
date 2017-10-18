@@ -235,12 +235,15 @@ angular.module('app')
           signaturePad1.maxWidth = brushSize;
           signaturePad1.penColor = brushColor;
         }
-        SoundServices.stop('brush');
-        SoundServices.stop('lesson');
 
-        $timeout(function() {
-          SoundServices.play('content');
-        }, 1000)
+        if(SoundServices.getIsActive()){
+          SoundServices.stop('brush');
+          SoundServices.stop('lesson');
+
+          $timeout(function() {
+            SoundServices.play('content');
+          }, 1000)
+        }
       });
     }
   });

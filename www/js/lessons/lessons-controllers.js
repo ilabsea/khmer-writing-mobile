@@ -88,11 +88,13 @@ angular.module('app')
   });
 
   $ionicPlatform.ready(function() {
-    SoundServices.stop('grade');
-    SoundServices.stop('methods');
-    $timeout(function(){
-      SoundServices.play('lesson');
-    }, 1000)
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('grade');
+      SoundServices.stop('methods');
+      $timeout(function(){
+        SoundServices.play('lesson');
+      }, 1000)
+    }
   })
 
 })

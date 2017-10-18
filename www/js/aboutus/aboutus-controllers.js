@@ -9,9 +9,11 @@ angular.module('app')
     $cordovaAppVersion.getVersionNumber().then(function (version) {
       vm.appVersion = version;
     });
-    SoundServices.stop('setting');
-    $timeout(function(){
-      SoundServices.play('aboutus');
-    }, 1000)
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('setting');
+      $timeout(function(){
+        SoundServices.play('aboutus');
+      }, 1000)
+    }
   });
 })
