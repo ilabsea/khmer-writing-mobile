@@ -28,8 +28,7 @@ angular.module('app')
   vm.resetCurrentTrack = resetCurrentTrack;
 
 
-  var path = "content://ilabsea.instedd.khmerwriting/main_expansion/grade"
-            + vm.gradeId + "/lesson" + vm.lessonId
+  var path = "img/org.kape.khmerwriting/grade" + vm.gradeId + "/lesson" + vm.lessonId
             + "/method" + vm.writingMethodId + "/";
 
   var index = 0;
@@ -49,7 +48,6 @@ angular.module('app')
       canvas = document.getElementById('drawingCanvas');
       paintingCanvas = document.getElementById('paintingCanvas');
       setCanvasSize(canvas);
-      setPaintingCanvasSize(paintingCanvas)
       setBrushSizeAndColor();
 
       if(canvas){
@@ -60,6 +58,7 @@ angular.module('app')
       }
 
       if(paintingCanvas){
+        setPaintingCanvasSize(paintingCanvas);
         signaturePad1 = new SignaturePad(paintingCanvas, {
           maxWidth: brushSize,
           penColor: brushColor
@@ -72,13 +71,13 @@ angular.module('app')
     var deviceWidth = $window.innerWidth;
     var deviceHeight = $window.innerHeight;
     if(deviceWidth >= 1020 && deviceHeight >= 600 ) {
-      canvas.width = 450;
-      canvas.height = 370;
+      canvas.width = 340;
+      canvas.height = 350;
     } else if (deviceWidth >= 700 && deviceHeight >= 400) {
       canvas.width = 330;
       canvas.height = 240;
     }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
-      canvas.width = 270;
+      canvas.width = 210;
       canvas.height = 200;
     } else if(deviceWidth >= 500  && deviceHeight >= 320 ){
       canvas.width = 170;
@@ -129,7 +128,8 @@ angular.module('app')
     var track = getTrackPerMethod();
     TracksServices.storeTrack(track);
     signaturePad.off();
-    signaturePad1.off();
+    if(signaturePad1)
+      signaturePad1.off();
   }
 
   function getTrackPerMethod(){
@@ -154,19 +154,22 @@ angular.module('app')
     index++;
     setContentDataChange(vm.contents);
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.previous = function() {
     index--;
     setContentDataChange(vm.contents);
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.redraw = function () {
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   var popupAnswer;
@@ -218,7 +221,8 @@ angular.module('app')
     index = 0 ;
     setContentDataChange(vm.contents);
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.$on('$stateChangeSuccess', function(event, toState) {

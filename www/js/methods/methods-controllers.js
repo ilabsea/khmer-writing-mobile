@@ -34,7 +34,11 @@ angular.module('app')
 
   $ionicPlatform.ready(function() {
     setMethods();
-    setTracks();
+    vm.$on('$stateChangeSuccess', function(event, toState) {
+      if (toState.url== "/methods") {
+        setTracks();
+      }
+    });
   });
 
 })

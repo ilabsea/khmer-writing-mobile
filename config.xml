@@ -1,14 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ilabsea.instedd.khmerwriting" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="org.kape.khmerwriting" version="1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>សរសេរខ្មែរ</name>
     <description>
         Khmer writing is allowed user especially kinder-garden kids to able to learn writing khmer.
   </description>
-    <author email="ilabsea@gmail.com" href="http://www.ilabsoutheastasia.org/">
-      InSTEDD iLabSea
+    <author email="chhayyuth.chhorn@kapekh.org" href="http://www.ilabsoutheastasia.org/">
+      KAPE
   </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="*://*/*"/>
+    <allow-intent href="*" />
+    <access origin="content:///*" />
+    <access origin="cdvfile:///*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -73,20 +77,5 @@
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
     <plugin name="cordova-plugin-file" spec="~4.3.1" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
-    <plugin name="com.flyingsoftgames.xapkreader" spec="https://github.com/agamemnus/cordova-plugin-xapkreader.git#cordova-6.5.0">
-        <variable name="XAPK_EXPANSION_AUTHORITY" value="ilabsea.instedd.khmerwriting" />
-        <variable name="XAPK_PUBLIC_KEY" value="PUBLIC KEY API">
-        <variable name="XAPK_TEXT_DL_ASSETS" value="Downloading assets…" />
-        <variable name="XAPK_TEXT_PR_ASSETS" value="Preparing assets…" />
-        <variable name="XAPK_TEXT_DL_FAILED" value="Download failed." />
-        <variable name="XAPK_TEXT_ERROR" value="Error." />
-        <variable name="XAPK_TEXT_CLOSE" value="Close." />
-        <variable name="XAPK_MAIN_VERSION" value="0" />
-        <variable name="XAPK_PATCH_VERSION" value="0" />
-        <variable name="XAPK_MAIN_FILESIZE" value="0" />
-        <variable name="XAPK_PATCH_FILESIZE" value="0" />
-        <variable name="XAPK_AUTO_DOWNLOAD" value="false" />
-        <variable name="XAPK_PROGRESS_FORMAT" value="percent" />
-    </plugin>
     <plugin name="cordova-plugin-app-version" spec="https://github.com/whiteoctober/cordova-plugin-app-version.git" />
 </widget>
