@@ -1,9 +1,9 @@
 angular.module('app')
 .factory("MethodsServices", MethodsServices)
 
-MethodsServices.$inject = ['$cordovaSQLite']
+MethodsServices.$inject = ['$cordovaSQLite', 'Helper']
 
-function MethodsServices($cordovaSQLite) {
+function MethodsServices($cordovaSQLite, Helper) {
 
   var method;
 
@@ -21,15 +21,7 @@ function MethodsServices($cordovaSQLite) {
                 "writing_methods.id = contents.writing_method_id" +
                 " AND contents.lesson_id=?";
     var methods = $cordovaSQLite.execute(db, query, [lessonId]).then(function(res) {
-      var result = [];
-      if(res.rows.length > 0){
-        var i = 0,
-            l = res.rows.length
-        for(;i<l;i++){
-          result.push(res.rows.item(i));
-        }
-      }
-      return result;
+      return Helper.generateResult(res);
     }, function(error){
       console.log('errro : ', error);
     });

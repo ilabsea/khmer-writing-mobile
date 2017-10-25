@@ -1,9 +1,9 @@
 angular.module('app')
 .factory("TracksServices", TracksServices)
 
-TracksServices.$inject = ['$cordovaSQLite', 'LessonsServices', 'UsersServices']
+TracksServices.$inject = ['$cordovaSQLite', 'LessonsServices', 'UsersServices', 'Helper']
 
-function TracksServices($cordovaSQLite, LessonsServices, UsersServices) {
+function TracksServices($cordovaSQLite, LessonsServices, UsersServices, Helper) {
   // userTracks = {'methodCode' : {"index": "", "number_contents": "", "content_id": ""} , 'methodCode' : {}};
   var userTracks;
 
@@ -66,15 +66,7 @@ function TracksServices($cordovaSQLite, LessonsServices, UsersServices) {
   function getByUserId(userId) {
     var query = "SELECT * FROM tracks WHERE user_id=?";
     tracksRes = $cordovaSQLite.execute(db, query, [userId]).then(function(res){
-      var result = [];
-      if(res.rows.length > 0){
-        var i = 0,
-            l = res.rows.length
-        for(;i<l;i++){
-          result.push(res.rows.item(i));
-        }
-      }
-      return result;
+      return Helper.generateResult(res);
     }, function(e){
       console.log('e : ', e);
     });

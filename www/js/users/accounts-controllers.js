@@ -8,15 +8,15 @@ angular.module('app')
 
   vm.avatars = AccountsServices.getAvatars();
   vm.user = {};
-  vm.selectedAvatar;
+  vm.selectedAvatar = {};
 
   vm.initUser = function(){
-    vm.user = $state.params.state == "edit" ? currentUser : {"grade" : "១", "type" : "ក", "avatar_id" : 1, "avatar_name": "boy.png"};
+    vm.user = $state.params.state === "edit" ? currentUser : {"grade" : "១", "type" : "ក", "avatar_id" : 1, "avatar_name": "boy.png"};
     var i = 0,
         length = vm.avatars.length;
     for (; i < length ; i++) {
       var avatar = vm.avatars[i];
-      if(avatar.id == vm.user.avatar_id){
+      if(avatar.id === vm.user.avatar_id){
         vm.selectedAvatar = avatar;
         vm.selectedAvatar.selected = true;
       }else{
@@ -26,7 +26,7 @@ angular.module('app')
   }
 
   vm.select = function (avatar) {
-    if(vm.selectedAvatar && avatar.id != vm.selectedAvatar.id){
+    if(vm.selectedAvatar && avatar.id !== vm.selectedAvatar.id){
       vm.selectedAvatar.selected = false ;
     }
     vm.selectedAvatar = avatar;
