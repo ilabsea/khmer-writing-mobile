@@ -13,7 +13,7 @@ angular.module('app')
   vm.isOpen = true;
   vm.toggleSound = function() {
     vm.isOpen = !vm.isOpen;
-    SoundServices.setIsActive(vm.isOpen);
+    SoundServices.setIsActive(false);
   };
   vm.isGuestUser = function(){
     return vm.currentUser.id == 1;

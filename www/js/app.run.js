@@ -16,7 +16,7 @@ function runBlock ($ionicPlatform, $location, $ionicHistory, SoundServices) {
       StatusBar.styleDefault();
     }
 
-    SoundServices.preloadSimple('intro', 'audio/intro.mp3');
+    SoundServices.preloadSimple('intro', 'audio/intro.wav');
     SoundServices.preloadSimple('grade', 'audio/grade.wav');
     SoundServices.preloadSimple('lesson', 'audio/lesson.wav');
     SoundServices.preloadSimple('content', 'audio/content.wav');

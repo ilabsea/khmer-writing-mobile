@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ilabsea.instedd.khmerwriting" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="org.kape.khmerwriting" version="1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>សរសេរខ្មែរ</name>
     <description>
         Khmer writing is allowed user especially kinder-garden kids to able to learn writing khmer.
   </description>
-    <author email="ilabsea@gmail.com" href="http://www.ilabsoutheastasia.org/">
-      InSTEDD iLabSea
+    <author email="chhayyuth.chhorn@kapekh.org" href="http://www.kapekh.org/">
+      KAPE
   </author>
     <content src="index.html" />
     <access origin="*" />

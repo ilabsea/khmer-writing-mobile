@@ -5,6 +5,7 @@ angular.module('app')
 Helper.$inject = []
 
 function Helper() {
+
   function generateResult(res) {
     var result = [];
     if(res.rows.length > 0){
@@ -14,6 +15,7 @@ function Helper() {
         result.push(res.rows.item(i));
       }
     }
+    console.log('result : ', result);
     return result;
   }
 

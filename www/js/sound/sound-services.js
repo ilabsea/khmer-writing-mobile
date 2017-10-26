@@ -5,7 +5,7 @@ SoundServices.$inject = ['$cordovaNativeAudio']
 
 function SoundServices($cordovaNativeAudio) {
 
-  var isActive = true;
+  var isActive = false;
 
   function setIsActive(active) {
     console.log('isActive : ', active)
