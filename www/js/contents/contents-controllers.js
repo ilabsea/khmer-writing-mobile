@@ -121,7 +121,7 @@ angular.module('app')
   }
 
   function playSound() {
-    media.play();
+    SoundServices.play('content_audio');
   }
 
   function goBack() {
@@ -206,12 +206,8 @@ angular.module('app')
     vm.imageAnswer = path + contents[index]["image_answer"];
 
     if (vm.methodCode == 3) {
-      if (media) {
-        media.stop();
-        media.release();
-      }
-      var src = "/android_asset/www/" + path + vm.contents[index]["audio"];
-      media = $cordovaMedia.newMedia(src);
+      var src = path + vm.contents[index]["audio"];
+      SoundServices.preloadSimple('content_audio', src);
     }
   }
 
