@@ -8,7 +8,6 @@ function SoundServices($cordovaNativeAudio) {
   var isActive = false;
 
   function setIsActive(active) {
-    console.log('isActive : ', active)
     this.isActive = active;
   }
 

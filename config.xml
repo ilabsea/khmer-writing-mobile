@@ -74,7 +74,7 @@
     <plugin name="cordova-plugin-file" spec="~4.3.1" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
     <plugin name="com.flyingsoftgames.xapkreader" spec="https://github.com/agamemnus/cordova-plugin-xapkreader.git#cordova-6.5.0">
-        <variable name="XAPK_EXPANSION_AUTHORITY" value="ilabsea.instedd.khmerwriting" />
+        <variable name="XAPK_EXPANSION_AUTHORITY" value="org.kape.khmerwriting" />
         <variable name="XAPK_PUBLIC_KEY" value="public key api" />
         <variable name="XAPK_TEXT_DL_ASSETS" value="Downloading assets…" />
         <variable name="XAPK_TEXT_PR_ASSETS" value="Preparing assets…" />
@@ -90,4 +90,5 @@
     </plugin>
     <plugin name="cordova-plugin-app-version" spec="https://github.com/whiteoctober/cordova-plugin-app-version.git" />
     <plugin name="cordova-plugin-nativeaudio" spec="~3.0.9" />
+    <plugin name="cordova-plugin-yanap" spec="https://github.com/Wizcorp/cordova-plugin-yanap" />
 </widget>
