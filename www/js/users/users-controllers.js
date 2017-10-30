@@ -8,6 +8,7 @@ angular.module('app')
   vm.limit = vm.offset == 0 && vm.isHome ? 1 : 2;
 
   vm.users = [];
+  vm.currentUser = UsersServices.getCurrentUser() ? UsersServices.getCurrentUser(): {};
 
   vm.nbUsers = 0;
 

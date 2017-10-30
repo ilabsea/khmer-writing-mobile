@@ -17,7 +17,8 @@
            ng-click='previous()' ng-if='offset > 0'></div>
 
       <div style="margin-left: 11%;">
-        <div class="user-item" ng-repeat='user in users'>
+        <div class="user-item" ng-repeat='user in users'
+             ng-style='{"font-weight": currentUser["id"] == user["id"] ? "bold": "normal"}'>
           <img ng-src='img/avatar/{{user.avatar_name}}'
             ng-style='{"margin-top": isHome ? "26.5%" : "-0.5%"}'
             style="width: 45%; ">
