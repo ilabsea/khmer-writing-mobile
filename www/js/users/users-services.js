@@ -7,7 +7,7 @@ function UsersServices($cordovaSQLite, Helper) {
   var currentUser;
 
   function getUsers(offset, limit) {
-    var query = "SELECT * FROM users LIMIT (?) OFFSET (?)";
+    var query = "SELECT * FROM users LIMIT (?) OFFSET (?);";
     return $cordovaSQLite.execute(db, query, [limit, offset]).then(function(res) {
       return Helper.generateResult(res);
     });
