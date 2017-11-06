@@ -6,13 +6,26 @@ SoundServices.$inject = ['$cordovaNativeAudio']
 function SoundServices($cordovaNativeAudio) {
 
   var isActive = false;
+  var audios = [{'intro' : 'audio/intro.wav'},
+                {'grade': 'audio/grade.wav'},
+                {'lesson': 'audio/lesson.wav'},
+                {'content': 'audio/content.wav'},
+                {'aboutus': 'audio/aboutus.wav'},
+                {'method': 'audio/method.wav'},
+                {'setting': 'audio/setting.wav'},
+                {'brush': 'audio/brush.wav'},
+                {'create-account': 'audio/create-account.wav'}];
 
   function setIsActive(active) {
-    this.isActive = active;
+    isActive = active;
   }
 
   function getIsActive() {
-    return this.isActive;
+    return isActive;
+  }
+
+  function getAudios() {
+    return audios;
   }
 
   function preloadSimple(id, path) {
@@ -43,7 +56,8 @@ function SoundServices($cordovaNativeAudio) {
     stop: stop,
     unload: unload,
     setIsActive: setIsActive,
-    getIsActive: getIsActive
+    getIsActive: getIsActive,
+    getAudios: getAudios
   }
 
 }

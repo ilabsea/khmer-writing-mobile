@@ -18,15 +18,12 @@ function runBlock ($ionicPlatform, $location, $ionicHistory, SoundServices) {
 
     SoundServices.setIsActive(false);
     if(SoundServices.getIsActive()){
-      SoundServices.preloadSimple('intro', 'audio/intro.wav');
-      SoundServices.preloadSimple('grade', 'audio/grade.wav');
-      SoundServices.preloadSimple('lesson', 'audio/lesson.wav');
-      SoundServices.preloadSimple('content', 'audio/content.wav');
-      SoundServices.preloadSimple('aboutus', 'audio/aboutus.wav');
-      SoundServices.preloadSimple('method', 'audio/method.wav');
-      SoundServices.preloadSimple('setting', 'audio/setting.wav');
-      SoundServices.preloadSimple('brush', 'audio/brush.wav');
-      SoundServices.preloadSimple('create-account', 'audio/create-account.wav');
+      var audios = SoundServices.getAudios();
+      audios.forEach(function(audio){
+        for(var key in audio){
+          SoundServices.preloadSimple(key, audio[key]);
+        }
+      })
     }
   });
 

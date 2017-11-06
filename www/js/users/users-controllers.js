@@ -69,7 +69,7 @@ angular.module('app')
       numberOfUsers();
       getUsers();
     }
-    
+
     if(SoundServices.getIsActive()){
       SoundServices.play('intro');
     }

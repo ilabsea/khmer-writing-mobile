@@ -3,7 +3,7 @@ angular.module('app')
 .controller('BrushesCtrl', function($scope, BrushesServices, SoundServices,
             $ionicPlatform, $timeout) {
   var vm = $scope;
-  var colors = ["#919191", "#8F00FF", "#00CFFF", "#F900F3", "#FC0000" , "#FFA300", "#0600FF", "#00C10E" , "#FFF203", "#000000"];
+  var colors = BrushesServices.getColors();
 
   vm.sizeLevel = BrushesServices.getBrushSize()/6 - 1;
   vm.colorIndex;
