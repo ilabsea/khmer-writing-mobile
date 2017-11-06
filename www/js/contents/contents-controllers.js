@@ -70,16 +70,16 @@ angular.module('app')
     var deviceWidth = $window.innerWidth;
     var deviceHeight = $window.innerHeight;
     if(deviceWidth >= 1020 && deviceHeight >= 600 ) {
-      canvas.width = 340;
+      canvas.width = 310;
       canvas.height = 350;
     } else if (deviceWidth >= 700 && deviceHeight >= 400) {
-      canvas.width = 240;
-      canvas.height = 230;
+      canvas.width = 217;
+      canvas.height = 220;
     }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
-      canvas.width = 210;
+      canvas.width = 200;
       canvas.height = 200;
     } else if(deviceWidth >= 500  && deviceHeight >= 320 ){
-      canvas.width = 170;
+      canvas.width = 155;
       canvas.height = 180
     }
   }
