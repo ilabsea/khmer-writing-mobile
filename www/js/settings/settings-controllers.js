@@ -48,6 +48,19 @@ angular.module('app')
     }
   }
 
+  if (ionic.Platform.isAndroid()) {
+    window.addEventListener('native.keyboardshow', function(){
+      if(document.getElementsByClassName('popup')[0]){
+        document.getElementsByClassName('popup')[0].setAttribute('style', 'margin-top:-20%;')
+      }
+    });
+    window.addEventListener('native.keyboardhide', function(){
+      if(document.getElementsByClassName('popup')[0]){
+        document.getElementsByClassName('popup')[0].removeAttribute('style');
+      }
+    });
+  }
+
   $ionicPlatform.ready(function() {
     if(SoundServices.getIsActive()){
       SoundServices.stop('grade');
