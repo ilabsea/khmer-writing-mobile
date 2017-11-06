@@ -60,7 +60,6 @@ angular.module('app')
       });
   }
 
-
   $ionicPlatform.ready(function() {
     var isDatabaseCopied = getDatabaseCopied();
     if(!isDatabaseCopied){
@@ -70,7 +69,7 @@ angular.module('app')
       numberOfUsers();
       getUsers();
     }
-
+    
     if(SoundServices.getIsActive()){
       SoundServices.play('intro');
     }

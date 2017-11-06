@@ -24,8 +24,7 @@
     "ionic-plugin-keyboard",
     "cordova-plugin-sqlite-2",
     "cordova-plugin-file",
-    "cordova-plugin-compat",
-    "cordova-plugin-media"
+    "cordova-plugin-compat"
   ],
   "cordovaPlatforms": [
     "ios",

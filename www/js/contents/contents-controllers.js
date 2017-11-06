@@ -27,11 +27,9 @@ angular.module('app')
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
   vm.resetCurrentTrack = resetCurrentTrack;
 
-
-  var path = "content://ilabsea.instedd.khmerwriting/main_expansion/grade"
+  var path = cordova.file.externalApplicationStorageDirectory + "main_expansion/grade"
             + vm.gradeId + "/lesson" + vm.lessonId
             + "/method" + vm.writingMethodId + "/";
-
   var index = 0;
 
   vm.contents = [];
@@ -121,7 +119,7 @@ angular.module('app')
   }
 
   function playSound() {
-    SoundServices.play('content_audio');
+    media.play();
   }
 
   function goBack() {
@@ -155,19 +153,22 @@ angular.module('app')
     index++;
     setContentDataChange(vm.contents);
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.previous = function() {
     index--;
     setContentDataChange(vm.contents);
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.redraw = function () {
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   var popupAnswer;
@@ -199,15 +200,19 @@ angular.module('app')
     }
   }
 
+  var media;
   function setContentDataChange(contents) {
     vm.content = contents[index].content;
     vm.image =  path + contents[index]["image"];
     vm.imageClue = path + contents[index]["image_clue"];
     vm.imageAnswer = path + contents[index]["image_answer"];
-
     if (vm.methodCode == 3) {
+      if (media) {
+        media.stop();
+        media.release();
+      }
       var src = path + vm.contents[index]["audio"];
-      SoundServices.preloadSimple('content_audio', src);
+      media = $cordovaMedia.newMedia(src);
     }
   }
 
@@ -215,7 +220,8 @@ angular.module('app')
     index = 0 ;
     setContentDataChange(vm.contents);
     signaturePad.clear();
-    signaturePad1.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.$on('$stateChangeSuccess', function(event, toState) {
