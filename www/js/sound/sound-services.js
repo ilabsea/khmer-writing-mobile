@@ -19,7 +19,6 @@ function SoundServices($cordovaNativeAudio) {
     $cordovaNativeAudio
       .preloadSimple(id, path)
       .then(function (msg) {
-        console.log("msg : ", msg);
         console.log("id : ", id);
       }, function (error) {
         console.log("error  : ", error);

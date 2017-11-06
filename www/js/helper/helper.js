@@ -15,7 +15,6 @@ function Helper() {
         result.push(res.rows.item(i));
       }
     }
-    console.log('result : ', result);
     return result;
   }
 
