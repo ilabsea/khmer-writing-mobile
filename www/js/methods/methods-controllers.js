@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller("MethodsCtrl", function($scope, MethodsServices,
+.controller("MethodsCtrl", function($scope, MethodsServices, $timeout, SoundServices,
             LessonsServices, $state, $ionicPlatform, UsersServices, TracksServices){
   vm = $scope;
   var currentLesson = LessonsServices.getLesson();
@@ -34,7 +34,18 @@ angular.module('app')
 
   $ionicPlatform.ready(function() {
     setMethods();
-    setTracks();
+    vm.$on('$stateChangeSuccess', function(event, toState) {
+      if (toState.url== "/methods") {
+        setTracks();
+      }
+    });
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('lesson');
+      SoundServices.stop('content');
+      $timeout(function(){
+        SoundServices.play('method');
+      }, 1000);
+    }
   });
 
 })

@@ -1,7 +1,8 @@
 angular.module('app')
 
 .controller("SettingsCtrl", function($scope, UsersServices, AccountsServices,
-          $ionicPopup, $state, MethodsServices, $ionicLoading){
+          $ionicPopup, $state, MethodsServices, $ionicLoading, SoundServices,
+          $ionicPlatform, $timeout, SoundServices){
   var vm = $scope;
 
   vm.currentUser = UsersServices.getCurrentUser();
@@ -9,7 +10,7 @@ angular.module('app')
   vm.valid = true;
   vm.formDelete = {};
 
-  vm.isOpen = false;
+  vm.isOpen = true;
   vm.toggleSound = function() {
     vm.isOpen = !vm.isOpen;
   };
@@ -46,5 +47,15 @@ angular.module('app')
       vm.valid = false;
     }
   }
+
+  $ionicPlatform.ready(function() {
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('grade');
+      $timeout(function(){
+        SoundServices.play('setting');
+      }, 1000);
+    }
+
+  })
 
 })

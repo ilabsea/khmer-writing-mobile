@@ -1,0 +1,17 @@
+<ion-view class='grade-background'>
+
+  <ion-content>
+
+    <i class='icon ion-star' ng-repeat='number in range(1, lesson.star)' ></i>
+    <i class='icon ion-star blur' ng-repeat='unstar in range(lesson.star + 1 , 3)'></i>
+
+    <a ui-sref='settings' class="button button-icon icon ion-setting"></a>
+    <div class='grade-contain'>
+      <div ng-click="setGrade(grade)" ui-sref='lessons' ng-repeat='grade in grades' class='grade-item'>
+        <img ng-src='img/grade/grade{{grade.code}}-btn.png'>
+      </div>
+    </div>
+
+  </ion-content>
+
+</ion-view>

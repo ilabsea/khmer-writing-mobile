@@ -1,9 +1,9 @@
 angular.module('app')
 .factory("LessonsServices", LessonsServices)
 
-LessonsServices.$inject = ['$cordovaSQLite']
+LessonsServices.$inject = ['$cordovaSQLite', 'Helper']
 
-function LessonsServices($cordovaSQLite) {
+function LessonsServices($cordovaSQLite, Helper) {
   var lesson;
 
   function setLesson(lessonParam) {
@@ -17,15 +17,7 @@ function LessonsServices($cordovaSQLite) {
   function getByGradeId(gradeId) {
     var query = "SELECT * FROM lessons WHERE grade_id = ?";
     var lessons = $cordovaSQLite.execute(db, query, [gradeId]).then(function(res) {
-      var result = [];
-      if(res.rows.length > 0){
-        var i = 0,
-            l = res.rows.length
-        for(;i<l;i++){
-          result.push(res.rows.item(i));
-        }
-      }
-      return result;
+      return Helper.generateResult(res);
     }, function(e){
       console.log('e : ', e);
     });

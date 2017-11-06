@@ -1,8 +1,9 @@
 angular.module('app')
 
-.controller('BrushesCtrl', function($scope, BrushesServices) {
+.controller('BrushesCtrl', function($scope, BrushesServices, SoundServices,
+            $ionicPlatform, $timeout) {
   var vm = $scope;
-  var colors = ["#919191", "#8F00FF", "#00CFFF", "#F900F3", "#FC0000" , "#FFA300", "#0600FF", "#00C10E" , "#FFF203", "#000000"];
+  var colors = BrushesServices.getColors();
 
   vm.sizeLevel = BrushesServices.getBrushSize()/6 - 1;
   vm.colorIndex;
@@ -36,5 +37,14 @@ angular.module('app')
     vm.colorIndex = index;
     BrushesServices.setBrushColor(colors[index]);
   }
+
+  $ionicPlatform.ready(function(){
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('content');
+      $timeout(function () {
+        SoundServices.play('brush');
+      },1000)
+    }
+  })
 
 })

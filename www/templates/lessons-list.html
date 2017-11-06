@@ -1,6 +1,6 @@
 <ion-view class="lesson-background">
   <ion-content>
-    <a ui-sref='settings' class="button button-icon icon ion-setting"></a>
+    <a ui-sref='grades' class="button button-icon icon ion-back"></a>
     <div class='lesson-grade'>
       <p> {{gradeName}} </p>
       <div>
@@ -14,7 +14,7 @@
            class='lesson-item'>
         <span class='lesson-text'> មេរៀនទី </span>
         <span class='lesson-numeric-text'
-              ng-style='{"font-size": lesson["khmer_numeric"].length > 3 ? "2vw": "8vw;"}'>
+              ng-style='{"font-size": lesson["khmer_numeric"].length > 3 ? "2vw": "5vw"}'>
               {{lesson["khmer_numeric"]}}
         </span>
         <div class='lesson-star-bar'>

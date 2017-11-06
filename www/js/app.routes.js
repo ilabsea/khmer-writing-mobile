@@ -31,6 +31,12 @@ function routes($stateProvider, $urlRouterProvider) {
     }
   })
 
+  .state('grades', {
+    url: '/grades',
+    templateUrl: 'templates/grades-list.html',
+    controller: 'GradesCtrl'
+  })
+
   .state('lessons', {
     url: '/lessons',
     templateUrl: 'templates/lessons-list.html',

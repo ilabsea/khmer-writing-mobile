@@ -20,10 +20,6 @@ ion-view {
   font-size: 20px;
   text-align: center; }
 
-.aboutus-background {
-  background: url("../img/aboutus/aboutus-background.png") center center no-repeat;
-  background-size: 100% 100%; }
-
 .aboutus-panel {
   display: block;
   background: url("../img/aboutus/aboutus-panel.png") center center no-repeat;
@@ -35,3 +31,7 @@ ion-view {
 .about-sponspor {
   background: url("../img/aboutus/box.png") center center no-repeat;
   background-size: 91% 100%; }
+
+.box-background {
+  background: url("../img/aboutus/box.png") center center no-repeat;
+  margin-left: -5.5%; }

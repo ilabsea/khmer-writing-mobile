@@ -1,10 +1,5 @@
 @import 'application';
 
-.aboutus-background {
-  background: url("../img/aboutus/aboutus-background.png") $background;
-  background-size: 100% 100%;
-}
-
 .aboutus-panel {
   display: block;
   background: url("../img/aboutus/aboutus-panel.png") $background;
@@ -17,4 +12,9 @@
 .about-sponspor {
   background: url("../img/aboutus/box.png") $background;
   background-size: 91% 100%;
+}
+
+.box-background{
+  background: url("../img/aboutus/box.png") $background;
+  margin-left: -5.5%;
 }

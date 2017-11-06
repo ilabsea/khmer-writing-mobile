@@ -1,23 +1,15 @@
 angular.module('app')
 
 .factory("UsersServices", UsersServices)
-UsersServices.$inject = ["$cordovaSQLite"]
+UsersServices.$inject = ["$cordovaSQLite", 'Helper']
 
-function UsersServices($cordovaSQLite) {
+function UsersServices($cordovaSQLite, Helper) {
   var currentUser;
 
   function getUsers(offset, limit) {
-    var query = "SELECT * FROM users LIMIT (?) OFFSET (?)";
+    var query = "SELECT * FROM users LIMIT (?) OFFSET (?);";
     return $cordovaSQLite.execute(db, query, [limit, offset]).then(function(res) {
-      var result = [];
-      if(res.rows.length > 0){
-        var i = 0,
-            l = res.rows.length
-        for(;i<l;i++){
-          result.push(res.rows.item(i));
-        }
-      }
-      return result;
+      return Helper.generateResult(res);
     });
   }
 

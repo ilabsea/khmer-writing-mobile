@@ -1,12 +1,14 @@
 angular.module('app')
 
-.controller('UsersCtrl', function($scope, isHome, UsersServices, $ionicPlatform, $cordovaFile, $cordovaSQLite) {
+.controller('UsersCtrl', function($scope, isHome, UsersServices, $ionicPlatform,
+            $cordovaFile, $cordovaSQLite, SoundServices) {
   var vm = $scope;
   vm.isHome = isHome;
   vm.offset = 0;
   vm.limit = vm.offset == 0 && vm.isHome ? 1 : 2;
 
   vm.users = [];
+  vm.currentUser = UsersServices.getCurrentUser() ? UsersServices.getCurrentUser(): {};
 
   vm.nbUsers = 0;
 
@@ -66,6 +68,10 @@ angular.module('app')
       db = $cordovaSQLite.openDB("khmer_writing.db");
       numberOfUsers();
       getUsers();
+    }
+
+    if(SoundServices.getIsActive()){
+      SoundServices.play('intro');
     }
   })
 

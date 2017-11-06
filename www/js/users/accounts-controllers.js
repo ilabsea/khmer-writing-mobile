@@ -1,20 +1,22 @@
 angular.module('app')
 
-.controller("AccountsCtrl", function ($scope, AccountsServices, $state, UsersServices, $ionicHistory, $ionicPopup) {
+.controller("AccountsCtrl", function ($scope, AccountsServices, $state,
+          UsersServices, $ionicHistory, $ionicPopup, $ionicPlatform, $timeout,
+          SoundServices) {
   var vm = $scope;
   var currentUser = UsersServices.getCurrentUser();
 
   vm.avatars = AccountsServices.getAvatars();
   vm.user = {};
-  vm.selectedAvatar;
+  vm.selectedAvatar = {};
 
   vm.initUser = function(){
-    vm.user = $state.params.state == "edit" ? currentUser : {"grade" : "១", "type" : "ក", "avatar_id" : 1, "avatar_name": "boy.png"};
+    vm.user = $state.params.state === "edit" ? currentUser : {"grade" : "១", "type" : "ក", "avatar_id" : 1, "avatar_name": "boy.png"};
     var i = 0,
         length = vm.avatars.length;
     for (; i < length ; i++) {
       var avatar = vm.avatars[i];
-      if(avatar.id == vm.user.avatar_id){
+      if(avatar.id === vm.user.avatar_id){
         vm.selectedAvatar = avatar;
         vm.selectedAvatar.selected = true;
       }else{
@@ -24,7 +26,7 @@ angular.module('app')
   }
 
   vm.select = function (avatar) {
-    if(vm.selectedAvatar && avatar.id != vm.selectedAvatar.id){
+    if(vm.selectedAvatar && avatar.id !== vm.selectedAvatar.id){
       vm.selectedAvatar.selected = false ;
     }
     vm.selectedAvatar = avatar;
@@ -34,12 +36,12 @@ angular.module('app')
   vm.save = function(userParams) {
     if(userParams.id)
       AccountsServices.editUser(userParams, vm.selectedAvatar).then(function (user) {
-        $state.go('lessons');
+        $state.go('grades');
         UsersServices.setCurrentUser(user);
       });
     else
       AccountsServices.addUser(userParams, vm.selectedAvatar).then(function (user) {
-        $state.go('lessons');
+        $state.go('grades');
         UsersServices.setCurrentUser(user);
       });
   }
@@ -81,5 +83,15 @@ angular.module('app')
       document.body.classList.add('keyboard-open');
     });
   }
+
+  $ionicPlatform.ready(function() {
+    if(SoundServices.getIsActive()){
+      SoundServices.stop('setting');
+      SoundServices.stop('intro');
+      $timeout(function(){
+        SoundServices.play('create-account');
+      }, 1000)
+    }
+  })
 
 })

@@ -1,20 +1,21 @@
 angular.module('app')
 
-.controller("ContentsCtrl", function($scope, LessonsServices,
+.controller("ContentsCtrl", function($scope, GradesServices, LessonsServices,
             ContentsServices, MethodsServices, $state, $cordovaMedia,
             BrushesServices, $ionicPlatform, $ionicPopup, TracksServices,
-            $window){
+            $window, SoundServices, $timeout){
 
-  var vm = $scope, canvas, signaturePad, brushSize, brushColor;
+  var vm = $scope, canvas, signaturePad, signaturePad1, brushSize, brushColor;
   var media;
 
+  var currentGrade = GradesServices.getGrade();
   var currentLesson = LessonsServices.getLesson();
   var currentMethod = MethodsServices.getMethod();
   var currentTracks = TracksServices.getCurrentTrack();
 
   vm.currentLesson = currentLesson;
 
-  vm.gradeId = 1;
+  vm.gradeId = currentGrade.id;
   vm.lessonId = currentLesson.id;
   vm.writingMethodId = currentMethod.id;
 
@@ -26,11 +27,9 @@ angular.module('app')
   vm.imageBackground = currentLesson.background == 1 ? "img/grid.png" : "img/table.png";
   vm.resetCurrentTrack = resetCurrentTrack;
 
-
-  var path = "img/ilabsea.instedd.khmerwriting/grade"
+  var path = cordova.file.externalApplicationStorageDirectory + "main_expansion/grade"
             + vm.gradeId + "/lesson" + vm.lessonId
             + "/method" + vm.writingMethodId + "/";
-
   var index = 0;
 
   vm.contents = [];
@@ -46,8 +45,8 @@ angular.module('app')
       vm.contents = contents;
       setContentDataChange(contents);
       canvas = document.getElementById('drawingCanvas');
+      paintingCanvas = document.getElementById('paintingCanvas');
       setCanvasSize(canvas);
-
       setBrushSizeAndColor();
 
       if(canvas){
@@ -56,7 +55,33 @@ angular.module('app')
           penColor: brushColor
         });
       }
+
+      if(paintingCanvas){
+        setPaintingCanvasSize(paintingCanvas)
+        signaturePad1 = new SignaturePad(paintingCanvas, {
+          maxWidth: brushSize,
+          penColor: brushColor
+        });
+      }
     });
+  }
+
+  function setPaintingCanvasSize(canvas) {
+    var deviceWidth = $window.innerWidth;
+    var deviceHeight = $window.innerHeight;
+    if(deviceWidth >= 1020 && deviceHeight >= 600 ) {
+      canvas.width = 340;
+      canvas.height = 350;
+    } else if (deviceWidth >= 700 && deviceHeight >= 400) {
+      canvas.width = 240;
+      canvas.height = 230;
+    }else if(deviceWidth >= 640 && deviceHeight >= 360 ) {
+      canvas.width = 210;
+      canvas.height = 200;
+    } else if(deviceWidth >= 500  && deviceHeight >= 320 ){
+      canvas.width = 170;
+      canvas.height = 180
+    }
   }
 
   function setCanvasSize(canvas) {
@@ -91,7 +116,6 @@ angular.module('app')
         canvas.height = 219;
       }
     }
-
   }
 
   function playSound() {
@@ -103,6 +127,8 @@ angular.module('app')
     var track = getTrackPerMethod();
     TracksServices.storeTrack(track);
     signaturePad.off();
+    if (signaturePad1)
+      signaturePad1.off();
   }
 
   function getTrackPerMethod(){
@@ -127,16 +153,22 @@ angular.module('app')
     index++;
     setContentDataChange(vm.contents);
     signaturePad.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.previous = function() {
     index--;
     setContentDataChange(vm.contents);
     signaturePad.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.redraw = function () {
     signaturePad.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   var popupAnswer;
@@ -168,18 +200,18 @@ angular.module('app')
     }
   }
 
+  var media;
   function setContentDataChange(contents) {
     vm.content = contents[index].content;
     vm.image =  path + contents[index]["image"];
     vm.imageClue = path + contents[index]["image_clue"];
     vm.imageAnswer = path + contents[index]["image_answer"];
-
     if (vm.methodCode == 3) {
       if (media) {
         media.stop();
         media.release();
       }
-      var src = "/android_asset/www/" + path + vm.contents[index]["audio"];
+      var src = path + vm.contents[index]["audio"];
       media = $cordovaMedia.newMedia(src);
     }
   }
@@ -188,6 +220,8 @@ angular.module('app')
     index = 0 ;
     setContentDataChange(vm.contents);
     signaturePad.clear();
+    if(signaturePad1)
+      signaturePad1.clear();
   }
 
   vm.$on('$stateChangeSuccess', function(event, toState) {
@@ -197,6 +231,20 @@ angular.module('app')
         if(signaturePad){
           signaturePad.maxWidth = brushSize;
           signaturePad.penColor = brushColor;
+        }
+
+        if(signaturePad1){
+          signaturePad1.maxWidth = brushSize;
+          signaturePad1.penColor = brushColor;
+        }
+
+        if(SoundServices.getIsActive()){
+          SoundServices.stop('brush');
+          SoundServices.stop('lesson');
+
+          $timeout(function() {
+            SoundServices.play('content');
+          }, 1000)
         }
       });
     }
