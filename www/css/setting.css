@@ -34,7 +34,9 @@ ion-view {
 
 .name {
   color: #FFF;
-  text-align: center; }
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%; }
 
 .new-user {
   background: url("../img/setting/new.png") center center no-repeat;

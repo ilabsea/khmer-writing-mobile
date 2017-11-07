@@ -22,7 +22,7 @@
           <img ng-src='img/avatar/{{user.avatar_name}}'
             ng-style='{"margin-top": isHome ? "26.5%" : "-0.5%"}'
             style="width: 45%; ">
-          <p class="user-name" style='padding-left: 5%; padding-right: 5%;'>{{user.name}}</p>
+          <p class="user-name">{{user.name | limitTo:20 }} {{main.title.length > 10 ? '...' : ''}}<span ng-if="user.name.length > 20">...</span></p>
           <p class="user-grade" ng-if='user.id != 1'>ថ្នាក់ទី {{user.grade}} " {{user.type}} " </p>
           <div ui-sref='grades' ng-click='setCurrentUser(user)'></div>
         </div>

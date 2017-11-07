@@ -16,6 +16,14 @@ function runBlock ($ionicPlatform, $location, $ionicHistory, SoundServices) {
       StatusBar.styleDefault();
     }
 
+    if(window.MobileAccessibility){
+      window.MobileAccessibility.usePreferredTextZoom(false);
+    }
+
+    if (window.StatusBar) {
+      StatusBar.hide();
+    }
+
     SoundServices.setIsActive(false);
     if(SoundServices.getIsActive()){
       var audios = SoundServices.getAudios();
@@ -36,11 +44,8 @@ function runBlock ($ionicPlatform, $location, $ionicHistory, SoundServices) {
     }
   }, 100);
 
-
-
   if (window.StatusBar) {
     StatusBar.hide();
     $ionicPlatform.fullScreen();
   }
-
 }

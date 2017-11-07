@@ -15,7 +15,7 @@
         <div class="col col-50">
           <img ng-src='img/avatar/{{currentUser.avatar_name}}'>
           <a class="button button-icon icon ion-edit" ui-sref="accounts({ state: 'edit'})" ng-if='currentUser.id != 1'></a>
-          <p class='name' style='padding-left: 10%; padding-right: 10%;'>{{currentUser.name}}</p>
+          <p class='name'>{{currentUser.name | limitTo:20 }} <span ng-if="currentUser.name.length > 20">...</span></p>
           <p class='grade' ng-if='currentUser.id != 1'>ថ្នាក់ទី {{currentUser.grade}} " {{currentUser.type}} "</p>
         </div>
 
